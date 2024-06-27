@@ -1,0 +1,413 @@
+﻿@inherits LayoutComponentBase
+@using MudBlocks.Client.Shared
+
+@inject NavigationManager Navigation
+@inject ISnackbar Snackbar
+
+<MudThemeProvider @ref="@_mudThemeProvider" Theme="@_themeDictionary[themeColor]" @bind-IsDarkMode="@_isDarkMode"/>
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1" Dense="true">
+		<MudIconButton Icon="@_drawerIcon" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.h5" Class="ml-3" style="text-transform: uppercase">MudBlocks</MudText>
+        <MudSpacer />
+        <MudTooltip Text="Copy to Clipboard">
+            <MudIconButton Icon="@Icons.Material.Outlined.ContentCopy" Color="Color.Inherit" OnClick=@((e) => CopyCode()) />
+        </MudTooltip>
+        <MudTooltip Text="Preview Code">
+            <MudIconButton Icon="@_showCodeIcon" Color="Color.Inherit" OnClick="@((e) => ToggleCode())" />
+        </MudTooltip>
+        <MudStack Row="true" Spacing="0" Style="background-color: white;border-radius: 16px;padding:0 5px;">
+            @foreach (var theme in _themeDictionary) {
+                <MudTooltip Text=@($"Set Primary Color to {theme.Key}")>
+                    <MudIconButton Icon="@(themeColor == theme.Key ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" OnClick="@((e) => SetPrimaryColor(theme.Key))" Style=@($"color: {theme.Value.Palette.Primary};padding: 5px;")></MudIconButton>
+                </MudTooltip>
+            }
+        </MudStack>
+        <MudTooltip Text="@_sitePreferenceTooltip">
+            <MudIconButton Icon="@_sitePreferenceIcon" Color="Color.Inherit" OnClick="@((e) => SetThemeMode())" />
+        </MudTooltip>
+    </MudAppBar>
+    <MudDrawer Style="top: 0;" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Never" Elevation="2" Variant="@DrawerVariant.Responsive" Breakpoint="@Breakpoint.Sm">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        <CascadingValue Value="Params">
+            @if(!Params?.ShowCode ?? true) {
+                @Body
+            } else {
+                <CodeHighlight Indent="true" CodeLanguage="cshtml-razor">@System.Web.HttpUtility.UrlDecode(Params.CodeToCopy).Replace("<", "&lt;")</CodeHighlight>
+            }
+
+            <MudStack Row="true" Style="position: fixed; bottom: 1rem; right: 1rem;">
+            @if (Params?.Authors?.Count > 0) {
+                <MudAvatarGroup Max="99" Spacing="3" MaxColor="Color.Primary">
+                    @foreach (var author in Params.Authors) {
+                        <MudTooltip Text="@(author.Name + (@author.Url != String.Empty ? $" ({author.Url})" : ""))">
+                            @if (author.Url != null && author.Url != string.Empty) {
+                                <MudLink Href="@author.Url">
+                                    @if (author.Image != null && author.Image != string.Empty) {
+                                        <MudAvatar Image="@author.Image" Alt="@author.Name" />
+                                    }else{
+                                        <MudAvatar Color="Color.Primary">@author.Name.Substring(0, 1)</MudAvatar>
+                                    }
+                                </MudLink>
+                            }else{
+                                @if (author.Image != null && author.Image != string.Empty) {
+                                    <MudAvatar Image="@author.Image" Alt="@author.Name" />
+                                }else{
+                                    <MudAvatar Color="Color.Primary">@author.Name.Substring(0, 1)</MudAvatar>
+                                }
+                            }
+                        </MudTooltip>
+                    }
+                </MudAvatarGroup>
+            }
+            <MudButton Href="@($"https://github.com/mouse0270/mudblocks/blob/master/Mudblocks.Client/{githubUrl}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
+            </MudStack>
+        </CascadingValue>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    [Inject] public IJSRuntime JSRuntime { get; set; } = default!;
+
+    private MudThemeProvider _mudThemeProvider;
+    private string themeColor = "indigo";
+    private string themeMode = "system";
+    private bool _isDarkMode;
+
+    private bool _drawerOpen = true;
+    private string _drawerIcon = Icons.Material.Outlined.ArrowBack;
+    private string _showCodeIcon = Icons.Material.Outlined.Code;
+    private string _sitePreferenceIcon = Icons.Material.Outlined.AutoMode;
+    private string _sitePreferenceTooltip = "Set to System Preference";
+    private CascadingParams Params = new CascadingParams();
+    private string githubUrl = String.Empty;
+
+    protected override async Task OnInitializedAsync() {
+        Navigation.LocationChanged += OnLocationChanged;
+        githubUrl = Navigation.Uri.Substring(Navigation.BaseUri.Length);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        if (firstRender) {
+            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
+            SetThemeState(_isDarkMode);
+            await _mudThemeProvider.WatchSystemPreference(OnSystemPreferenceChanged);
+            StateHasChanged();
+        }
+
+		if (Params?.ShowCode ?? false) await JSRuntime.InvokeVoidAsync("window.showLineNumbers");
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private void OnLocationChanged(object sender, LocationChangedEventArgs e) {
+        if (Params.ShowCode) {
+            Params.ShowCode = false;
+            _showCodeIcon = Params.ShowCode ? Icons.Material.Filled.CodeOff : Icons.Material.Outlined.Code;
+            StateHasChanged();
+        }
+
+        //Params.Authors = new List<CascadingParams.Author>();
+        githubUrl = e.Location.Substring(Navigation.BaseUri.Length);
+        StateHasChanged();
+        Console.WriteLine(e.Location);
+    }
+
+    public void Dispose() {
+        Navigation.LocationChanged -= OnLocationChanged;
+    }
+
+    private Task OnSystemPreferenceChanged(bool newValue) {
+        _isDarkMode = newValue;
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    private void DrawerToggle() {
+        _drawerOpen = !_drawerOpen;
+        _drawerIcon = _drawerOpen ? Icons.Material.Filled.ArrowBack : Icons.Material.Outlined.Notes;
+    }
+
+    private void ToggleCode() {
+        Params.ShowCode = !Params.ShowCode;
+        _showCodeIcon = Params.ShowCode ? Icons.Material.Filled.CodeOff : Icons.Material.Outlined.Code;
+    }
+
+    private async Task CopyCode() {
+        await JSRuntime.InvokeVoidAsync("copyToClipboard", Params.CodeToCopy);
+
+        Snackbar.Add("Block Copied!", Severity.Info);
+    }
+
+    private async Task SetThemeState(bool isDarkPerference) {
+        _isDarkMode = themeMode == "system" && isDarkPerference || themeMode == "dark";
+
+        if (themeMode == "system") {
+            _sitePreferenceIcon = isDarkPerference ? Icons.Material.Outlined.LightMode : Icons.Material.Outlined.DarkMode;
+            _sitePreferenceTooltip = isDarkPerference ? "Set to Light Mode" : "Set to Dark Mode";
+        }else if (themeMode == "dark") {
+            _sitePreferenceIcon = isDarkPerference ? Icons.Material.Outlined.AutoMode : Icons.Material.Outlined.LightMode;
+            _sitePreferenceTooltip = isDarkPerference ? "Set to System Preference" : "Set to Light Mode";
+        }else if (themeMode == "light") {
+            _sitePreferenceIcon = isDarkPerference ? Icons.Material.Outlined.DarkMode : Icons.Material.Outlined.AutoMode;
+            _sitePreferenceTooltip = isDarkPerference ? "Set to Dark Mode" : "Set to System Preference";
+        }
+
+        await JSRuntime.InvokeVoidAsync("ls.set", "themeMode", themeMode);
+        await JSRuntime.InvokeVoidAsync("ls.set", "isDarkMode", _isDarkMode.ToString());
+    }
+
+    private async Task SetThemeMode() {
+        bool isDarkPerference = await _mudThemeProvider.GetSystemPreference();
+        if (themeMode == "system" && isDarkPerference) {
+            themeMode = "light";
+        }else if (themeMode == "system" && !isDarkPerference) {
+            themeMode = "dark";
+        }else if (themeMode == "dark" && !isDarkPerference) {
+            themeMode = "light";
+        }else if (themeMode == "dark" && isDarkPerference) {
+            themeMode = "system";
+        }else if (themeMode == "light" && isDarkPerference) {
+            themeMode = "dark";
+        }else if (themeMode == "light" && !isDarkPerference) {
+            themeMode = "system";
+        }
+
+        SetThemeState(isDarkPerference);
+
+        JSRuntime.InvokeVoidAsync("setHLJSStyle", _isDarkMode ? "dark" : "light");
+    }
+
+    private void SetPrimaryColor(string color) {
+        themeColor = color.ToLower();
+        StateHasChanged();
+    }
+
+    private Dictionary<string, MudTheme> _themeDictionary = new Dictionary<string, MudTheme>() {
+        {
+            "red", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Red.Default,           // [500]
+                    Secondary = Colors.Red.Lighten2         // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Red.Lighten2,          // [100]
+                    Secondary = Colors.Red.Lighten4,        // [50]
+                    AppbarBackground = Colors.Red.Default
+                }
+            }
+        },
+        {
+            "pink", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Pink.Default,          // [500]
+                    Secondary = Colors.Pink.Lighten2        // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Pink.Lighten2,         // [100]
+                    Secondary = Colors.Pink.Lighten4,       // [50]
+                    AppbarBackground = Colors.Pink.Default
+                }
+            }
+        },
+        {
+            "purple", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Purple.Default,        // [500]
+                    Secondary = Colors.Purple.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Purple.Lighten2,       // [100]
+                    Secondary = Colors.Purple.Lighten4,     // [50]
+                    AppbarBackground = Colors.Purple.Default
+                }
+            }
+        },
+        {
+            "deeppurple", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.DeepPurple.Default,        // [500]
+                    Secondary = Colors.DeepPurple.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.DeepPurple.Lighten2,       // [100]
+                    Secondary = Colors.DeepPurple.Lighten4,     // [50]
+                    AppbarBackground = Colors.DeepPurple.Default
+                }
+            }
+        },
+        {
+            "indigo", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Indigo.Default,        // [500]
+                    Secondary = Colors.Indigo.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Indigo.Lighten2,       // [100]
+                    Secondary = Colors.Indigo.Lighten4,     // [50]
+                    AppbarBackground = Colors.Indigo.Default
+                }
+            }
+        },
+        { 
+            "blue", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Blue.Default,          // [500]
+                    Secondary = Colors.Blue.Lighten2        // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Blue.Lighten2,         // [100]
+                    Secondary = Colors.Blue.Lighten4,       // [50]
+                    AppbarBackground = Colors.Blue.Default
+                }
+            }
+        },
+        { 
+            "lightblue", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.LightBlue.Default,          // [500]
+                    Secondary = Colors.LightBlue.Lighten2        // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.LightBlue.Lighten2,         // [100]
+                    Secondary = Colors.LightBlue.Lighten4,       // [50]
+                    AppbarBackground = Colors.LightBlue.Default
+                }
+            }
+        },
+        { 
+            "teal", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Teal.Default,          // [500]
+                    Secondary = Colors.Teal.Lighten2        // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Teal.Lighten2,         // [100]
+                    Secondary = Colors.Teal.Lighten4,       // [50]
+                    AppbarBackground = Colors.Teal.Default
+                }
+            }
+        },
+        {
+            "green", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Green.Default,     // [500]
+                    Secondary = Colors.Green.Lighten2       // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Green.Lighten2,        // [100]
+                    Secondary = Colors.Green.Lighten4,       // [50]
+                    AppbarBackground = Colors.Green.Default
+                }
+            }
+        },
+        {
+            "lightgreen", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.LightGreen.Default,     // [500]
+                    Secondary = Colors.LightGreen.Lighten2       // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.LightGreen.Lighten2,        // [100]
+                    Secondary = Colors.LightGreen.Lighten4,       // [50]
+                    AppbarBackground = Colors.LightGreen.Default
+                }
+            }
+        },
+        {
+            "lime", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Lime.Default,     // [500]
+                    Secondary = Colors.Lime.Lighten2       // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Lime.Lighten2,        // [100]
+                    Secondary = Colors.Lime.Lighten4,       // [50]
+                    AppbarBackground = Colors.Lime.Default
+                }
+            }
+        },
+        {
+            "yellow", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Yellow.Default,     // [500]
+                    Secondary = Colors.Yellow.Lighten2       // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Yellow.Lighten2,        // [100]
+                    Secondary = Colors.Yellow.Lighten4,       // [50]
+                    AppbarBackground = Colors.Yellow.Default
+                }
+            }
+        },
+        {
+            "amber", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Amber.Default,     // [500]
+                    Secondary = Colors.Amber.Lighten2       // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Amber.Lighten2,        // [100]
+                    Secondary = Colors.Amber.Lighten4,       // [50]
+                    AppbarBackground = Colors.Amber.Default
+                }
+            }
+        },
+        {
+            "orange", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Orange.Default,        // [500]
+                    Secondary = Colors.Orange.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Orange.Lighten2,       // [100]
+                    Secondary = Colors.Orange.Lighten4,     // [50]
+                    AppbarBackground = Colors.Orange.Default
+                }
+            }
+        },
+        {
+            "deeporange", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.DeepOrange.Default,        // [500]
+                    Secondary = Colors.DeepOrange.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.DeepOrange.Lighten2,       // [100]
+                    Secondary = Colors.DeepOrange.Lighten4,     // [50]
+                    AppbarBackground = Colors.DeepOrange.Default
+                }
+            }
+        },
+        {
+            "brown", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.Brown.Default,        // [500]
+                    Secondary = Colors.Brown.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.Brown.Lighten2,       // [100]
+                    Secondary = Colors.Brown.Lighten4,     // [50]
+                    AppbarBackground = Colors.Brown.Default
+                }
+            }
+        },
+        {
+            "bluegrey", new MudTheme() {
+                Palette = new Palette() {
+                    Primary = Colors.BlueGrey.Default,        // [500]
+                    Secondary = Colors.BlueGrey.Lighten2      // [300]
+                },
+                PaletteDark = new PaletteDark() {
+                    Primary = Colors.BlueGrey.Lighten2,       // [100]
+                    Secondary = Colors.BlueGrey.Lighten4,     // [50]
+                    AppbarBackground = Colors.BlueGrey.Default
+                }
+            }
+        }
+    };
+}
