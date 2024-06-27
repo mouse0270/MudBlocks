@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NvZZt9AEWlPhVlGJt260+FJ2S1j+I/aOG7fdSV/rOa3dKiekWxbCYzlMivEejCbhtfFJg81ylIZJ/zsHYBPr/Q==",
+  "dgSpecHash": "Rvzc0JEYo4ELZGizrVwFACI33XTpWgSeMTehnf/uqRRXQVKoUBCheMXG2HSOkAi9zXlh5xj1PD7hWE1FZtTX3g==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\server\\server.csproj",
+  "projectFilePath": "E:\\Programs\\GitHub\\MudBlocks\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.3\\microsoft.aspnetcore.authorization.8.0.3.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.3\\microsoft.aspnetcore.components.8.0.3.nupkg.sha512",

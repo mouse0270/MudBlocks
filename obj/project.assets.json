@@ -703,11 +703,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\server\\server.csproj",
+      "projectUniqueName": "E:\\Programs\\GitHub\\MudBlocks\\server.csproj",
       "projectName": "server",
-      "projectPath": "G:\\Projects\\server\\server.csproj",
+      "projectPath": "E:\\Programs\\GitHub\\MudBlocks\\server.csproj",
       "packagesPath": "C:\\Users\\rmcin\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\server\\obj\\",
+      "outputPath": "E:\\Programs\\GitHub\\MudBlocks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rmcin\\AppData\\Roaming\\NuGet\\NuGet.Config"
