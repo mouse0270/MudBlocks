@@ -20,6 +20,10 @@ jobs:
     # publishes Blazor project to the release folder
     - name: Publish .NET Project
       run: dotnet publish MudBlocks\/MudBlocks.csproj -c Release -o release --nologo
+    
+    # lists the contents of the release folder
+    - name: List directory contents
+      run: ls -R release
 
     # changes the base-tag in index.html from '/' to 'MudBlocks' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to MudBlocks
