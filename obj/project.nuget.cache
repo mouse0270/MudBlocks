@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "NvZZt9AEWlPhVlGJt260+FJ2S1j+I/aOG7fdSV/rOa3dKiekWxbCYzlMivEejCbhtfFJg81ylIZJ/zsHYBPr/Q==",
+  "success": true,
+  "projectFilePath": "G:\\Projects\\server\\server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.3\\microsoft.aspnetcore.authorization.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.3\\microsoft.aspnetcore.components.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.3\\microsoft.aspnetcore.components.analyzers.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\8.0.3\\microsoft.aspnetcore.components.forms.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.3\\microsoft.aspnetcore.components.web.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.3\\microsoft.aspnetcore.metadata.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.localization\\8.0.3\\microsoft.extensions.localization.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\8.0.3\\microsoft.extensions.localization.abstractions.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.jsinterop\\8.0.3\\microsoft.jsinterop.8.0.3.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\mudblazor\\6.20.0\\mudblazor.6.20.0.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
