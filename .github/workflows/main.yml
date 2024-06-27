@@ -35,7 +35,7 @@ jobs:
       - run: touch ${{ env.WEBAPP_PATH }}/wwwroot/.nojekyll #folder starting with _ are handled as jekyll. This file will prevent that.  
       - name: Run webapp and generate static files
         run: |
-          dotnet run --project ${{ env.WEBAPP_PATH }}${{env.WEBAPP_CSPROJ}}  --configuration Release
+          dotnet build --project ${{ env.WEBAPP_PATH }}${{env.WEBAPP_CSPROJ}}  --configuration Release
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
