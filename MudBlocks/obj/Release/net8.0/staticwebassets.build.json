@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CUi4q9RlskDHQwFjaQANbSA2ql9Flvk/TmdKg+lRXnc=",
+  "Hash": "T9mxWVs/LMC27jDd651nX0P3KG9ixujLRJpEfgJsthE=",
   "Source": "MudBlocks",
   "BasePath": "_content/MudBlocks",
   "Mode": "Default",
@@ -8204,25 +8204,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\Version4.jpg"
-    },
-    {
-      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\index.html",
-      "SourceId": "MudBlocks",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\",
-      "BasePath": "_content/MudBlocks",
-      "RelativePath": "index.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
     }
   ]
 }

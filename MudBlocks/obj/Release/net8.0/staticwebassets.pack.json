@@ -25,10 +25,6 @@
       "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version4.jpg"
     },
     {
-      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
-    },
-    {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.MudBlocks.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
