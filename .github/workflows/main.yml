@@ -16,10 +16,15 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+    
+          
+    # Install dotnet wasm buildtools workload
+    - name: Install .NET WASM Build Tools
+      run: dotnet workload install wasm-tools
 
     # publishes Blazor project to the release folder
     - name: Publish .NET Project
-      run: dotnet publish MudBlocks\/MudBlocks.csproj -c Release -o release --nologo
+      run: dotnet publish MudBlocks\/MudBlocks.csproj -c:Release -p:GHPages=true -o release --nologo
     
     # lists the contents of the release folder
     - name: List directory contents
