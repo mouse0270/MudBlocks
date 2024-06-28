@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MudBlocks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+423be38b57a789a9f22b2f3053385c3ecbfba64b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+049ba61c9019a9716e0d1fc73e33629726db73e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MudBlocks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MudBlocks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
