@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version1.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version1.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version2.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version2.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version3.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version3.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version4.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version4.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.MudBlocks.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.MudBlocks.props",
+      "PackagePath": "build\\MudBlocks.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MudBlocks.props",
+      "PackagePath": "buildMultiTargeting\\MudBlocks.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.MudBlocks.props",
+      "PackagePath": "buildTransitive\\MudBlocks.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
