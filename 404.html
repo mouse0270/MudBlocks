@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <base href="/MudBlocks/" />
+    <title>MudBlocks</title>
+	
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/@@highlightjs/cdn-assets@11.9.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@@highlightjs/cdn-assets@11.9.0/styles/atom-one-light.min.css" rel="disabled">
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="app.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.web.js"></script>
+	<script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="_content/HighlightBlazor/highlight-blazor.js"></script>
+    <script src="//unpkg.com/@@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script src="//unpkg.com/highlightjs-cshtml-razor/dist/cshtml-razor.min.js"></script>
+    <script>
+        window.showLineNumbers = () => {
+            setTimeout(() => {
+                hljs.initLineNumbersOnLoad();
+            }, 100);
+        };
+        window.setHLJSStyle = (themeMode) => {
+            document.querySelector('link[href*="atom-one-dark"]').setAttribute('rel', themeMode.toLowerCase() === "dark" ? 'stylesheet' : 'disabled');
+            document.querySelector('link[href*="atom-one-light"]').setAttribute('rel', themeMode.toLowerCase() === "light" ? 'stylesheet' : 'disabled');
+        };
+
+        window.copyToClipboard = (text) => {
+            // URL Decode Text
+            text = decodeURIComponent(text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"'));
+
+            navigator.clipboard.writeText(text).then(function() {
+                console.log('Text copied to clipboard');
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        };
+
+        window.getInnterText = (id) => {
+            var ele = document.getElementById(id);
+            return ele == null ? "" : ele.innerText;
+        };
+
+        window.setInnerHtml = (id, txt) => {
+            document.getElementById(id).innerHTML = txt;
+        }
+
+        window.highlightElementById = (id) => {
+            return hljs.highlightElement(document.getElementById(id));
+        };
+
+        window.loadCss = (url) => {
+            if (!url || url.length === 0) {
+                throw new Error('argument "url" is required !');
+            }
+            var head = document.getElementsByTagName('head')[0];
+            var link = document.createElement('link');
+            link.href = url;
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            head.appendChild(link);
+        };
+    </script>
+</body>
+</html>
