@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\obj\\Debug\\net8.0\\compressed\\me3sfmzrn2.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MudBlocks.styles.css",
+      "PackagePath": "staticwebassets\\MudBlocks.styles.css"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version1.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version1.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version2.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version2.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version3.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version3.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version4.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\blog\\Version4.jpg"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MudBlocks.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MudBlocks.props",
+      "PackagePath": "build\\MudBlocks.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MudBlocks.props",
+      "PackagePath": "buildMultiTargeting\\MudBlocks.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MudBlocks.props",
+      "PackagePath": "buildTransitive\\MudBlocks.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

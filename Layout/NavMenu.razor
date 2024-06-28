@@ -1,39 +1,30 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">TestingMudBlocks</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿<MudNavMenu Color="Color.Primary">
+    <MudNavLink Href="blog" Match="NavLinkMatch.Prefix" Disabled="true"><MudText Typo="Typo.button" Class="mud-text-disabled">Blog</MudText></MudNavLink>
+    <MudNavLink Href="blocks/blog/1" Match="NavLinkMatch.Prefix">
+        <MudImage Src="images/blocks/blog/Version1.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+    </MudNavLink>
+    <MudNavLink Href="blocks/blog/2" Match="NavLinkMatch.Prefix">
+        <MudImage Src="images/blocks/blog/Version2.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+    </MudNavLink>
+    <MudNavLink Href="blocks/blog/3" Match="NavLinkMatch.Prefix">
+        <MudImage Src="images/blocks/blog/version3.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+    </MudNavLink>
+    <MudNavLink Href="blocks/blog/4" Match="NavLinkMatch.Prefix">
+        <MudImage Src="images/blocks/blog/version4.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+    </MudNavLink>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+    <MudNavGroup Title="Blog" Expanded="true">
+        <MudNavLink Href="blocks/blog/1" Match="NavLinkMatch.Prefix">
+            <MudImage Src="images/blocks/blog/Version1.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+        </MudNavLink>
+        <MudNavLink Href="blocks/blog/2" Match="NavLinkMatch.Prefix">
+            <MudImage Src="images/blocks/blog/Version2.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+        </MudNavLink>
+        <MudNavLink Href="blocks/blog/3" Match="NavLinkMatch.Prefix">
+            <MudImage Src="images/blocks/blog/version3.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+        </MudNavLink>
+        <MudNavLink Href="blocks/blog/4" Match="NavLinkMatch.Prefix">
+            <MudImage Src="images/blocks/blog/version4.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+        </MudNavLink>
+    </MudNavGroup>
+</MudNavMenu>

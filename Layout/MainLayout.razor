@@ -1,16 +1,37 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+<MudThemeProvider Theme="@Themes.Themes[Themes.Current]" />
+<MudDialogProvider/>
+<MudSnackbarProvider/>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+<MudLayout>
+    <MudAppBar>
+        <MudIconButton Icon="@Menu.Icon" Color="Color.Inherit" Edge="Edge.Start" OnClick="Menu.Toggle" />
+        <MudIcon Color="Color.Inherit" Icon="@Icons.Material.Outlined.QrCode" Class="mx-2" />
+        <MudText Typo="Typo.h6" Style="text-transform:uppercase;">@Title</MudText>
+        <MudSpacer />
+        <MudTooltip Text="Copy to Clipboard">
+            <MudIconButton Icon="@Icons.Material.Outlined.ContentCopy" Color="Color.Inherit" />
+        </MudTooltip>
+        <MudTooltip Text="Preview Code">
+            <MudIconButton Icon="@Icons.Material.Outlined.Code" Color="Color.Inherit" />
+        </MudTooltip>
+        <MudStack Row="true" Spacing="0" Style="background-color: white;border-radius: 16px;padding:0 5px;">
+            @foreach (var theme in Themes.Themes) {
+                <MudTooltip Text=@($"Set Primary Color to {theme.Key}")>
+                    <MudIconButton Icon="@(Themes.Current == theme.Key ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" OnClick="@((e) => Themes.Current = theme.Key)" Style=@($"color: {theme.Value.Palette.Primary};padding: 5px;")></MudIconButton>
+                </MudTooltip>
+            }
+        </MudStack>
+    </MudAppBar>
+    <MudDrawer @bind-Open="@Menu.IsOpen">
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer Class="mt-16 pa-4" MaxWidth="MaxWidth.Large">
+            <MudItem xs="12">
+                @Body
+            </MudItem>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>

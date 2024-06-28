@@ -1,0 +1,67 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = MudBlocks
+build_property.RootNamespace = MudBlocks
+build_property.ProjectDir = E:\Programs\GitHub\MudBlocks\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Programs\GitHub\MudBlocks
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Programs/GitHub/MudBlocks/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Blocks/Blog/002.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXEJsb2dcMDAyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Blocks/Blog/003.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXEJsb2dcMDAzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Blocks/Blog/004.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXEJsb2dcMDA0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Blocks/Blog/001.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXEJsb2dcMDAxLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-5v46txp6nc
