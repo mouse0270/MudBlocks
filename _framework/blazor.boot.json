@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MudBlocks.Client",
   "resources": {
-    "hash": "sha256-CDCrqfb4otOdrUX9VFbWZAGtcdAUZUiSV2t5vYcELS0=",
+    "hash": "sha256-JmpA8uFjGarCTa9GnGKnpWq4eVDe8xy4aeOVSQqFM8g=",
     "jsModuleNative": {
       "dotnet.native.8.0.6.suuomc2hr0.js": "sha256-YU6M9+jtDVnB8/wtrgIndOstzNh778Ls8g9XnbjorSk="
     },
@@ -36,7 +36,7 @@
       "Microsoft.JSInterop.wasm": "sha256-Zf9aEUyIbFr0zhEm1l0Qegf0X6syx4UnSYhzv0lI5SA=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-nJo9AftA2/mHxtXapqHsgjzQgIHOpue2DnVtxkgTSME=",
       "MudBlazor.wasm": "sha256-zkRXBCvrNDfoy3ZsZZxtwHuRr7OAYB6nEZqqfbGN5xM=",
-      "MudBlocks.Client.wasm": "sha256-+EdyGHTTqDhUFZMkwSM0IpuvRMgfc77TqnGFKhPKAB4=",
+      "MudBlocks.Client.wasm": "sha256-aGRbogkzCtHkEfJ35y3ZMN8Mf5b+UJfhbTtpAzBpo7Q=",
       "netstandard.wasm": "sha256-bRdDqSpgyIPjL9B+SmCugyA0w5umlhPYMju8xQCFNh4=",
       "System.Collections.Concurrent.wasm": "sha256-FTbxIAuxgUhamcPPkQkrWHqyaFgYbnVMY4pNI819yhM=",
       "System.Collections.Immutable.wasm": "sha256-xBOdJyrpzI8E50v1hDgFS3fstmDPTmc10tCXYh+WdhE=",
