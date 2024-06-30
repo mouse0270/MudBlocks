@@ -38,6 +38,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BlazorPro.BlazorSize": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "HighlightBlazor": {
               "target": "Package",
               "version": "[0.1.10, )"

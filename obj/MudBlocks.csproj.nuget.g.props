@@ -18,6 +18,7 @@
     <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.2\build\Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.2\build\Microsoft.NET.ILLink.Tasks.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.2\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.2\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)highlightblazor\0.1.10\buildTransitive\HighlightBlazor.props" Condition="Exists('$(NuGetPackageRoot)highlightblazor\0.1.10\buildTransitive\HighlightBlazor.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorpro.blazorsize\8.0.0\buildTransitive\BlazorPro.BlazorSize.props" Condition="Exists('$(NuGetPackageRoot)blazorpro.blazorsize\8.0.0\buildTransitive\BlazorPro.BlazorSize.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_NET_Sdk_WebAssembly_Pack Condition=" '$(PkgMicrosoft_NET_Sdk_WebAssembly_Pack)' == '' ">C:\Users\rmcin\.nuget\packages\microsoft.net.sdk.webassembly.pack\8.0.2</PkgMicrosoft_NET_Sdk_WebAssembly_Pack>

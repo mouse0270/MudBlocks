@@ -82,6 +82,13 @@
             link.type = 'text/css';
             head.appendChild(link);
         };
+
+        // Get System Preference for Dark Mode
+        const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Get User Preference for Dark Mode
+        const userPrefersDark = localStorage.getItem('darkmode');
+        // If Null, Set User Preference to System Preference
+        if (userPrefersDark === null) localStorage.setItem('darkmode', darkMode ? 'true' : 'false');
     </script>
 </body>
 

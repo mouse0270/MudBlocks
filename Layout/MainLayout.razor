@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider Theme="@Themes.Themes[Themes.Current]" />
+<MudThemeProvider @ref="@Themes.Provider" Theme="@Themes.Themes[Themes.Current]" @bind-IsDarkMode="@Themes.IsDarkMode" />
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
@@ -11,27 +11,82 @@
         <MudText Typo="Typo.h6" Style="text-transform:uppercase;">@Title</MudText>
         <MudSpacer />
         <MudTooltip Text="Copy to Clipboard">
-            <MudIconButton Icon="@Icons.Material.Outlined.ContentCopy" Color="Color.Inherit" />
+            <MudIconButton Icon="@Icons.Material.Outlined.ContentCopy" OnClick="CopyCode" Color="Color.Inherit" />
         </MudTooltip>
         <MudTooltip Text="Preview Code">
-            <MudIconButton Icon="@Icons.Material.Outlined.Code" Color="Color.Inherit" />
+            <MudIconButton Icon="@(Blocks.ShowCode ? Icons.Material.Filled.CodeOff : Icons.Material.Outlined.Code)" OnClick=@((e) => Blocks.ShowCode = !Blocks.ShowCode) Color="Color.Inherit" />
         </MudTooltip>
-        <MudStack Row="true" Spacing="0" Style="background-color: white;border-radius: 16px;padding:0 5px;">
+        <MudStack ID="CurrentThemeBig" Row="true" Spacing="0" Style="background-color: white;border-radius: 16px;padding:0 5px;">
             @foreach (var theme in Themes.Themes) {
                 <MudTooltip Text=@($"Set Primary Color to {theme.Key}")>
-                    <MudIconButton Icon="@(Themes.Current == theme.Key ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" OnClick="@((e) => Themes.Current = theme.Key)" Style=@($"color: {theme.Value.Palette.Primary};padding: 5px;")></MudIconButton>
+                    <MudIconButton Icon="@(Themes.Current == theme.Key ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" OnClick="@((e) => SetTheme(theme.Key))" Style=@($"color: {theme.Value.Palette.Primary};padding: 5px;")></MudIconButton>
                 </MudTooltip>
             }
+        </MudStack>
+        <MudTooltip id="SizeDesktop" Text="Set to Desktop">
+            <MudIconButton Icon="@Icons.Material.Outlined.DesktopWindows" Style="color: white" />
+        </MudTooltip>
+        <MudTooltip id="SizeTablet" Text="Set to Tablet">
+            <MudIconButton Icon="@Icons.Material.Outlined.TabletAndroid" Style="color: rgba(255 255 255 / 50%)" />
+        </MudTooltip>
+        <MudTooltip id="SizeMobile" Text="Set to Mobile">
+            <MudIconButton Icon="@Icons.Material.Outlined.Smartphone" Style="color: rgba(255 255 255 / 50%)" />
+        </MudTooltip>
+        <MudTooltip id="ColorOptions" Text="Set Theme Options">
+            <MudIconButton Icon="@Icons.Material.Outlined.ColorLens" Color="Color.Inherit" OnClick="ColorMenu.Toggle" />
+        </MudTooltip>
+        <MudStack ID="CurrentThemeMenu" Row="true" Spacing="0" Style="background-color: rgba(255 255 255 / 30%);border-radius: 16px;padding:0 5px;">
+            <MudTooltip Text=@($"Set to Dark Mode")>
+                @if (Themes.IsDarkMode) {
+                    <MudIconButton Icon="@Icons.Material.Outlined.DarkMode"Variant="Variant.Filled" Color="Color.Primary" DisableElevation="true" Style=@($"background-color: {Themes.Themes[Themes.Current].Palette.Primary};border-radius: 50%; margin: 2px; padding: 3px;") Size="Size.Small"></MudIconButton>
+                }else {
+                    <MudIconButton Icon="@Icons.Material.Outlined.DarkMode" OnClick=@((e) => SetDarkMode(true))  Color="Color.Inherit" DisableElevation="true" Style="border-radius: 50%; margin: 2px; padding: 3px;" Size="Size.Small"></MudIconButton>
+                }
+            </MudTooltip>
+            <MudTooltip Text=@($"Set to Light Mode")>
+                @if (!Themes.IsDarkMode) {
+                    <MudIconButton Icon="@Icons.Material.Outlined.LightMode" Variant="Variant.Filled" Color="Color.Primary" DisableElevation="true" Style=@($"background-color: {Themes.Themes[Themes.Current].Palette.Primary};border-radius: 50%; margin: 2px; padding: 3px;") Size="Size.Small"></MudIconButton>
+                }else {
+                    <MudIconButton Icon="@Icons.Material.Outlined.LightMode" OnClick=@((e) => SetDarkMode(false))  Color="Color.Inherit" DisableElevation="true" Style="border-radius: 50%; margin: 2px; padding: 3px;" Size="Size.Small"></MudIconButton>
+                }
+            </MudTooltip>
         </MudStack>
     </MudAppBar>
     <MudDrawer @bind-Open="@Menu.IsOpen">
         <NavMenu/>
     </MudDrawer>
+    <MediaQuery Media="(max-width: 1450px)">
+        <Matched>
+            <MudDrawer @bind-Open="@ColorMenu.IsOpen" Anchor="Anchor.End">
+                <MudStack Row="true" Spacing="0" Style=@($"background-color: rgba({(Themes.IsDarkMode ? "255 255 255" : "0 0 0")} / 30%);border-radius: 16px;margin:1rem;padding:5px;")>
+                    @if (Themes.IsDarkMode) {
+                        <MudButton StartIcon="@Icons.Material.Outlined.DarkMode"Variant="Variant.Filled" Color="Color.Primary" DisableElevation="true" Style=@($"background-color: {Themes.Themes[Themes.Current].Palette.Primary};border-radius: 16px; flex: 1; margin: 5px;") Size="Size.Small">Dark</MudButton>
+                    }else {
+                        <MudButton StartIcon="@Icons.Material.Outlined.DarkMode" OnClick=@((e) => SetDarkMode(true))  Color="Color.Inherit" DisableElevation="true" Style="border-radius: 50%; flex: 1; margin: 2px; padding: 3px;" Size="Size.Small">Dark</MudButton>
+                    }
+                    @if (!Themes.IsDarkMode) {
+                        <MudButton StartIcon="@Icons.Material.Outlined.LightMode" Variant="Variant.Filled" Color="Color.Primary" DisableElevation="true" Style=@($"background-color: {Themes.Themes[Themes.Current].Palette.Primary};border-radius: 16px; flex: 1; margin: 2px;") Size="Size.Small">Light</MudButton>
+                    }else {
+                        <MudButton StartIcon="@Icons.Material.Outlined.LightMode" OnClick=@((e) => SetDarkMode(false))  Color="Color.Inherit" DisableElevation="true" Style="border-radius: 50%; flex: 1; margin: 2px; padding: 3px;" Size="Size.Small">Light</MudButton>
+                    }
+                </MudStack>
+                <MudNavMenu Color="Color.Inherit" Class="mud-width-full">
+                    @foreach (var theme in Themes.Themes) {
+                        <MudNavLink Icon="@(Themes.Current == theme.Key ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Circle)" OnClick="@((e) => SetTheme(theme.Key))" Style=@($"color: {theme.Value.Palette.Primary};")>Set Primary Color to @theme.Key</MudNavLink>
+                    }
+                </MudNavMenu>
+            </MudDrawer>
+        </Matched>
+    </MediaQuery>
     <MudMainContent>
-        <MudContainer Class="mt-16 pa-4" MaxWidth="MaxWidth.Large">
-            <MudItem xs="12">
-                @Body
-            </MudItem>
-        </MudContainer>
+        @if (Blocks.ShowCode) {
+            <CodeHighlight Indent="true" CodeLanguage="cshtml-razor">@System.Web.HttpUtility.UrlDecode(Blocks.Code).Replace("<", "&lt;")</CodeHighlight>
+        }else{
+            <MudContainer Class="mt-16 pa-4" MaxWidth="MaxWidth.Large">
+                <MudItem xs="12">
+                    @Body
+                </MudItem>
+            </MudContainer>
+        }
     </MudMainContent>
 </MudLayout>

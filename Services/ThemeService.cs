@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Components;
 using MudBlazor;
+using MudBlocks.Models;
 
 namespace MudBlocks.Services {
 	public class ThemeService {
 		public Dictionary<string, MudTheme> Themes = new Dictionary<string, MudTheme>() {
 			{
-				"red", new MudTheme() {
+				"Red", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Red.Default,
 						Secondary = Colors.Cyan.Default,
@@ -18,7 +20,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"pink", new MudTheme() {
+				"Pink", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Pink.Default,
 						Secondary = Colors.Lime.Default,
@@ -32,7 +34,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"purple", new MudTheme() {
+				"Purple", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Purple.Default,
 						Secondary = Colors.Lime.Default,
@@ -46,7 +48,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"deepPurple", new MudTheme() {
+				"Deep Purple", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.DeepPurple.Default,
 						Secondary = Colors.LightGreen.Default,
@@ -60,7 +62,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"indigo", new MudTheme() {
+				"Indigo", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Indigo.Default,
 						Secondary = Colors.Pink.Default,
@@ -74,7 +76,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"blue", new MudTheme() {
+				"Blue", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Blue.Default,
 						Secondary = Colors.Orange.Default,
@@ -88,7 +90,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"lightBlue", new MudTheme() {
+				"Light Blue", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.LightBlue.Default,
 						Secondary = Colors.Red.Default,
@@ -102,7 +104,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"cyan", new MudTheme() {
+				"Cyan", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Cyan.Default,
 						Secondary = Colors.Purple.Default,
@@ -116,7 +118,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"teal", new MudTheme() {
+				"Teal", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Teal.Default,
 						Secondary = Colors.Pink.Default,
@@ -130,7 +132,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"green", new MudTheme() {
+				"Green", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Green.Default,
 						Secondary = Colors.Purple.Default,
@@ -144,7 +146,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"lightGreen", new MudTheme() {
+				"Light Green", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.LightGreen.Default,
 						Secondary = Colors.Pink.Default,
@@ -158,7 +160,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"lime", new MudTheme() {
+				"Lime", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Lime.Default,
 						Secondary = Colors.Blue.Default,
@@ -172,7 +174,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"yellow", new MudTheme() {
+				"Yellow", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Yellow.Default,
 						Secondary = Colors.Indigo.Default,
@@ -186,7 +188,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"amber", new MudTheme() {
+				"Amber", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Amber.Default,
 						Secondary = Colors.DeepPurple.Default,
@@ -200,7 +202,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"orange", new MudTheme() {
+				"Orange", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Orange.Default,
 						Secondary = Colors.Cyan.Default,
@@ -214,7 +216,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"deepOrange", new MudTheme() {
+				"Deep Orange", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.DeepOrange.Default,
 						Secondary = Colors.LightBlue.Default,
@@ -228,7 +230,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"brown", new MudTheme() {
+				"Brown", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Brown.Default,
 						Secondary = Colors.Cyan.Default,
@@ -242,7 +244,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"grey", new MudTheme() {
+				"Grey", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.Grey.Default,
 						Secondary = Colors.Red.Default,
@@ -256,7 +258,7 @@ namespace MudBlocks.Services {
 					}
 				}
 			}, {
-				"blueGrey", new MudTheme() {
+				"Blue Grey", new MudTheme() {
 					Palette = new PaletteLight() {
 						Primary = Colors.BlueGrey.Default,
 						Secondary = Colors.Orange.Default,
@@ -272,6 +274,9 @@ namespace MudBlocks.Services {
 			}
 		};
 	
-		public string Current { get; set; } = "indigo";
+		public string Current { get; set; } = "Indigo";
+
+		public bool IsDarkMode { get; set; } = false;
+		public MudThemeProvider Provider { get; set; }
 	}
 }
