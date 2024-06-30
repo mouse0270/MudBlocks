@@ -1,3 +1,45 @@
+#CurrentThemeBig, #CurrentThemeMenu {
+    display: none !important;
+}
+#CurrentThemeMenu > .mud-menu {
+    padding: 5px;
+}
+#CurrentThemeMenu > .mud-menu > button {
+    padding: 0;
+}
+
+#SizeDesktop, #SizeTablet, #SizeMobile {
+    display: none !important;
+}
+/*@media (min-width: 600px) { 
+    #SizeTablet, #SizeMobile {
+        display: inline-block !important; 
+    }
+}
+@media (min-width: 960px) { 
+    #SizeDesktop, #SizeTablet, #SizeMobile {
+        display: inline-block !important; 
+    }
+}*/
+@media (min-width: 1450px) {
+    #CurrentThemeBig, #CurrentThemeMenu {
+        display: flex !important;;
+    }
+    #ColorOptions {
+        display: none !important;
+    }
+    #CurrentThemeMenu > .mud-menu {
+        display: none !important;;
+    }
+}
+
+.mud-nav-link:not(.mud-nav-link-disabled) .mud-nav-link-icon.mud-nav-link-icon-default{
+    color: currentColor;
+}
+.mud-popover .mud-list {
+  max-height: calc(100vh - 2rem);
+}
+
 .mud-layout > .mud-drawer:has(.mud-image) .mud-nav-group * .mud-navmenu .mud-nav-item .mud-nav-link {
     padding-left: 16px;
     padding-inline-start: 16px;
@@ -550,6 +592,24 @@
        max-width: 100%;
        flex-basis: 100%
    }
+}
+
+
+.mud-main-content:has(pre > code.hljs) {
+    height: 100vh;
+}
+.mud-main-content:has(pre > code.hljs) > pre,
+.mud-main-content:has(pre > code.hljs) > pre > code.hljs {
+    height: 100%;
+}
+
+.hljs-ln .hljs-ln-numbers {
+    border-right: 1px solid currentColor;
+    padding-right: 0.5rem;
+    text-align: right;
+}
+.hljs-ln .hljs-ln-numbers + td {
+    padding-left: 0.5rem;
 }
 
 #blazor-error-ui {
