@@ -9,8 +9,6 @@ namespace MudBlocks.Services {
 			get { return _code; }
 			set {
 				_code = value;
-				Console.WriteLine("Code Updated");
-				Console.WriteLine(_code);
 				OnMajorUpdateOccured();
 			}
 		}
