@@ -31,12 +31,12 @@ jobs:
       run: ls -R release
 
     # changes the base-tag in index.html from '/' to 'MudBlocks' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to MudBlocks
-      run: sed -i 's/<base href="\/" \/>/<base href="\/MudBlocks\/" \/>/g' release/wwwroot/index.html
+    #- name: Change base-tag in index.html from / to MudBlocks
+    #  run: sed -i 's/<base href="\/" \/>/<base href="\/MudBlocks\/" \/>/g' release/wwwroot/index.html
 
     # changes the base-tag in index.html from '/' to 'MudBlocks' to match GitHub Pages repository subdirectory
-    - name: Change blazor.web.js in index.html to blazor.webassembly.js
-      run: sed -i 's/<script src="_framework\/blazor.web.js">/<script src="_framework\/blazor.webassembly.js">/g' release/wwwroot/index.html
+    #- name: Change blazor.web.js in index.html to blazor.webassembly.js
+    #  run: sed -i 's/<script src="_framework\/blazor.web.js">/<script src="_framework\/blazor.webassembly.js">/g' release/wwwroot/index.html
 
     # copy index.html to 404.html to serve the same file when a file is not found
     - name: copy index.html to 404.html
