@@ -29,10 +29,10 @@ namespace MudBlocks.Pages {
 
 		protected override async Task OnParametersSetAsync() {
 			// Get List of Categories from Blocks
-			Categories = Blocks.Blocks.Where(b => b.Tags.Any(tag => tag.Equals(TagName, StringComparison.OrdinalIgnoreCase))).ToList();
+			Categories = Blocks.Blocks.Where(b => b.Tags.Any(tag => tag.ToLower() == TagName.ToLower())).ToList();
 
 			// Update Category Name
-			if (Categories.Any()) TagName = Categories.First().Category;
+			//if (Categories.Any()) TagName = Categories.First().Category;
 
 			StateHasChanged();
 		}

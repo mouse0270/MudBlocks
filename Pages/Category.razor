@@ -12,7 +12,7 @@
 					<MudStack Row="true" Wrap="Wrap.Wrap">
 						<MudText Typo="Typo.button" Style="font-size: 0.8rem;">Tags</MudText>
 						@foreach (string tag in b.Tags) {
-							<MudLink Href=@($"/tag/{tag}") Style="font-size: 0.8rem;">@tag</MudLink>
+							<MudLink Href=@($"/tag/{tag.ToLower()}") Style="font-size: 0.8rem;">@tag</MudLink>
 						}
 					</MudStack>
 				</MudCardContent>
