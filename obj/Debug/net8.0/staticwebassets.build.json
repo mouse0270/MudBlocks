@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K2t4eiuNvO/UVMT24+MVlB1pdr1gauiPY4vuFPhzTEs=",
+  "Hash": "UY5/WsapIZaMQ2z4ipGXrFEh0CWNgJ0nw+4hbeFA06Q=",
   "Source": "MudBlocks",
   "BasePath": "/",
   "Mode": "Root",
@@ -8320,12 +8320,12 @@
       "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
-      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version1.jpg",
+      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\001.jpg",
       "SourceId": "MudBlocks",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "images/blocks/blog/Version1.jpg",
+      "RelativePath": "images/blocks/blog/001.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -8336,15 +8336,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\Version1.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\001.jpg"
     },
     {
-      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version2.jpg",
+      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\002.jpg",
       "SourceId": "MudBlocks",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "images/blocks/blog/Version2.jpg",
+      "RelativePath": "images/blocks/blog/002.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -8355,15 +8355,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\Version2.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\002.jpg"
     },
     {
-      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version3.jpg",
+      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\003.jpg",
       "SourceId": "MudBlocks",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "images/blocks/blog/Version3.jpg",
+      "RelativePath": "images/blocks/blog/003.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -8374,15 +8374,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\Version3.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\003.jpg"
     },
     {
-      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\Version4.jpg",
+      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\blog\\004.jpg",
       "SourceId": "MudBlocks",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "images/blocks/blog/Version4.jpg",
+      "RelativePath": "images/blocks/blog/004.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -8393,7 +8393,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\Version4.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\blocks\\blog\\004.jpg"
+    },
+    {
+      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\contact\\001.jpg",
+      "SourceId": "MudBlocks",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/blocks/contact/001.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blocks\\contact\\001.jpg"
     },
     {
       "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\index.html",

@@ -1,30 +1,10 @@
 ﻿<MudNavMenu Color="Color.Primary">
-    <MudNavLink Href="blog" Match="NavLinkMatch.Prefix" Disabled="true"><MudText Typo="Typo.button" Class="mud-text-disabled">Blog</MudText></MudNavLink>
-    <MudNavLink Href="blocks/blog/1" Match="NavLinkMatch.Prefix">
-        <MudImage Src="images/blocks/blog/Version1.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-    </MudNavLink>
-    <MudNavLink Href="blocks/blog/2" Match="NavLinkMatch.Prefix">
-        <MudImage Src="images/blocks/blog/Version2.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-    </MudNavLink>
-    <MudNavLink Href="blocks/blog/3" Match="NavLinkMatch.Prefix">
-        <MudImage Src="images/blocks/blog/Version3.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-    </MudNavLink>
-    <MudNavLink Href="blocks/blog/4" Match="NavLinkMatch.Prefix">
-        <MudImage Src="images/blocks/blog/Version4.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-    </MudNavLink>
-
-    <MudNavGroup Title="Blog" Expanded="true">
-        <MudNavLink Href="blocks/blog/1" Match="NavLinkMatch.Prefix">
-            <MudImage Src="images/blocks/blog/Version1.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-        </MudNavLink>
-        <MudNavLink Href="blocks/blog/2" Match="NavLinkMatch.Prefix">
-            <MudImage Src="images/blocks/blog/Version2.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-        </MudNavLink>
-        <MudNavLink Href="blocks/blog/3" Match="NavLinkMatch.Prefix">
-            <MudImage Src="images/blocks/blog/Version3.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-        </MudNavLink>
-        <MudNavLink Href="blocks/blog/4" Match="NavLinkMatch.Prefix">
-            <MudImage Src="images/blocks/blog/Version4.jpg" Alt="Mony the dog" Elevation="25"  Fluid="true" Class="rounded-lg"/>
-        </MudNavLink>
-    </MudNavGroup>
+    @foreach (string Category in Categories) {
+        <MudNavLink Href="blog" Match="NavLinkMatch.Prefix" Disabled="true"><MudText Typo="Typo.button" Class="mud-text-disabled">@Category</MudText></MudNavLink>
+        @foreach (MudBlocks.Models.Block b in Blocks.Blocks.Where(b => b.Category == Category)) {
+            <MudNavLink Href="@b.Url" Match="NavLinkMatch.Prefix">
+                <MudImage Src="@b.Image" Alt="@b.Name" Elevation="25"  Fluid="true" Class="rounded-lg"/>
+            </MudNavLink>
+        }
+    }
 </MudNavMenu>

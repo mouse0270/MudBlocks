@@ -1,9 +1,9 @@
-﻿@page "/"
+@page "/category/{CategoryName}"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@CategoryName</PageTitle>
 
 <MudGrid>
-	@foreach (MudBlocks.Models.Block b in Blocks.Blocks.OrderBy(x => Guid.NewGuid()).Take(9)){
+	@foreach (MudBlocks.Models.Block b in Categories){
 		<MudItem xs="12" md="4">
 			<MudCard Style="position: relative;">
 				<MudLink Href="@b.Url"><MudCardMedia Image="@b.Image" Height="200" /></MudLink>
@@ -20,4 +20,3 @@
 		</MudItem>
 	}
 </MudGrid>
-

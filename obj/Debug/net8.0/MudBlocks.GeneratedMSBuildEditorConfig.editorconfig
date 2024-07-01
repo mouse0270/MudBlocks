@@ -46,16 +46,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXEJsb2dcMDA0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Programs/GitHub/MudBlocks/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[E:/Programs/GitHub/MudBlocks/Pages/Blocks/Contact/001.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXENvbnRhY3RcMDAxLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programs/GitHub/MudBlocks/Pages/Category.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Programs/GitHub/MudBlocks/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Programs/GitHub/MudBlocks/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+[E:/Programs/GitHub/MudBlocks/Pages/Tags.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFncy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Programs/GitHub/MudBlocks/_Imports.razor]

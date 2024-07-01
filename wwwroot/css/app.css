@@ -673,3 +673,25 @@
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+
+/* 1400x700 */
+body:has(.screenshot) .mud-layout > .mud-appbar,
+body:has(.screenshot) .mud-layout > .mud-drawer {
+    display: none;
+}
+.screenshot {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 0px !important;
+}
+.screenshot > .mud-container {
+    margin-top: 0px !important;
+}
+
+.screenshot > .d-flex {
+    display: none !important;
+}
+

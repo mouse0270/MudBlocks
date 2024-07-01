@@ -39,6 +39,10 @@ namespace MudBlocks.Layout {
 			// Watch for location changes
 			NavigationManager.LocationChanged += LocationChanged;
 			
+
+			// Attaches the MajorUpdateOccured event to the LayoutServiceOnMajorUpdateOccured method
+			Blocks.MajorUpdateOccured += BlocksServiceOnMajorUpdateOccured;
+			
 			// Initialization logic here
 			await base.OnInitializedAsync();
 		}
@@ -77,11 +81,10 @@ namespace MudBlocks.Layout {
 		private void LocationChanged(object sender, object e) {
 			// Location change logic here
 			Blocks.ShowCode = false;
-			Blocks.Code = "";
+			//Blocks.Code = "";
 
 			StateHasChanged();
 		}
-
 
 
 		private async Task CopyCode() {
@@ -89,10 +92,13 @@ namespace MudBlocks.Layout {
 
 			Snackbar.Add("Block Copied!", Severity.Info);
 		}
+    
+    	private void BlocksServiceOnMajorUpdateOccured(object sender, EventArgs e) => StateHasChanged();
 
 		public void Dispose() {
 			// Dispose logic here
 			NavigationManager.LocationChanged -= LocationChanged;
+        	Blocks.MajorUpdateOccured -= BlocksServiceOnMajorUpdateOccured;
 		}
 	}
 }
