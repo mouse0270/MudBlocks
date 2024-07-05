@@ -19,11 +19,63 @@
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <svg id="square_01" class="loading-progress" width="50" height="50"  viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" >
+            <g style="fill: currentColor">
+              <rect x="36" y="26" width="8" height="8">
+                <set attributeType="XML" attributeName="y" to="26" begin="square_01_12.end" />
+                <set attributeType="XML" attributeName="x" to="36" begin="square_01_12.end" />
+                <animate id="square_01_01" attributeType="XML" attributeName="y" to="36" dur="0.1s" fill="freeze" begin="0;square_01_12.end" />
+                <animate id="square_01_12" attributeType="XML" attributeName="x" to="26" dur="0.1s" fill="freeze" begin="square_01_11.end" />
+              </rect>
+              <rect x="36" y="16" width="8" height="8">
+                <animate id="square_01_02" attributeType="XML" attributeName="y" to="26" dur="0.1s" fill="freeze" begin="square_01_01.end" />
+                <set attributeType="XML" attributeName="y" to="16" begin="square_01_12.end" />
+              </rect>
+              <rect x="36" y="6" width="8" height="8">
+                <animate id="square_01_03" attributeType="XML" attributeName="y" to="16" dur="0.1s" fill="freeze" begin="square_01_02.end" />
+                <set attributeType="XML" attributeName="y" to="6" begin="square_01_12.end" />
+              </rect>
+              <rect x="26" y="6" width="8" height="8">
+                <animate id="square_01_04" attributeType="XML" attributeName="x" to="36" dur="0.1s" fill="freeze" begin="square_01_03.end" />
+                <set attributeType="XML" attributeName="x" to="26" begin="square_01_12.end" />
+              </rect>
+              <rect x="16" y="6" width="8" height="8">
+                <animate id="square_01_05" attributeType="XML" attributeName="x" to="26" dur="0.1s" fill="freeze" begin="square_01_04.end" />
+                <set attributeType="XML" attributeName="x" to="16" begin="square_01_12.end" />
+              </rect>
+              <rect x="6" y="6" width="8" height="8">
+                <animate id="square_01_06" attributeType="XML" attributeName="x" to="16" dur="0.1s" fill="freeze" begin="square_01_05.end" />
+                <set attributeType="XML" attributeName="x" to="6" begin="square_01_12.end" />
+              </rect>
+              <rect x="6" y="16" width="8" height="8">
+                <animate id="square_01_07" attributeType="XML" attributeName="y" to="6" dur="0.1s" fill="freeze" begin="square_01_06.end" />
+                <set attributeType="XML" attributeName="y" to="16" begin="square_01_12.end" />
+              </rect>
+              <rect x="6" y="26" width="8" height="8">
+                <animate id="square_01_08" attributeType="XML" attributeName="y" to="16" dur="0.1s" fill="freeze" begin="square_01_07.end" />
+                <set attributeType="XML" attributeName="y" to="26" begin="square_01_12.end" />
+              </rect>
+              <rect x="6" y="36" width="8" height="8">
+                <animate id="square_01_09" attributeType="XML" attributeName="y" to="26" dur="0.1s" fill="freeze" begin="square_01_08.end" />
+                <set attributeType="XML" attributeName="y" to="36" begin="square_01_12.end" />
+              </rect>
+              <rect x="16" y="36" width="8" height="8">
+                <animate id="square_01_10" attributeType="XML" attributeName="x" to="6" dur="0.1s" fill="freeze" begin="square_01_09.end" />
+                <set attributeType="XML" attributeName="x" to="16" begin="square_01_12.end" />
+              </rect>
+              <rect x="26" y="36" width="8" height="8">
+                <animate id="square_01_11" attributeType="XML" attributeName="x" to="16" dur="0.1s" fill="freeze" begin="square_01_10.end" />
+                <set attributeType="XML" attributeName="x" to="26" begin="square_01_12.end" />
+              </rect>
+              
+              <rect x="16" y="16" width="8" height="8" />
+              <rect x="26" y="16" width="8" height="8" />
+              <rect x="16" y="26" width="8" height="8" />
+              <rect x="26" y="26" width="8" height="8" />
+            </g>
+          </svg>
+        <div class="loading-progress-text" style="display:none"></div>
+        <div class="loading-progress" style="display:none"></div>
     </div>
 
     <div id="blazor-error-ui">
@@ -31,11 +83,11 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-    <script src="//unpkg.com/highlightjs-cshtml-razor/dist/cshtml-razor.min.js"></script>
+    <script src="_framework/blazor.webassembly.js" defer></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"defer></script>
+    <script src="//unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js" async></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js" async></script>
+    <script src="//unpkg.com/highlightjs-cshtml-razor/dist/cshtml-razor.min.js" async></script>
     <script>
         window.showLineNumbers = () => {
             setTimeout(() => {
