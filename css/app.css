@@ -1,3 +1,8 @@
+[data-theme="dark"] body {
+    --mud-palette-text-primary: rgba(255,255,255,0.6980392156862745);
+    --mud-palette-background: rgba(50,51,61,1);
+}
+
 /* HTML: <div class="loader"></div> */
 #CurrentThemeBig, #CurrentThemeMenu {
     display: none !important;
