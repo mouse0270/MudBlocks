@@ -74,7 +74,8 @@ namespace MudBlocks.Layout {
 		}
 
 		private async Task SetDarkMode(bool darkmode) {
-			await LocalStorage.SetItemAsync("darkmode", darkmode.ToString());
+			await LocalStorage.SetItemAsync("darkmode", darkmode.ToString().ToLower());
+			await JSRuntime.InvokeVoidAsync("window.setHLJSStyle", darkmode.ToString().ToLower());
 			Themes.IsDarkMode = darkmode;
 		}
 
