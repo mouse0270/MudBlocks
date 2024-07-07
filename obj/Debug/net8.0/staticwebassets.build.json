@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UY5/WsapIZaMQ2z4ipGXrFEh0CWNgJ0nw+4hbeFA06Q=",
+  "Hash": "LtnglVMDiBQlhbuNWsiXCfgTPSdD2+LyaHRUSHhXX5o=",
   "Source": "MudBlocks",
   "BasePath": "/",
   "Mode": "Root",
@@ -8451,6 +8451,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
+    },
+    {
+      "Identity": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\scripts\\app.js",
+      "SourceId": "MudBlocks",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "scripts/app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripts\\app.js"
     }
   ]
 }

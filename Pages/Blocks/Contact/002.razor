@@ -1,25 +1,40 @@
-@page "/blocks/contact/1"
+@page "/blocks/contact/2"
 
 @inject MudBlocks.Services.BlockService Blocks
 
-<MudContainer MaxWidth="MaxWidth.False" Class="px-0">
-	<MudGrid Style=@($"background-color: {Colors.Grey.Lighten3}")>
-		<iframe width="100%" height="100%" style="position:absolute; border:0; z-index: -1; filter: grayscale(1) contrast(1.2) opacity(0.4);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.148195953282!2d-77.03888382259599!3d38.897726271724075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7547d5f6f8f%3A0x9189ce80cfe6cbb2!2s1600%20Pennsylvania%20Avenue%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1719839638309!5m2!1sen!2sus"></iframe>
-		<MudItem xs="12">
-			<MudContainer>
-				<MudGrid Justify="Justify.FlexEnd">
-					<MudItem xs="12" md="6" lg="4">
-						<MudCard Class="ma-4">
-							<MudCardContent>
-								<MudText Typo="Typo.h6" Class="mb-4">Feedback</MudText>
-								<MudText Typo="Typo.body2">Post-ironic portland shabby chic echo park, banjo fashion axe</MudText>
-								<MudTextField T="string" Label="Email" Variant="Variant.Text"></MudTextField>
-								<MudTextField T="string" Label="Message" Variant="Variant.Text" AutoGrow Lines="5" />
-							</MudCardContent>
-						</MudCard>
-					</MudItem>
-				</MudGrid>
-			</MudContainer>
+<MudContainer>
+	<MudGrid>
+		<MudItem xs="12" sm="6" md="8" AlignItems="AlignItems.FlexEnd" Class="pa-0 rounded-lg" Style=@($"overflow: hidden; position: relative;")>
+			<iframe width="100%" height="100%" style="border:0; inset: 0; position: absolute; z-index: -1; filter: grayscale(1) contrast(1.2) opacity(0.4);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.148195953282!2d-77.03888382259599!3d38.897726271724075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7547d5f6f8f%3A0x9189ce80cfe6cbb2!2s1600%20Pennsylvania%20Avenue%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1719839638309!5m2!1sen!2sus"></iframe>
+			<MudCard Class="ma-4" Elevation="0">
+				<MudCardContent>
+					<MudGrid>
+						<MudItem xs="12" md="6">
+							<MudText Typo="Typo.h6">Address</MudText>
+							<MudText Typo="Typo.body2">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</MudText>
+						</MudItem>
+						<MudItem xs="12" md="6">
+							<MudText Typo="Typo.h6">Email</MudText>
+							<MudText Typo="Typo.body2">example@email.com</MudText>
+							<MudText Typo="Typo.h6">Phone</MudText>
+							<MudText Typo="Typo.body2">123-456-7890</MudText>
+						</MudItem>
+					</MudGrid>
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+		<MudItem xs="12" sm="6" md="4">
+			<MudCard Class="ma-4" Elevation="0">
+				<MudCardContent>
+					<MudText Typo="Typo.h6" Class="mb-4">Feedback</MudText>
+					<MudText Typo="Typo.body2">Post-ironic portland shabby chic echo park, banjo fashion axe</MudText>
+					<MudTextField T="string" Label="Name" Variant="Variant.Text"></MudTextField>
+					<MudTextField T="string" Label="Email" Variant="Variant.Text"></MudTextField>
+					<MudTextField T="string" Label="Message" Variant="Variant.Text" AutoGrow Lines="5" />
+					<MudButton Color="Color.Primary" Class="my-4" FullWidth="true" Variant="Variant.Filled">Send</MudButton>
+					<MudText Typo="Typo.caption" Class="mt-4">We'll never share your email with anyone else.</MudText>
+				</MudCardContent>
+			</MudCard>
 		</MudItem>
 	</MudGrid>
 </MudContainer>

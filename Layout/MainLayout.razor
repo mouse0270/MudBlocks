@@ -84,7 +84,7 @@
         @if (Blocks.ShowCode) {
             <CodeHighlight Indent="true" CodeLanguage="cshtml-razor">@System.Web.HttpUtility.UrlDecode(Blocks.Code).Replace("<", "&lt;")</CodeHighlight>
         }else{
-            <MudContainer Class="mt-16 pa-4" MaxWidth="MaxWidth.Large">
+            <MudContainer Class="mt-16 px-0" MaxWidth="MaxWidth.False">
                 <MudItem xs="12">
                     @Body
                 </MudItem>

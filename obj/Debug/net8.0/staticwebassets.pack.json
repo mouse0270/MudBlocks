@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\scripts\\app.js",
+      "PackagePath": "staticwebassets\\scripts\\app.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MudBlocks.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
