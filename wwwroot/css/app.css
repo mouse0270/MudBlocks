@@ -609,6 +609,14 @@
     height: 100%;
 }
 
+.mud-avatar-group .mud-tooltip-root:has(.ms-n3) {
+    height: 44px;
+    margin-inline-start: -12px !important;
+}
+.mud-avatar-group .mud-tooltip-root:has(.ms-n3):first-child {
+    margin-inline-start: 0px !important;
+}
+
 .hljs-ln .hljs-ln-numbers {
     border-right: 1px solid currentColor;
     padding-right: 0.5rem;

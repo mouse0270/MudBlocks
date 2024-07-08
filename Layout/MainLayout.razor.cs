@@ -28,6 +28,9 @@ namespace MudBlocks.Layout {
 		public MenuClass ColorMenu { get; set; } = new MenuClass();
 		public string Title { get; set; } = "MudBlocks";
 
+		public List<MudBlocks.Models.Author> Authors = new List<MudBlocks.Models.Author>();
+		public string GithubURL = string.Empty;
+
 		protected override async Task OnInitializedAsync() {
 			// if host is mudframes.cc then set title to MudFrames
 			if (new Uri(NavigationManager.Uri).Host.Contains("mudframes")) Title = "MudFrames";
@@ -42,6 +45,8 @@ namespace MudBlocks.Layout {
 
 			// Attaches the MajorUpdateOccured event to the LayoutServiceOnMajorUpdateOccured method
 			Blocks.MajorUpdateOccured += BlocksServiceOnMajorUpdateOccured;
+
+			SetBlockData();
 			
 			// Initialization logic here
 			await base.OnInitializedAsync();
@@ -82,11 +87,35 @@ namespace MudBlocks.Layout {
 		private void LocationChanged(object sender, object e) {
 			// Location change logic here
 			Blocks.ShowCode = false;
-			//Blocks.Code = "";
+
+			SetBlockData();
 
 			StateHasChanged();
 		}
 
+		private void SetBlockData() {
+			// Get URL without Domain
+			GithubURL = new Uri(NavigationManager.Uri).PathAndQuery;
+			// Get Block from query
+			MudBlocks.Models.Block block = Blocks.Blocks.FirstOrDefault(b => b.Url == GithubURL);
+
+			if (block == null) Authors = new List<MudBlocks.Models.Author>();
+			else {
+				 Authors = block.Authors;
+
+				// Fix Github URL
+				// - blocks/blog/1 => Blocks/Blog/001
+				// - blocks/blog/2 => Blocks/Blog/002
+				// - blocks/contact/1 => Blocks/Contact/001
+				string[] parts = GithubURL.Split('/');
+				if (parts.Length >= 3) {
+					string category = parts[2].First().ToString().ToUpper() + parts[2].Substring(1);
+					// Pad blockId with 0s
+					string blockId = parts[3].PadLeft(3, '0');
+					GithubURL = $"Blocks/{category}/{blockId}";
+				}
+			}
+		}
 
 		private async Task CopyCode() {
 			await JSRuntime.InvokeVoidAsync("copyToClipboard", Blocks.Code);

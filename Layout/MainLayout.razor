@@ -89,6 +89,33 @@
                     @Body
                 </MudItem>
             </MudContainer>
+
+            <MudStack AlignItems="AlignItems.Center" Row="true" Style="position: fixed; bottom: 1rem; right: 1rem;">
+            @if (Authors?.Count > 0) {
+                <MudAvatarGroup Max="99" Spacing="3" MaxColor="Color.Primary" Style="align-items: center;">
+                    @foreach (var author in Authors) {
+                        <MudTooltip Text="@(author.Name + (@author.Url != String.Empty ? $" ({author.Url})" : ""))">
+                            @if (author.Url != null && author.Url != string.Empty) {
+                                <MudLink Href="@author.Url">
+                                    @if (author.Image != null && author.Image != string.Empty) {
+                                        <MudAvatar Image="@author.Image" Alt="@author.Name" />
+                                    }else{
+                                        <MudAvatar Color="Color.Primary">@author.Name.Substring(0, 1)</MudAvatar>
+                                    }
+                                </MudLink>
+                            }else{
+                                @if (author.Image != null && author.Image != string.Empty) {
+                                    <MudAvatar Image="@author.Image" Alt="@author.Name" />
+                                }else{
+                                    <MudAvatar Color="Color.Primary">@author.Name.Substring(0, 1)</MudAvatar>
+                                }
+                            }
+                        </MudTooltip>
+                    }
+                </MudAvatarGroup>
+                <MudButton Href="@($"https://github.com/mouse0270/MudBlocks/blob/main/Pages/{GithubURL}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
+            }
+            </MudStack>
         }
     </MudMainContent>
 </MudLayout>
