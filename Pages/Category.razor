@@ -2,21 +2,23 @@
 
 <PageTitle>@CategoryName</PageTitle>
 
-<MudGrid>
-	@foreach (MudBlocks.Models.Block b in Categories){
-		<MudItem xs="12" md="4">
-			<MudCard Style="position: relative;">
-				<MudLink Href="@b.Url"><MudCardMedia Image="@b.Image" Height="200" /></MudLink>
-				<MudCardContent>
-					<MudLink Href=@($"/category/{b.Category.ToLower()}") Style="position:absolute;top:1rem;left:1rem;"><MudChip Style="cursor: pointer" Variant="Variant.Filled" Color="Color.Primary"><MudText Typo="Typo.button">@b.Category</MudText></MudChip></MudLink>
-					<MudStack Row="true" Wrap="Wrap.Wrap">
-						<MudText Typo="Typo.button" Style="font-size: 0.8rem;">Tags</MudText>
-						@foreach (string tag in b.Tags) {
-							<MudLink Href=@($"/tag/{tag.ToLower()}") Style="font-size: 0.8rem;">@tag</MudLink>
-						}
-					</MudStack>
-				</MudCardContent>
-			</MudCard>
-		</MudItem>
-	}
-</MudGrid>
+<MudContainer>
+	<MudGrid>
+		@foreach (MudBlocks.Models.Block b in Categories){
+			<MudItem xs="12" md="4">
+				<MudCard Style="position: relative;">
+					<MudLink Href="@b.Url"><MudCardMedia Image="@b.Image" Height="200" /></MudLink>
+					<MudCardContent>
+						<MudLink Href=@($"/category/{b.Category.ToLower()}") Style="position:absolute;top:1rem;left:1rem;"><MudChip Style="cursor: pointer" Variant="Variant.Filled" Color="Color.Primary"><MudText Typo="Typo.button">@b.Category</MudText></MudChip></MudLink>
+						<MudStack Row="true" Wrap="Wrap.Wrap">
+							<MudText Typo="Typo.button" Style="font-size: 0.8rem;">Tags</MudText>
+							@foreach (string tag in b.Tags) {
+								<MudLink Href=@($"/tag/{tag.ToLower()}") Style="font-size: 0.8rem;">@tag</MudLink>
+							}
+						</MudStack>
+					</MudCardContent>
+				</MudCard>
+			</MudItem>
+		}
+	</MudGrid>
+</MudContainer>

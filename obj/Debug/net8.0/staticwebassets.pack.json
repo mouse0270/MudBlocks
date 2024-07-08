@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\images\\blocks\\contact\\001.jpg"
     },
     {
+      "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\images\\blocks\\contact\\002.jpg",
+      "PackagePath": "staticwebassets\\images\\blocks\\contact\\002.jpg"
+    },
+    {
       "Id": "E:\\Programs\\GitHub\\MudBlocks\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
