@@ -1,0 +1,46 @@
+@page "/blocks/contact/3"
+
+@inject MudBlocks.Services.BlockService Blocks
+
+<MudContainer>
+	<MudGrid Justify="Justify.Center">
+		<MudItem xs="12" sm="8" md="6" lg="4">
+			<MudGrid>
+				<MudItem xs="12" Class="mud-typography-align-center">
+					<MudText Typo="Typo.h4" Class="mb-4">Contact Us</MudText>
+					<MudText Typo="Typo.body2" Class="mb-4">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</MudText>
+				</MudItem>
+				<MudItem xs="12" sm="6">
+					<MudTextField T="string" Label="Name" Variant="Variant.Text"></MudTextField>
+				</MudItem>
+				<MudItem xs="12" sm="6">
+					<MudTextField T="string" Label="Email" Variant="Variant.Text"></MudTextField>
+				</MudItem>
+				<MudItem xs="12">
+					<MudTextField T="string" Label="Message" Variant="Variant.Text" AutoGrow Lines="5" />
+				</MudItem>
+				<MudItem xs="12" Class="d-flex justify-center">
+					<MudButton Color="Color.Primary" Variant="Variant.Filled">Send</MudButton>
+				</MudItem>
+				<MudItem xs="12"> <MudDivider /> </MudItem>
+				<MudItem xs="12" Class="mud-typography-align-center">
+					<MudLink Href="mailto:example@email.com">example@email.com</MudLink>
+					<MudText Typo="Typo.body2" Class="mt-4">49 Smith St.</MudText>
+					<MudText Typo="Typo.body2">Saint Cloud, MN 56301</MudText>
+					<MudStack Justify="Justify.Center" Class="mt-4" Row="true">
+						<MudIconButton Icon="@Icons.Custom.Brands.Facebook" />
+						<MudIconButton Icon="@Icons.Custom.Brands.X" />
+						<MudIconButton Icon="@Icons.Custom.Brands.Instagram" />
+						<MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" />
+					</MudStack>
+				</MudItem>
+			</MudGrid>
+		</MudItem>
+	</MudGrid>
+</MudContainer>
+
+@code {
+	protected override void OnInitialized() {
+		Blocks.Code = @"%3CMudContainer%3E%0A%20%20%3CMudGrid%20Justify%3D%22Justify.Center%22%3E%0A%20%20%20%20%3CMudItem%20xs%3D%2212%22%20sm%3D%228%22%20md%3D%226%22%20lg%3D%224%22%3E%0A%20%20%20%20%20%20%3CMudGrid%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%20Class%3D%22mud-typography-align-center%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudText%20Typo%3D%22Typo.h4%22%20Class%3D%22mb-4%22%3EContact%20Us%3C%2FMudText%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudText%20Typo%3D%22Typo.body2%22%20Class%3D%22mb-4%22%3EWhatever%20cardigan%20tote%20bag%20tumblr%20hexagon%20brooklyn%20asymmetrical%20gentrify.%3C%2FMudText%3E%0A%20%20%20%20%20%20%20%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%20sm%3D%226%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudTextField%20T%3D%22string%22%20Label%3D%22Name%22%20Variant%3D%22Variant.Text%22%3E%3C%2FMudTextField%3E%0A%20%20%20%20%20%20%20%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%20sm%3D%226%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudTextField%20T%3D%22string%22%20Label%3D%22Email%22%20Variant%3D%22Variant.Text%22%3E%3C%2FMudTextField%3E%0A%20%20%20%20%20%20%20%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudTextField%20T%3D%22string%22%20Label%3D%22Message%22%20Variant%3D%22Variant.Text%22%20AutoGrow%20Lines%3D%225%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%20Class%3D%22d-flex%20justify-center%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudButton%20Color%3D%22Color.Primary%22%20Variant%3D%22Variant.Filled%22%3ESend%3C%2FMudButton%3E%0A%20%20%20%20%20%20%20%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%3E%20%3CMudDivider%20%2F%3E%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%20%20%3CMudItem%20xs%3D%2212%22%20Class%3D%22mud-typography-align-center%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudLink%20Href%3D%22mailto%3Aexample%40email.com%22%3Eexample%40email.com%3C%2FMudLink%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudText%20Typo%3D%22Typo.body2%22%20Class%3D%22mt-4%22%3E49%20Smith%20St.%3C%2FMudText%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudText%20Typo%3D%22Typo.body2%22%3ESaint%20Cloud%2C%20MN%2056301%3C%2FMudText%3E%0A%20%20%20%20%20%20%20%20%20%20%3CMudStack%20Justify%3D%22Justify.Center%22%20Class%3D%22mt-4%22%20Row%3D%22true%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CMudIconButton%20Icon%3D%22%40Icons.Custom.Brands.Facebook%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CMudIconButton%20Icon%3D%22%40Icons.Custom.Brands.X%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CMudIconButton%20Icon%3D%22%40Icons.Custom.Brands.Instagram%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CMudIconButton%20Icon%3D%22%40Icons.Custom.Brands.MudBlazor%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%3C%2FMudStack%3E%0A%20%20%20%20%20%20%20%20%3C%2FMudItem%3E%0A%20%20%20%20%20%20%3C%2FMudGrid%3E%0A%20%20%20%20%3C%2FMudItem%3E%0A%20%20%3C%2FMudGrid%3E%0A%3C%2FMudContainer%3E";
+	}
+}

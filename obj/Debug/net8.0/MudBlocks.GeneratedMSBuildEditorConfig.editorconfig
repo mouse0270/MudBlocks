@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXENvbnRhY3RcMDAyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Programs/GitHub/MudBlocks/Pages/Blocks/Contact/003.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvY2tzXENvbnRhY3RcMDAzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Programs/GitHub/MudBlocks/Pages/Category.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

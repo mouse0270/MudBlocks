@@ -89,6 +89,18 @@ namespace MudBlocks.Services {
 				},
 				Category = "Contact",
 				Tags = new List<string> { "Contact", "MudCard", "MudTextField" },
+			},
+			new Block {
+				Url = "/blocks/contact/3",
+				Name = "Contact",
+				Description = string.Empty,
+				Image = "/images/blocks/contact/003.jpg",
+				Authors = new List<Author> {
+					new Author { Name = "Mouse0270", Url = "https://github.com/mouse0270", Image = "https://avatars.githubusercontent.com/u/564874?v=4" },
+					new Author { Name = "Tailblocks", Url = "https://github.com/mertJF/tailblocks" }
+				},
+				Category = "Contact",
+				Tags = new List<string> { "Contact", "MudTextField", "MudIconButton", "MudStack" },
 			}
 		};
 	}
