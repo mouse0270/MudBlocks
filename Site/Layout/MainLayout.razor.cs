@@ -49,9 +49,7 @@ namespace MudBlocks.Site.Layout {
 
 				// Listen for block changes
 				// When the block changes, we need to re-render the page
-				BlockService.OnBlockChanged += async (code, displayMode) => {
-					Console.WriteLine($"Block Changed: {BlockService.Code.Length} | {code.Length} | {displayMode}");
-					await Task.Yield();
+				BlockService.OnBlockChanged += (code, displayMode) => {
 					StateHasChanged();
 				};
 

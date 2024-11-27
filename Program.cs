@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using MudBlocks;
 using Brism;
-using Sentry;
+//using Sentry;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-SentrySdk.Init(options => {
+/*SentrySdk.Init(options => {
 	// When configuring for the first time, you can set the environment directly in code.
 	// In a production application, you should set the environment in the SENTRY_ENVIRONMENT environment variable.
 	options.Environment = builder.HostEnvironment.Environment;
@@ -46,7 +46,7 @@ SentrySdk.Init(options => {
         // prefer profiling to start asynchronously
         TimeSpan.FromMilliseconds(500)
     ));
-});
+});*/
 
 builder.Services.AddScoped<MudBlocks.Site.Services.Database>();
 builder.Services.AddScoped<MudBlocks.Site.Services.ThemeService>();

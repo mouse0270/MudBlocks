@@ -87,14 +87,6 @@
             "MudBlazor": {
               "target": "Package",
               "version": "[8.0.0-preview.5, )"
-            },
-            "Sentry": {
-              "target": "Package",
-              "version": "[4.13.0, )"
-            },
-            "Sentry.Profiling": {
-              "target": "Package",
-              "version": "[4.13.0, )"
             }
           },
           "imports": [

@@ -45,9 +45,9 @@ namespace MudBlocks.Site.Pages {
 
 			// If url is `/random` then select a random Block from the database
 			type = NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('/').First().Humanize();
-			if (type.ToLower() == "random" || type.ToLower() == "r") {
+			if ((type.ToLower() == "random" || type.ToLower() == "r") && (Blocks ?? new List<Services.Database.Block>()).Count > 0) {
 				var random = new Random();
-				var randomBlock = Blocks[random.Next(0, Blocks.Count)];
+				var randomBlock = (Blocks ?? new List<Services.Database.Block>())[random.Next(0, (Blocks ?? new List<Services.Database.Block>()).Count)];
 				category = randomBlock.Namespace.Split('.').First();
 				block = randomBlock.Namespace.Split('.').Last();
 			}
@@ -143,6 +143,7 @@ namespace MudBlocks.Site.Pages {
 				}
 			} catch (Exception ex) {
 				// Log the exception (ex) if necessary
+				Console.WriteLine(ex.Message);
 				return "Unable to load block content.";
 			}
 		}

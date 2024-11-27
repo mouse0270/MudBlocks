@@ -28,7 +28,7 @@ namespace MudBlocks.Site.Pages {
 
 			// Listen for theme changes
 			// When the theme changes, we need to update the theme options
-			Theme.OnThemeChanged += async (isDarkMode, themeColor, themeMode, themeFont) => {
+			Theme.OnThemeChanged += (isDarkMode, themeColor, themeMode, themeFont) => {
 				StateHasChanged();
 			};
 
@@ -56,7 +56,6 @@ namespace MudBlocks.Site.Pages {
 
 			// Set the Category BreadCrumb
 			if (options.Count > 0 && type != null) {
-				Console.WriteLine($"Type: {type} | Options: {options.Count} | {options.First().Humanize(LetterCasing.Title)}");
 				BreadCrumbService.Set(new List<MudBlazor.BreadcrumbItem> {
 					new MudBlazor.BreadcrumbItem(options.First().Humanize(LetterCasing.Title), href: $"/category/{string.Join("/", options)}"),
 				});
@@ -66,13 +65,11 @@ namespace MudBlocks.Site.Pages {
 				if (type.ToLower() == "category" || type.ToLower() == "categories") {
 					// Get the blocks from the database
 					Blocks = Blocks.Where(b => options.Any(option => b.Namespace.Split('.').First().Humanize().ToLower() == option.Humanize().ToLower())).ToList();
-					Console.WriteLine($"Categories {Blocks.Count()}");
 				}
 
 				if (type.ToLower() == "tag" || type.ToLower() == "tags") {
 					// Get the blocks from the database
-					Blocks = Blocks.Where(b => options.Any(option => b.Tags.Any(tag => tag.Humanize().ToLower() == option.Humanize().ToLower()))).ToList();
-					Console.WriteLine($"Tags {Blocks.Count()}");
+					Blocks = Blocks.Where(b => b.Tags != null && options.Any(option => b.Tags.Any(tag => tag.Humanize().ToLower() == option.Humanize().ToLower()))).ToList();
 				}
 			}
 		}

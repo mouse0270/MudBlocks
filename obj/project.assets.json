@@ -157,22 +157,6 @@
           }
         }
       },
-      "Microsoft.Diagnostics.NETCore.Client/0.2.510501": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Diagnostics.NETCore.Client.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Diagnostics.NETCore.Client.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/9.0.0-preview.7.24405.7": {
         "type": "package",
         "dependencies": {
@@ -541,54 +525,6 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/MudBlazor.props": {}
-        }
-      },
-      "Sentry/4.13.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Sentry.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Sentry.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Sentry.targets": {}
-        }
-      },
-      "Sentry.Profiling/4.13.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Diagnostics.NETCore.Client": "0.2.510501",
-          "Sentry": "4.13.0"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Diagnostics.FastSerialization.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Microsoft.Diagnostics.Tracing.TraceEvent.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Sentry.Profiling.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Diagnostics.FastSerialization.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Microsoft.Diagnostics.Tracing.TraceEvent.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Sentry.Profiling.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Sentry.Profiling.targets": {}
         }
       },
       "System.IO.Pipelines/9.0.0-preview.7.24405.7": {
@@ -824,22 +760,6 @@
           }
         }
       },
-      "Microsoft.Diagnostics.NETCore.Client/0.2.510501": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Diagnostics.NETCore.Client.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Diagnostics.NETCore.Client.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/9.0.0-preview.7.24405.7": {
         "type": "package",
         "dependencies": {
@@ -1208,54 +1128,6 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/MudBlazor.props": {}
-        }
-      },
-      "Sentry/4.13.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Sentry.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Sentry.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Sentry.targets": {}
-        }
-      },
-      "Sentry.Profiling/4.13.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Diagnostics.NETCore.Client": "0.2.510501",
-          "Sentry": "4.13.0"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Diagnostics.FastSerialization.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Microsoft.Diagnostics.Tracing.TraceEvent.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Sentry.Profiling.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Diagnostics.FastSerialization.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Microsoft.Diagnostics.Tracing.TraceEvent.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/Sentry.Profiling.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Sentry.Profiling.targets": {}
         }
       },
       "System.IO.Pipelines/9.0.0-preview.7.24405.7": {
@@ -1703,22 +1575,6 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
         "microsoft.aspnetcore.metadata.9.0.0.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
-      ]
-    },
-    "Microsoft.Diagnostics.NETCore.Client/0.2.510501": {
-      "sha512": "juoqJYMDs+lRrrZyOkXXMImJHneCF23cuvO4waFRd2Ds7j+ZuGIPbJm0Y/zz34BdeaGiiwGWraMUlln05W1PCQ==",
-      "type": "package",
-      "path": "microsoft.diagnostics.netcore.client/0.2.510501",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net6.0/Microsoft.Diagnostics.NETCore.Client.dll",
-        "lib/net6.0/Microsoft.Diagnostics.NETCore.Client.xml",
-        "lib/netstandard2.0/Microsoft.Diagnostics.NETCore.Client.dll",
-        "lib/netstandard2.0/Microsoft.Diagnostics.NETCore.Client.xml",
-        "microsoft.diagnostics.netcore.client.0.2.510501.nupkg.sha512",
-        "microsoft.diagnostics.netcore.client.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration/9.0.0-preview.7.24405.7": {
@@ -2402,83 +2258,6 @@
         "staticwebassets/MudBlazor.min.js"
       ]
     },
-    "Sentry/4.13.0": {
-      "sha512": "Wfw3M1WpFcrYaGzPm7QyUTfIOYkVXQ1ry6p4WYjhbLz9fPwV23SGQZTFDpdox67NHM0V0g1aoQ4YKLm4ANtEEg==",
-      "type": "package",
-      "path": "sentry/4.13.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "build/Sentry.Native.targets",
-        "build/Sentry.targets",
-        "buildTransitive/Sentry.Native.targets",
-        "buildTransitive/Sentry.targets",
-        "lib/net462/Sentry.dll",
-        "lib/net462/Sentry.xml",
-        "lib/net6.0/Sentry.dll",
-        "lib/net6.0/Sentry.xml",
-        "lib/net7.0-android33.0/Sentry.dll",
-        "lib/net7.0-android33.0/Sentry.xml",
-        "lib/net7.0-ios16.1/Sentry.dll",
-        "lib/net7.0-ios16.1/Sentry.xml",
-        "lib/net7.0-maccatalyst16.1/Sentry.dll",
-        "lib/net7.0-maccatalyst16.1/Sentry.xml",
-        "lib/net8.0-android34.0/Sentry.dll",
-        "lib/net8.0-android34.0/Sentry.xml",
-        "lib/net8.0-ios18.0/Sentry.dll",
-        "lib/net8.0-ios18.0/Sentry.xml",
-        "lib/net8.0-maccatalyst18.0/Sentry.dll",
-        "lib/net8.0-maccatalyst18.0/Sentry.xml",
-        "lib/net8.0/Sentry.dll",
-        "lib/net8.0/Sentry.xml",
-        "lib/netstandard2.0/Sentry.dll",
-        "lib/netstandard2.0/Sentry.xml",
-        "lib/netstandard2.1/Sentry.dll",
-        "lib/netstandard2.1/Sentry.xml",
-        "sentry-native/linux-x64/libsentry-native.a",
-        "sentry-native/osx/libsentry-native.a",
-        "sentry-native/win-x64/sentry-native.lib",
-        "sentry-nuget.png",
-        "sentry.4.13.0.nupkg.sha512",
-        "sentry.nuspec",
-        "tools/sentry-cli-Darwin-arm64",
-        "tools/sentry-cli-Darwin-x86_64",
-        "tools/sentry-cli-Linux-aarch64",
-        "tools/sentry-cli-Linux-i686",
-        "tools/sentry-cli-Linux-x86_64",
-        "tools/sentry-cli-Windows-i686.exe",
-        "tools/sentry-cli-Windows-x86_64.exe"
-      ]
-    },
-    "Sentry.Profiling/4.13.0": {
-      "sha512": "FJM5SDwHGN2+ceVGCeVQLHXNSBQEHSpvPrBVqVdbbduIdf7yWvaCdCn8MZyCJsvOuKMpwbrle6lXtxrKOZ2ESA==",
-      "type": "package",
-      "path": "sentry.profiling/4.13.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "build/Sentry.Profiling.targets",
-        "buildTransitive/Sentry.Profiling.targets",
-        "lib/net6.0/Microsoft.Diagnostics.FastSerialization.dll",
-        "lib/net6.0/Microsoft.Diagnostics.FastSerialization.pdb",
-        "lib/net6.0/Microsoft.Diagnostics.Tracing.TraceEvent.dll",
-        "lib/net6.0/Microsoft.Diagnostics.Tracing.TraceEvent.pdb",
-        "lib/net6.0/Sentry.Profiling.dll",
-        "lib/net6.0/Sentry.Profiling.xml",
-        "lib/net8.0/Microsoft.Diagnostics.FastSerialization.dll",
-        "lib/net8.0/Microsoft.Diagnostics.FastSerialization.pdb",
-        "lib/net8.0/Microsoft.Diagnostics.Tracing.TraceEvent.dll",
-        "lib/net8.0/Microsoft.Diagnostics.Tracing.TraceEvent.pdb",
-        "lib/net8.0/Sentry.Profiling.dll",
-        "lib/net8.0/Sentry.Profiling.xml",
-        "sentry-nuget.png",
-        "sentry.profiling.4.13.0.nupkg.sha512",
-        "sentry.profiling.nuspec"
-      ]
-    },
     "System.IO.Pipelines/9.0.0-preview.7.24405.7": {
       "sha512": "Ucbel9Qn222FZNK3HuAHSdYCa2ayYIY02vzbBh1K9NgJpOENyMjU4BUALGTelXq8c4e0EfOswkM5kPcytgsrAw==",
       "type": "package",
@@ -2684,9 +2463,7 @@
       "Microsoft.JSInterop >= 9.0.0",
       "Microsoft.NET.ILLink.Tasks >= 9.0.0-preview.7.24405.7",
       "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.0-preview.7.24405.7",
-      "MudBlazor >= 8.0.0-preview.5",
-      "Sentry >= 4.13.0",
-      "Sentry.Profiling >= 4.13.0"
+      "MudBlazor >= 8.0.0-preview.5"
     ]
   },
   "packageFolders": {
@@ -2776,14 +2553,6 @@
           "MudBlazor": {
             "target": "Package",
             "version": "[8.0.0-preview.5, )"
-          },
-          "Sentry": {
-            "target": "Package",
-            "version": "[4.13.0, )"
-          },
-          "Sentry.Profiling": {
-            "target": "Package",
-            "version": "[4.13.0, )"
           }
         },
         "imports": [

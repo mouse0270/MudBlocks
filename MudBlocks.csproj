@@ -13,8 +13,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0-preview.7.24406.2" PrivateAssets="all" />
     <PackageReference Include="Microsoft.JSInterop" Version="9.0.0" />
     <PackageReference Include="MudBlazor" Version="8.0.0-preview.5" />
-    <PackageReference Include="Sentry" Version="4.13.0" />
-    <PackageReference Include="Sentry.Profiling" Version="4.13.0" />
   </ItemGroup>
 
 </Project>

@@ -24,7 +24,7 @@ namespace MudBlocks.Site.Pages
 
 			// Listen for theme changes
 			// When the theme changes, we need to update the theme options
-			Theme.OnThemeChanged += async (isDarkMode, themeColor, themeMode, themeFont) => {
+			Theme.OnThemeChanged += (isDarkMode, themeColor, themeMode, themeFont) => {
 				StateHasChanged();
 			};
 		}

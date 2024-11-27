@@ -15,7 +15,7 @@
 				<MudItem xs="12" md="6" lg="4">
 					<MudLink Href=@($"/block/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title)}/{item.Title}") Underline="Underline.None">
 						<MudCard Outlined="true" Style="position: relative;">
-							<MudCardMedia Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{item.Title.Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")" Height="200" />
+							<MudCardMedia Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{(item.Title ?? "").Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")" Height="200" />
 							<MudChip T="String" Variant="Variant.Filled" Color="Color.Primary" Style="position:absolute;top:1rem;left:1rem;">
 								<MudText Typo="Typo.button">@item.Namespace.Split(".")[0].Humanize(LetterCasing.Title)</MudText>
 							</MudChip>

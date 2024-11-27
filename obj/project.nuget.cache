@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bYM2g7AMFik=",
+  "dgSpecHash": "ra7tqs0AP2c=",
   "success": true,
   "projectFilePath": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,6 @@
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\9.0.0-preview.7.24406.2\\microsoft.aspnetcore.components.webassembly.9.0.0-preview.7.24406.2.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\9.0.0-preview.7.24406.2\\microsoft.aspnetcore.components.webassembly.devserver.9.0.0-preview.7.24406.2.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.0\\microsoft.aspnetcore.metadata.9.0.0.nupkg.sha512",
-    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.diagnostics.netcore.client\\0.2.510501\\microsoft.diagnostics.netcore.client.0.2.510501.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0-preview.7.24405.7\\microsoft.extensions.configuration.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0-preview.7.24405.7\\microsoft.extensions.configuration.abstractions.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.configuration.binder\\9.0.0-preview.7.24405.7\\microsoft.extensions.configuration.binder.9.0.0-preview.7.24405.7.nupkg.sha512",
@@ -36,8 +35,6 @@
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.0-preview.7.24405.7\\microsoft.net.illink.tasks.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.0-preview.7.24405.7\\microsoft.net.sdk.webassembly.pack.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\mudblazor\\8.0.0-preview.5\\mudblazor.8.0.0-preview.5.nupkg.sha512",
-    "C:\\Users\\rmcin\\.nuget\\packages\\sentry\\4.13.0\\sentry.4.13.0.nupkg.sha512",
-    "C:\\Users\\rmcin\\.nuget\\packages\\sentry.profiling\\4.13.0\\sentry.profiling.4.13.0.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.io.pipelines\\9.0.0-preview.7.24405.7\\system.io.pipelines.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.text.encodings.web\\9.0.0-preview.7.24405.7\\system.text.encodings.web.9.0.0-preview.7.24405.7.nupkg.sha512",
