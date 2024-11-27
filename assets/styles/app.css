@@ -61,3 +61,8 @@ body:has(header.mud-appbar) .mud-main-content {
 		padding-top: var(--mud-appbar-height);
 	}
 }
+
+.code-view code[class*="language-"], 
+.code-view pre[class*="language-"] {
+	background-color: var(--mud-palette-background);
+}
