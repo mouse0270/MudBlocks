@@ -1,0 +1,18 @@
+@page "/iframe/{category}/{block}"
+@page "/iframe/{category}/{block}/{type}"
+@page "/dyanmiccontent/{category}/{block}"
+@page "/dyanmiccontent/{category}/{block}/{type}"
+@using Humanizer
+
+<PageTitle>Code Block Viewer</PageTitle>
+
+@if (ComponentType != null)
+{
+	<DynamicComponent Type="ComponentType" Parameters="null" />
+}
+else
+{
+	<MudAlert Severity="Severity.Error">
+		Category @((category ?? "").Dehumanize()) / Block @((block ?? "").Dehumanize()) cannot be found.
+	</MudAlert>
+}

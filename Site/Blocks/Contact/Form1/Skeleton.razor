@@ -1,0 +1,29 @@
+<MudContainer MaxWidth="MaxWidth.False" Class="px-0" Style="align-content: center; height: 100vh;">
+	<MudGrid Style="@($"align-items: center;background-color: rgba(var(--mud-palette-dark-rgb), 0.1);height: 100vh;")">
+		<iframe width="100%" height="100vh"
+			style="border:0; filter: grayscale(1) contrast(1.2) opacity(0.4); left: 0; position:absolute; z-index: -1;"
+			allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.148195953282!2d-77.03888382259599!3d38.897726271724075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7547d5f6f8f%3A0x9189ce80cfe6cbb2!2s1600%20Pennsylvania%20Avenue%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1719839638309!5m2!1sen!2sus"></iframe>
+		<MudItem xs="12">
+			<MudContainer>
+				<MudGrid Justify="Justify.FlexEnd">
+					<MudItem xs="12" md="6" lg="4">
+						<MudCard Class="ma-4">
+							<MudCardContent>
+								<MudSkeleton Animation="Animation.False" Class="mb-2" Height="26px" Width="70px"/>
+								<MudSkeleton Animation="Animation.False" Class="mb-1" Height="20px" Width="100%"/>
+								<MudSkeleton Animation="Animation.False" Class="mb-2" Height="20px" Width="100%"/>
+
+								<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="50px" Width="100%"/>
+								<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-4" Height="100px" Width="100%"/>
+
+								<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="30px" Width="100%" Style="border-radius: var(--mud-default-borderradius)"/>
+								<MudSkeleton Animation="Animation.False" Class="mb-1" Height="15px" Width="80%"/>
+							</MudCardContent>
+						</MudCard>
+					</MudItem>
+				</MudGrid>
+			</MudContainer>
+		</MudItem>
+	</MudGrid>
+</MudContainer>

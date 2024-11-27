@@ -1,0 +1,53 @@
+<style>
+	/* MudAlert Dense=true does not work in properly in MudBlazor v7.15.x*/
+	.mud-alert.mud-dense {
+		padding: 0px;
+
+		.mud-alert-message {
+			padding: 0px;
+		}
+	}
+</style>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-8 px-4 text-center d-flex flex-column justify-center align-center">
+	<!-- Alert Banner -->
+	<MudAlert Severity="Severity.Info" Variant="Variant.Outlined" NoIcon="true" Dense="true"
+		ContentAlignment="HorizontalAlignment.Center" Class="mb-7 d-flex justify-center align-center rounded-pill"
+		Style="width: fit-content;">
+		<MudChip T="String" Color="Color.Primary" Class="mr-3 text-white">New</MudChip>
+		Check out our latest updates and features
+		<MudIconButton Icon="@Icons.Material.Filled.ArrowForward" Class="mx-2" Size="Size.Small" />
+	</MudAlert>
+
+	<!-- Main Heading -->
+	<MudText Typo="Typo.h2" Align="Align.Center" Class="mb-4">
+		Discover Our Latest Site Updates
+	</MudText>
+
+	<!-- Description -->
+	<MudText Typo="Typo.h5" HtmlTag="p" Align="Align.Center" Class="mb-8">
+		We've updated our site to enhance features and improve functionality. Enjoy a more seamless and efficient
+		browsing experience. Stay tuned for more updates.
+	</MudText>
+
+	<!-- Buttons -->
+	<MudStack Spacing="2" Class="mb-8" Row="true" Justify="Justify.Center">
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="px-5 py-3">
+			Learn more
+			<MudIcon Icon="@Icons.Material.Filled.ArrowForward" Class="ml-2" />
+		</MudButton>
+		<MudButton Variant="Variant.Outlined" Class="px-5 py-3">
+			<MudIcon Icon="@Icons.Material.Filled.PlayArrow" Class="mr-2" />
+			Watch video
+		</MudButton>
+	</MudStack>
+
+	<!-- Featured In Section -->
+	<MudContainer MaxWidth="MaxWidth.Medium" Class="text-center">
+		<MudStack Spacing="2" Row="true" Justify="Justify.Center" AlignItems="AlignItems.Center" Class="mt-8">
+			<MudIcon Icon="@Icons.Custom.Brands.Facebook" Size="Size.Large" Class="mx-3" />
+			<MudIcon Icon="@Icons.Custom.Brands.X" Size="Size.Large" Class="mx-3" />
+			<MudIcon Icon="@Icons.Custom.Brands.Discord" Size="Size.Large" Class="mx-3" />
+		</MudStack>
+	</MudContainer>
+</MudContainer>

@@ -1,0 +1,17 @@
+{
+	"Title": "Cards 4",
+	"Description": "A simple card with image, title, description and button.",
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}
+	], 
+	"Tags": [
+		"Blog", "MudCard"
+	]
+}

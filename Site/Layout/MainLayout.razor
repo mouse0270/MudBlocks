@@ -1,0 +1,120 @@
+﻿@inherits LayoutComponentBase
+@using Humanizer 
+
+@* Required *@
+<MudThemeProvider @ref="@Theme.ThemeProvider" Theme="@Theme.Theme" @bind-IsDarkMode="@Theme.IsDarkMode" />
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+<MudLayout>
+    @if (!NavigationManager.Uri.Contains("/iframe/"))
+    {
+        <MudAppBar Elevation="1">
+            <MudBlocks.Site.Layout.Components.Logo
+                style="height: 100%;max-width: var(--mud-drawer-width-mini-left);max-height: calc(var(--mud-appbar-height) / 2);" />
+
+            <MudBreadcrumbs Class="d-none d-md-flex" Items="Breadcrumbs.Breadcrumbs">
+                <ItemTemplate Context="item">
+                    @if ((item.Icon != null || item.Href == "/") && Breadcrumbs.Breadcrumbs.Count > 1)
+                    {
+                        <MudIconButton Href="@item.Href" Icon="@item.Icon" aria-label="@item.Text" Color="Color.Inherit" />
+                    }
+                    else
+                    {
+                        <MudButton Href="@item.Href" Variant="Variant.Text" Color="Color.Inherit">
+                            <MudText Typo="Typo.h2" Class="mud-typography-h6" Style="white-space: nowrap;">@item.Text</MudText>
+                        </MudButton>
+                    }
+                </ItemTemplate>
+            </MudBreadcrumbs>
+            <MudSpacer />
+            <MudStack AlignItems="AlignItems.Center" Row="true">
+                @if (!String.IsNullOrEmpty(BlockService.Code)) {
+                    <MudTooltip Text="@(BlockService.ViewCode ? "View Preview" : "View Code")" Placement="Placement.Bottom">
+                        <MudToggleIconButton @bind-Toggled="BlockService.ViewCode" 
+                        Icon="@Icons.Material.Outlined.RemoveRedEye" Color="@Color.Inherit"
+                        ToggledIcon="@Icons.Material.Outlined.Code"  ToggledColor="@Color.Inherit" />
+                    </MudTooltip>
+                    <MudTooltip Text="Copy" Placement="Placement.Bottom">
+                        <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" Color="Color.Inherit" OnClick="CopyToClipboard" />
+                    </MudTooltip>
+                    @if (!BlockService.ViewCode) {
+                        <MudButtonGroup Class="d-none d-lg-flex" Color="Color.Primary" Variant="Variant.Outlined" OverrideStyles="false" Style="background-color: #fff;border: 1px solid #fff;">
+                            <MudButton Color="Color.Primary" DropShadow="false" Style="border-width: 0;" Variant="@(BlockService.DisplayMode == "Mobile" ? Variant.Filled : Variant.Outlined)" OnClick="@(() => BlockService.DisplayMode = "Mobile")">
+                                <MudIcon Icon="@Icons.Material.Outlined.MobileFriendly" />
+                            </MudButton>
+                            <MudButton Color="Color.Primary" DropShadow="false" Style="border-width: 0;" Variant="@(BlockService.DisplayMode == "Tablet" ? Variant.Filled : Variant.Outlined)" OnClick="@(() => BlockService.DisplayMode = "Tablet")">
+                                <MudIcon Icon="@Icons.Material.Outlined.TabletAndroid" />
+                            </MudButton>
+                            <MudButton Color="Color.Primary" DropShadow="false" Style="border-width: 0;" Variant="@(BlockService.DisplayMode == "Desktop" ? Variant.Filled : Variant.Outlined)" OnClick="@(() => BlockService.DisplayMode = "Desktop")">
+                                <MudIcon Icon="@Icons.Material.Outlined.DesktopWindows" />
+                            </MudButton>
+                        </MudButtonGroup>
+                    }
+                }
+                <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
+                    <ActivatorContent>
+                        <MudButton EndIcon="@Icons.Material.Filled.KeyboardArrowDown" Variant="Variant.Outlined"
+                            Color="Color.Inherit">@Theme.Font</MudButton>
+                    </ActivatorContent>
+                    <ChildContent>
+                        @foreach(var font in Theme.Fonts)
+                        {
+                            <MudMenuItem OnClick="@(() => SetFont(font.Key))">
+                                <MudStack AlignItems="AlignItems.Center" Row="true">
+                                    <MudText Typo="Typo.body1" Style="white-space: nowrap;">@font.Key.Humanize(LetterCasing.Title)</MudText>
+                                </MudStack>
+                            </MudMenuItem>
+                        }
+                    </ChildContent>
+                </MudMenu>
+                <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
+                    <ActivatorContent>
+                        <MudButton StartIcon=""
+                          Variant="Variant.Outlined" Color="Color.Primary" Style="background-color: #fff;">
+                            <MudIcon Icon="@Icons.Material.Outlined.Palette" Class="mr-md-4" Color="Color.Primary" Title="Primary" />
+                            <MudIcon Icon="@Icons.Material.Filled.Rectangle" Class="d-none d-md-flex" Color="Color.Primary" Title="Primary" />
+                            <MudIcon Icon="@Icons.Material.Filled.Rectangle" Class="d-none d-md-flex" Color="Color.Secondary" Title="Secondary" />
+                            <MudIcon Icon="@Icons.Material.Filled.Rectangle" Class="d-none d-md-flex" Color="Color.Tertiary" Title="Tertiary" />
+                        </MudButton>
+                    </ActivatorContent>
+                    <ChildContent>
+                        @foreach (var color in Theme.Themes) {
+                            <MudMenuItem OnClick="@(() => SetTheme(color.Key, "Monochromatic"))">
+                                <MudStack AlignItems="AlignItems.Center" Row="true">
+                                    <MudText Typo="Typo.body1" Style="white-space: nowrap;">@color.Key.Humanize()</MudText>
+                                    <MudSpacer />
+                                    <MudStack Row="true" Spacing="0">
+                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle"Style="@($"color: {@Theme.Themes[color.Key]["Monochromatic"].PaletteLight.Primary.ToString()}")" Title="Primary" />
+                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key]["Monochromatic"].PaletteLight.Secondary.ToString()}")" Title="Secondary" />
+                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key]["Monochromatic"].PaletteLight.Tertiary.ToString()}")" Title="Tertiary" />
+                                        @*@foreach (var mode in color.Value) {
+                                            <MudButton Variant="Variant.Text" OnClick="@(() => SetTheme(color.Key, mode.Key))">
+                                                <MudIcon Icon="@Icons.Material.Filled.Rectangle"Style="@($"color: {@Theme.Themes[color.Key][mode.Key].PaletteLight.Primary.ToString()}")" Title="Primary" />
+                                                <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key][mode.Key].PaletteLight.Secondary.ToString()}")" Title="Secondary" />
+                                                <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key][mode.Key].PaletteLight.Tertiary.ToString()}")" Title="Tertiary" />
+                                            </MudButton>
+                                        }*@
+                                    </MudStack>
+                                </MudStack>
+                            </MudMenuItem>
+                        }
+                    </ChildContent>
+                </MudMenu>
+                <MudTooltip Text="@(Theme.IsDarkMode ? "Light Mode" : "Dark Mode")" Placement="Placement.Bottom">
+                    <MudToggleIconButton @bind-Toggled="Theme.IsDarkMode" 
+                      Icon="@Icons.Material.Outlined.WbSunny" Color="@Color.Inherit"
+                      ToggledIcon="@Icons.Material.Outlined.DarkMode"  ToggledColor="@Color.Inherit" />
+                </MudTooltip>
+            </MudStack>
+        </MudAppBar>
+    }
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>

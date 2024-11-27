@@ -1,0 +1,37 @@
+<style>
+	/* MudAlert Dense=true does not work in properly in MudBlazor v7.15.x*/
+	.mud-alert.mud-dense {
+		padding: 0px;
+
+		.mud-alert-message {
+			padding: 0px;
+		}
+	}
+</style>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-8 px-4 text-center d-flex flex-column justify-center align-center" Style="align-content: center; height: 100vh;">
+	<!-- Alert Banner -->
+	<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-7" Height="42px" Width="385px" Style="border-radius: 9999px;" />
+
+	<!-- Main Heading -->
+	<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-4" Height="72px" Width="845px" Style="border-radius: var(--mud-default-borderradius);" />
+
+	<!-- Description -->
+	<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="32px" Width="100%" Style="border-radius: var(--mud-default-borderradius);" />
+	<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-8" Height="32px" Width="60%" Style="border-radius: var(--mud-default-borderradius);" />
+
+	<!-- Buttons -->
+	<MudStack Spacing="2" Class="mb-8" Row="true" Justify="Justify.Center">
+		<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Height="50px" Width="160px" Style="border-radius: var(--mud-default-borderradius);" />
+		<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Height="50px" Width="160px" Style="border-radius: var(--mud-default-borderradius);" />
+	</MudStack>
+
+	<!-- Featured In Section -->
+	<MudContainer MaxWidth="MaxWidth.Medium" Class="text-center">
+		<MudStack Spacing="2" Row="true" Justify="Justify.Center" AlignItems="AlignItems.Center" Class="mt-8">
+			<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px" />
+			<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px" />
+			<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px" />
+		</MudStack>
+	</MudContainer>
+</MudContainer>

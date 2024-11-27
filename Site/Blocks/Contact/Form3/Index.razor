@@ -1,0 +1,39 @@
+<MudContainer Class="py-4 py-sm-8 py-md-12 py-lg-16 py-xl-20">
+	<MudGrid Justify="Justify.Center">
+		<MudItem xs="12" sm="8" md="6" lg="4">
+			<MudGrid>
+				<MudItem xs="12" Class="mud-typography-align-center">
+					<MudText Typo="Typo.h4" Class="mb-4">Contact Us</MudText>
+					<MudText Typo="Typo.body2" Class="mb-4">Whatever cardigan tote bag tumblr hexagon brooklyn
+						asymmetrical gentrify.</MudText>
+				</MudItem>
+				<MudItem xs="12" sm="6">
+					<MudTextField T="string" Label="Name" Variant="Variant.Text"></MudTextField>
+				</MudItem>
+				<MudItem xs="12" sm="6">
+					<MudTextField T="string" Label="Email" Variant="Variant.Text"></MudTextField>
+				</MudItem>
+				<MudItem xs="12">
+					<MudTextField T="string" Label="Message" Variant="Variant.Text" AutoGrow Lines="5" />
+				</MudItem>
+				<MudItem xs="12" Class="d-flex justify-center">
+					<MudButton Color="Color.Primary" Variant="Variant.Filled">Send</MudButton>
+				</MudItem>
+				<MudItem xs="12">
+					<MudDivider />
+				</MudItem>
+				<MudItem xs="12" Class="mud-typography-align-center">
+					<MudLink Href="mailto:example@email.com">example@email.com</MudLink>
+					<MudText Typo="Typo.body2" Class="mt-4">49 Smith St.</MudText>
+					<MudText Typo="Typo.body2">Saint Cloud, MN 56301</MudText>
+					<MudStack Justify="Justify.Center" Class="mt-4" Row="true">
+						<MudIconButton Icon="@Icons.Custom.Brands.Facebook" />
+						<MudIconButton Icon="@Icons.Custom.Brands.X" />
+						<MudIconButton Icon="@Icons.Custom.Brands.Instagram" />
+						<MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" />
+					</MudStack>
+				</MudItem>
+			</MudGrid>
+		</MudItem>
+	</MudGrid>
+</MudContainer>

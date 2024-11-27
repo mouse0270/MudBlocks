@@ -1,0 +1,38 @@
+<MudContainer Style="align-content: center; height: 100vh;">
+	<MudGrid Justify="Justify.Center">
+		<MudItem xs="12" sm="8" md="6" lg="4">
+			<MudGrid>
+				<MudItem xs="12" Class="mud-typography-align-center" Style="justify-items: center;">
+					<MudSkeleton Animation="Animation.False" Class="mb-2" Height="60px" Width="200px"/>
+					<MudSkeleton Animation="Animation.False" Class="mb-2" Height="20px" Width="80%"/>
+				</MudItem>
+				<MudItem xs="12" sm="6">
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="50px" Width="100%"/>
+				</MudItem>
+				<MudItem xs="12" sm="6">
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="50px" Width="100%"/>
+				</MudItem>
+				<MudItem xs="12">
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-4" Height="100px" Width="100%"/>
+				</MudItem>
+				<MudItem xs="12" Class="d-flex justify-center">
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="30px" Width="120px" Style="border-radius: var(--mud-default-borderradius)"/>
+				</MudItem>
+				<MudItem xs="12">
+					<MudDivider />
+				</MudItem>
+				<MudItem xs="12" Class="mud-typography-align-center" Style="justify-items: center;">
+					<MudSkeleton Animation="Animation.False" Class="mb-4" Height="20px" Width="60%"/>
+					<MudSkeleton Animation="Animation.False" Class="mb-1" Height="20px" Width="30%"/>
+					<MudSkeleton Animation="Animation.False" Class="mb-2" Height="20px" Width="60%"/>
+					<MudStack Justify="Justify.Center" Class="mt-8" Row="true">
+						<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px"/>
+						<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px"/>
+						<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px"/>
+						<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Height="40px" Width="40px"/>
+					</MudStack>
+				</MudItem>
+			</MudGrid>
+		</MudItem>
+	</MudGrid>
+</MudContainer>

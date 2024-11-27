@@ -1,0 +1,166 @@
+@page "/r"
+@page "/random"
+@page "/b/{**path}"
+@page "/block/{**path}"
+@page "/blocks/{**path}"
+@page "/s/{**path}"
+@page "/skeleton/{**path}"
+
+@using Humanizer
+
+<PageTitle>
+	@BreadCrumbService.GetText()
+</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="This is an example page with a dynamic description." />
+    <meta name="keywords" content="example, blazor, dynamic" />
+</HeadContent>
+
+<style>
+	.iframe-view, .code-view {
+		--view-height: (100vh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 8) - 6px);
+		border: none;
+		height: calc(var(--view-height));
+		width: 100%;
+	}
+	.code-view {
+		opacity: 0;
+		overflow: auto;
+		pointer-events: none;
+		position: absolute !important;
+		top: var(--mud-appbar-height);
+		transition: opacity 0.3s ease-in-out;
+	}
+	.code-view.show {
+		opacity: 1;
+		pointer-events: all;
+	}
+	.code-view .code-toolbar .toolbar {
+		display: none;
+	}
+	.code-view pre[class*="language-"] {
+		margin: 0;
+	}
+	
+	@@media (min-width: 1280px) {	
+		.iframe-view[data-display="Mobile"], .iframe-view[data-display="Tablet"] {
+			background-color: var(--mud-palette-background-gray);
+			border: 2px solid var(--mud-palette-action-disabled-background);
+			border-radius: 30px;
+			height: calc(var(--view-height) - 120px);
+			max-height: 930px;
+			margin: 30px auto 120px;
+			position: relative;
+			width: 490px;
+		}
+		.iframe-view[data-display="Mobile"]::after, .iframe-view[data-display="Tablet"]::after {
+			border: 2px solid var(--mud-palette-action-disabled-background);
+			border-radius: 50%;
+			bottom: 20px;
+			content: "";
+			height: 50px;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50px;
+		}
+		.iframe-view[data-display="Mobile"] iframe, .iframe-view[data-display="Tablet"] iframe {
+			border: 2px solid var(--mud-palette-action-disabled-background);
+			border-radius: var(--mud-default-borderradius);
+			height: calc(100% - 130px);
+			margin: 30px 30px 100px;
+			width: calc(100% - 60px);
+		}
+
+		.iframe-view[data-display="Tablet"] {
+			height: calc(var(--view-height) - 180px);
+			max-height: unset;
+			margin: 60px auto 120px;
+			width: 960px;
+		}
+		.iframe-view[data-display="Tablet"] iframe {
+			height: calc(100% - 150px);
+			margin: 50px 50px 100px;
+			width: calc(100% - 100px);
+		}
+	}
+
+	@@media (min-width: 0px) and (orientation: landscape) {
+		.iframe-view, .code-view {
+			--view-height: (100vh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4) - 6px);
+		}
+		.code-view {
+			top: var(--mud-appbar-height) - var(--mud-appbar-height) / 4;
+		}
+	}
+
+	@@media (min-width: 600px) {
+		.iframe-view, .code-view {
+			--view-height: (100vh - (var(--mud-appbar-height)) - 6px);
+		}
+		.code-view {
+			top: var(--mud-appbar-height);
+		}
+	}
+	.mud-avatar-group .mud-tooltip-root:has(.ms-n3) {
+		height: 44px;
+		margin-inline-start: -12px !important;
+	}
+	.mud-avatar-group .mud-tooltip-root:has(.ms-n3):first-child {
+		margin-inline-start: 0px !important;
+	}
+	.mud-avatar-group.mud-avatar-group-outlined.mud-avatar-group-outlined-surface .mud-avatar:not(.mud-avatar-outlined):hover {
+		z-index: calc(var(--mud-zindex-drawer) - 1) !important;
+	}
+</style>
+
+@if (ComponentType != null)
+{	
+	<div class="iframe-view" data-display="@BlockService.DisplayMode">
+		<iframe title="@BreadCrumbService.GetText() Preview" src="/iframe/@category/@block/@(type != "Skeleton" ? "Index" : "Skeleton")"></iframe>
+	</div>
+
+	@if (!String.IsNullOrEmpty(BlockService.Code)) {
+		<div class="@($"code-view {(BlockService.ViewCode ? "show" : "hide")}")">
+			<CodeBlock Code="@BlockService.Code" Language="@CodeLanguages.Razor" EnableLineNumbers="true" />
+		</div>
+	}
+
+	<MudStack AlignItems="AlignItems.Center" Row="true" Style="position: fixed; bottom: 1rem; right: 1rem;">
+		@if (BlockService.Authors?.Count > 0) {
+			<MudAvatarGroup Max="99" Spacing="3" MaxColor="Color.Primary" Style="align-items: center;">
+				@foreach (var author in BlockService.Authors) {
+					<MudTooltip Text="@(author.Name + (@author.Url != String.Empty ? $" ({author.Url})" : ""))">
+						@if (author.Url != null && author.Url != string.Empty) {
+							<MudLink Href="@author.Url">
+								@if (author.Image != null && author.Image != string.Empty) {
+									<MudAvatar>
+										<MudImage Src="@author.Image" Alt="@author.Name" />
+									</MudAvatar>
+								}else{
+									<MudAvatar Color="Color.Primary">@author.Name.Substring(0, 1)</MudAvatar>
+								}
+							</MudLink>
+                        }else{
+                            @if (author.Image != null && author.Image != string.Empty) {
+								<MudAvatar>
+									<MudImage Src="@author.Image" Alt="@author.Name" />
+								</MudAvatar>
+                            }else{
+                                <MudAvatar Color="Color.Primary">@author.Name.Substring(0, 1)</MudAvatar>
+                            }
+                        }
+                    </MudTooltip>
+                }
+            </MudAvatarGroup>
+		}
+        <MudButton Href="@($"https://github.com/mouse0270/MudBlocks/blob/main/Pages/{category}/{block}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
+    </MudStack>
+}
+else
+{
+	<MudAlert Severity="Severity.Error">
+		Category @((category ?? "").Dehumanize()) / Block @((block ?? "").Dehumanize()) cannot be found.
+	</MudAlert>
+}

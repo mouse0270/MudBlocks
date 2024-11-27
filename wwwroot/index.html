@@ -1,121 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<base href="/" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MudBlocks</title>
-    <base href="/" />
+		<!-- SEO Optimization -->
+		<title>MudBlocks - Your Ultimate Building Blocks</title>
+		<meta name="description" content="MudBlocks is Ready to Use MudBlazor Blocks" />
+		<meta name="keywords" content="MudBlocks, web development, responsive design, modern web applications, UI components" />
+		<meta name="author" content="Mouse0270" />
+		<!-- Ensures the page is indexed and links are followed -->
+		<meta name="robots" content="index, follow" />
+		<!-- Browser theme color -->
+		<meta name="theme-color" content="#7e6fff" />
 
-    <link rel="icon" type="image/png" href="favicon.png" />
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://mudblocks.cc/" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/atom-one-dark.min.css" rel="disabled">
-    <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/atom-one-light.min.css" rel="disabled">
-    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href="MudBlocks.styles.css" rel="stylesheet" />
+		<!-- Social Media Metadata -->
+		<meta property="og:title" content="MudBlocks - Your Ultimate Building Blocks" />
+		<meta property="og:description" content="MudBlocks is your ultimate solution for building responsive and modern web applications with ease." />
+		<meta property="og:image" content="https://mudblocks.cc/og-image.png" />
+		<!-- Ensure this URL points to your Open Graph image -->
+		<meta property="og:url" content="https://mudblocks.cc/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+		<!-- Social Media Metadata - Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="MudBlocks - Your Ultimate Building Blocks" />
+		<meta name="twitter:description" content="MudBlocks is your ultimate solution for building responsive and modern web applications with ease." />
+		<meta name="twitter:image" content="https://mudblocks.cc/og-image.png" />
 
-    <script>
-        // Get System Preference for Dark Mode
-        const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        // Get User Preference for Dark Mode
-        const userPrefersDark = localStorage.getItem('darkmode');
-        // If Null, Set User Preference to System Preference
-        if (userPrefersDark === null) localStorage.setItem('darkmode', darkMode ? 'true' : 'false');
+		<!-- Favicon and Device Compatibility -->
+		<link rel="icon" type="image/png" href="/assets/images/logo/favicon-64.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/favicon-180.png" />
+		<link rel="icon" type="image/png" sizes="128x128" href="/assets/images/logo/favicon-128.png" />
+		<link rel="icon" type="image/png" sizes="64x64" href="/assets/images/logo/favicon-64.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo/favicon-32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo/favicon-16.png" />
+		<!-- Optional, for PWA support -->
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#7e6fff" />
 
-        // Set Dark Mode
-        document.documentElement.setAttribute('data-theme', localStorage.getItem('darkmode').toLowerCase().includes('true') ? 'dark' : 'light');
-        document.querySelector('link[href*="atom-one-dark"]').setAttribute('rel', localStorage.getItem('darkmode').toLowerCase().includes('true') ? 'stylesheet' : 'disabled');
-        document.querySelector('link[href*="atom-one-light"]').setAttribute('rel', localStorage.getItem('darkmode').toLowerCase().includes('true') ? 'disabled' : 'stylesheet');
-    </script>
-</head>
+		<!-- Font Optimization -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Stylesheets -->
+		<link href="_content/Brism/prism.css" rel="stylesheet" />
+		<link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+		<link href="MudBlocks.styles.css" rel="stylesheet" />
 
-<body>
-    <div id="app">
-        <svg id="square_01" class="loading-progress" width="50" height="50" viewBox="0 0 50 50"
-            xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g style="fill: currentColor">
-                <rect x="36" y="26" width="8" height="8">
-                    <set attributeType="XML" attributeName="y" to="26" begin="square_01_12.end" />
-                    <set attributeType="XML" attributeName="x" to="36" begin="square_01_12.end" />
-                    <animate id="square_01_01" attributeType="XML" attributeName="y" to="36" dur="0.1s" fill="freeze"
-                        begin="0;square_01_12.end" />
-                    <animate id="square_01_12" attributeType="XML" attributeName="x" to="26" dur="0.1s" fill="freeze"
-                        begin="square_01_11.end" />
-                </rect>
-                <rect x="36" y="16" width="8" height="8">
-                    <animate id="square_01_02" attributeType="XML" attributeName="y" to="26" dur="0.1s" fill="freeze"
-                        begin="square_01_01.end" />
-                    <set attributeType="XML" attributeName="y" to="16" begin="square_01_12.end" />
-                </rect>
-                <rect x="36" y="6" width="8" height="8">
-                    <animate id="square_01_03" attributeType="XML" attributeName="y" to="16" dur="0.1s" fill="freeze"
-                        begin="square_01_02.end" />
-                    <set attributeType="XML" attributeName="y" to="6" begin="square_01_12.end" />
-                </rect>
-                <rect x="26" y="6" width="8" height="8">
-                    <animate id="square_01_04" attributeType="XML" attributeName="x" to="36" dur="0.1s" fill="freeze"
-                        begin="square_01_03.end" />
-                    <set attributeType="XML" attributeName="x" to="26" begin="square_01_12.end" />
-                </rect>
-                <rect x="16" y="6" width="8" height="8">
-                    <animate id="square_01_05" attributeType="XML" attributeName="x" to="26" dur="0.1s" fill="freeze"
-                        begin="square_01_04.end" />
-                    <set attributeType="XML" attributeName="x" to="16" begin="square_01_12.end" />
-                </rect>
-                <rect x="6" y="6" width="8" height="8">
-                    <animate id="square_01_06" attributeType="XML" attributeName="x" to="16" dur="0.1s" fill="freeze"
-                        begin="square_01_05.end" />
-                    <set attributeType="XML" attributeName="x" to="6" begin="square_01_12.end" />
-                </rect>
-                <rect x="6" y="16" width="8" height="8">
-                    <animate id="square_01_07" attributeType="XML" attributeName="y" to="6" dur="0.1s" fill="freeze"
-                        begin="square_01_06.end" />
-                    <set attributeType="XML" attributeName="y" to="16" begin="square_01_12.end" />
-                </rect>
-                <rect x="6" y="26" width="8" height="8">
-                    <animate id="square_01_08" attributeType="XML" attributeName="y" to="16" dur="0.1s" fill="freeze"
-                        begin="square_01_07.end" />
-                    <set attributeType="XML" attributeName="y" to="26" begin="square_01_12.end" />
-                </rect>
-                <rect x="6" y="36" width="8" height="8">
-                    <animate id="square_01_09" attributeType="XML" attributeName="y" to="26" dur="0.1s" fill="freeze"
-                        begin="square_01_08.end" />
-                    <set attributeType="XML" attributeName="y" to="36" begin="square_01_12.end" />
-                </rect>
-                <rect x="16" y="36" width="8" height="8">
-                    <animate id="square_01_10" attributeType="XML" attributeName="x" to="6" dur="0.1s" fill="freeze"
-                        begin="square_01_09.end" />
-                    <set attributeType="XML" attributeName="x" to="16" begin="square_01_12.end" />
-                </rect>
-                <rect x="26" y="36" width="8" height="8">
-                    <animate id="square_01_11" attributeType="XML" attributeName="x" to="16" dur="0.1s" fill="freeze"
-                        begin="square_01_10.end" />
-                    <set attributeType="XML" attributeName="x" to="26" begin="square_01_12.end" />
-                </rect>
+		<link rel="stylesheet" href="/assets/styles/app.css" />
+		<link rel="stylesheet" href="/assets/styles/prism-material-dark.css" />
 
-                <rect x="16" y="16" width="8" height="8" />
-                <rect x="26" y="16" width="8" height="8" />
-                <rect x="16" y="26" width="8" height="8" />
-                <rect x="26" y="26" width="8" height="8" />
-            </g>
-        </svg>
-        <div class="loading-progress-text" style="display:none"></div>
-        <div class="loading-progress" style="display:none"></div>
-    </div>
+		<!-- prefetch core scripts -->
+		<link as="script" rel="prefetch" href="/_framework/blazor.webassembly.js">
+		<link as="script" rel="prefetch" href="/_content/MudBlazor/MudBlazor.min.js">
+		<link as="script" rel="prefetch" href="/_content/Brism/prism.js">
+		<link as="script" rel="prefetch" href="/_content/Brism/prismInterop.js">	
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js" defer></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js" defer></script>
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js" async></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js" async></script>
-    <script src="//unpkg.com/highlightjs-cshtml-razor/dist/cshtml-razor.min.js" async></script>
-    <script src="/scripts/app.js" async></script>
-</body>
+		<link as="fetch" rel="prefetch" href="/assets/db.json" />
 
+		<script>
+			(() => {
+				let isDarkMode = localStorage.getItem("isDarkMode");
+				let themeColor = localStorage.getItem("themeColor");
+				let themeMode = localStorage.getItem("themeMode");
+	
+				if (isDarkMode === null) {
+					isDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "true" : "false";
+					localStorage.setItem("isDarkMode", isDarkMode);
+				}
+	
+				if (themeColor === null) {
+					themeColor = "DeepPurple";
+					localStorage.setItem("themeColor", themeColor);
+				}
+
+				if (themeMode === null) {
+					themeMode = "Monochromatic";
+					localStorage.setItem("themeMode", themeMode);
+				}
+
+				document.documentElement.style.setProperty(
+					"--loading-palette-background", isDarkMode === "true" ? "rgba(50,51,61,1)" : "rgba(255,255,255,1)"
+				);
+
+				document.documentElement.style.setProperty(
+					"--loading-palette-text-primary", isDarkMode === "true" ? "rgba(255,255,255,1)" : "rgba(66,66,66,1)"
+				);
+				
+				document.head.querySelector(`link[href*="prism-material-"]`).href = `/assets/styles/prism-material-${isDarkMode === "true" ? "dark" : "light"}.css`;
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="loading-indicator">
+			<div class="loader">
+				<style>
+					body:has(.mud-main-content) .loading-indicator {
+						opacity: 0;
+						pointer-events: none;
+					}
+					.loading-indicator {
+						background-color: var(--mud-palette-background, var(--loading-palette-background));
+						color: var(--mud-palette-text-primary, var(--loading-palette-text-primary));
+						align-content: center;
+						height: 100vh;
+						opacity: 1;
+						position: fixed;
+						text-align: center;
+						transition: opacity 0.3s ease-in-out;
+						width: 100%;
+						z-index: 1301;
+					}
+					.loader {
+						margin: 0 auto;
+						width: 55px;
+						aspect-ratio: 1;
+						--g1:conic-gradient(from  90deg at top    3px left  3px, #0000 90deg, currentColor 0);
+						--g2:conic-gradient(from -90deg at bottom 3px right 3px, #0000 90deg, currentColor 0);
+						background:
+						  var(--g1),var(--g1),var(--g1),var(--g1), 
+						  var(--g2),var(--g2),var(--g2),var(--g2);
+						background-position: 0 0,100% 0,100% 100%,0 100%;
+						background-size: 25px 25px;
+						background-repeat: no-repeat;
+						animation: l11 1.5s infinite;
+					  }
+					  @keyframes l11 {
+						0%   {background-size:35px 15px,15px 15px,15px 35px,35px 35px}
+						25%  {background-size:35px 35px,15px 35px,15px 15px,35px 15px}
+						50%  {background-size:15px 35px,35px 35px,35px 15px,15px 15px}
+						75%  {background-size:15px 15px,35px 15px,35px 35px,15px 35px}
+						100% {background-size:35px 15px,15px 15px,15px 35px,35px 35px}
+					  }
+				</style>
+			</div>
+		</div>
+
+		<div id="app">
+		</div>
+
+		<div id="blazor-error-ui">
+			An unhandled error has occurred.
+			<a href="." class="reload">Reload</a>
+			<span class="dismiss">🗙</span>
+		</div>
+		<script src="_framework/blazor.webassembly.js"></script>
+		<script src="_content/MudBlazor/MudBlazor.min.js"></script>
+		<script src="_content/Brism/prism.js" defer></script>
+		<script type="module" src="_content/Brism/prismInterop.js"></script>
+		<script src="/assets/scripts/app.js" defer></script>
+	</body>
 </html>

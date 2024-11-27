@@ -1,0 +1,40 @@
+<MudContainer Style="align-content: center; height: 100vh;">
+	<MudGrid>
+		<MudItem xs="12" sm="6" md="8" Class="pa-0 rounded-lg" Style=@($"align-content: end; overflow: hidden; position: relative;")>
+			<iframe width="100%" height="100%" style="border:0; inset: 0; position: absolute; z-index: -1; filter: grayscale(1) contrast(1.2) opacity(0.4);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.148195953282!2d-77.03888382259599!3d38.897726271724075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7547d5f6f8f%3A0x9189ce80cfe6cbb2!2s1600%20Pennsylvania%20Avenue%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1719839638309!5m2!1sen!2sus"></iframe>
+			<MudCard Class="ma-4" Elevation="0">
+				<MudCardContent>
+					<MudGrid>
+						<MudItem xs="12" md="6">
+							<MudSkeleton Animation="Animation.False" Class="mb-2" Height="26px" Width="70px"/>
+							<MudSkeleton Animation="Animation.False" Class="mb-1" Height="20px" Width="100%"/>
+							<MudSkeleton Animation="Animation.False" Height="20px" Width="100%"/>
+						</MudItem>
+						<MudItem xs="12" md="6">
+							<MudSkeleton Animation="Animation.False" Class="mb-2" Height="26px" Width="70px"/>
+							<MudSkeleton Animation="Animation.False" Class="mb-1" Height="20px" Width="100%"/>
+							<MudSkeleton Animation="Animation.False" Class="mb-2" Height="26px" Width="70px"/>
+							<MudSkeleton Animation="Animation.False" Height="20px" Width="100%"/>
+						</MudItem>
+					</MudGrid>
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+		<MudItem xs="12" sm="6" md="4">
+			<MudCard Class="ma-4" Elevation="0">
+				<MudCardContent>
+					<MudSkeleton Animation="Animation.False" Class="mb-2" Height="36px" Width="70px"/>
+					<MudSkeleton Animation="Animation.False" Class="mb-1" Height="20px" Width="100%"/>
+					<MudSkeleton Animation="Animation.False" Class="mb-2" Height="20px" Width="100%"/>
+
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="50px" Width="100%"/>
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="50px" Width="100%"/>
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-4" Height="100px" Width="100%"/>
+
+					<MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Class="mb-2" Height="30px" Width="100%" Style="border-radius: var(--mud-default-borderradius)"/>
+					<MudSkeleton Animation="Animation.False" Class="mb-1" Height="15px" Width="80%"/>
+				</MudCardContent>
+			</MudCard>
+		</MudItem>
+	</MudGrid>
+</MudContainer>
