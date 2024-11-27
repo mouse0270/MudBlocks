@@ -79,7 +79,7 @@ namespace MudBlocks.Site.Pages {
 				var componentFullName = $"MudBlocks.Site.Blocks.{category.Dehumanize()}.{block.Dehumanize()}.{(type != "Skeleton" ? "Index" : "Skeleton")}";
 				ComponentType = assembly.GetType(componentFullName);
 
-				var url = $"https://raw.githubusercontent.com/mouse0270/MudBlocks/main/Site/Pages/Blocks/{category.Dehumanize()}/{block.Dehumanize()}/Index.razor";
+				var url = $"https://raw.githubusercontent.com/mouse0270/MudBlocks/main/Site/Blocks/{category.Dehumanize()}/{block.Dehumanize()}/Index.razor";
 				BlockService.Code = await FetchRazorFileContent(url);
 
 				// Check if Block is in Database
