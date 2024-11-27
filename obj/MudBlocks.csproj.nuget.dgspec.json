@@ -13,18 +13,25 @@
         "packagesPath": "C:\\Users\\rmcin\\.nuget\\packages\\",
         "outputPath": "E:\\Programs\\GitHub\\MudBlocks\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rmcin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\rmcin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -32,52 +39,62 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
-            "BlazorPro.BlazorSize": {
+            "Brism": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[1.0.0, )"
             },
-            "Blazored.LocalStorage": {
+            "Humanizer.Core": {
               "target": "Package",
-              "version": "[4.5.0, )"
-            },
-            "Blazored.SessionStorage": {
-              "target": "Package",
-              "version": "[2.4.0, )"
-            },
-            "HighlightBlazor": {
-              "target": "Package",
-              "version": "[0.1.10, )"
+              "version": "[3.0.0-beta.54, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[9.0.0-preview.7.24406.2, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[9.0.0-preview.7.24406.2, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[9.0.0-preview.7.24405.7, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[9.0.0-preview.7.24405.7, )",
               "autoReferenced": true
             },
             "MudBlazor": {
               "target": "Package",
-              "version": "[6.20.0, )"
+              "version": "[8.0.0-preview.5, )"
+            },
+            "Sentry": {
+              "target": "Package",
+              "version": "[4.13.0, )"
+            },
+            "Sentry.Profiling": {
+              "target": "Package",
+              "version": "[4.13.0, )"
             }
           },
           "imports": [
@@ -94,7 +111,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.2, 8.0.2]"
+              "version": "[9.0.0-preview.7.24405.7, 9.0.0-preview.7.24405.7]"
             }
           ],
           "frameworkReferences": {
@@ -102,7 +119,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.7.24407.12/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
