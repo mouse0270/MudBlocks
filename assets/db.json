@@ -1,0 +1,229 @@
+[
+  {
+    "Title": "Cards 1",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Blog",
+    "Namespace": "Blog.Cards1"
+  },
+  {
+    "Title": "Cards 2",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Blog",
+    "Namespace": "Blog.Cards2"
+  },
+  {
+    "Title": "Cards 3",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Blog",
+    "Namespace": "Blog.Cards3"
+  },
+  {
+    "Title": "Cards 4",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Blog",
+    "Namespace": "Blog.Cards4"
+  },
+  {
+    "Title": "List 1",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Blog",
+    "Namespace": "Blog.List1"
+  },
+  {
+    "Title": "Form 1",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Contact",
+      "MudCard",
+      "Maps",
+      "Form"
+    ],
+    "Category": "Contact",
+    "Namespace": "Contact.Form1"
+  },
+  {
+    "Title": "Form 2",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Contact",
+      "MudCard",
+      "Maps",
+      "Form"
+    ],
+    "Category": "Contact",
+    "Namespace": "Contact.Form2"
+  },
+  {
+    "Title": "Form 3",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Contact",
+      "MudCard",
+      "Maps",
+      "Form"
+    ],
+    "Category": "Contact",
+    "Namespace": "Contact.Form3"
+  },
+  {
+    "Title": "Default1",
+    "Category": "HeroSection",
+    "Namespace": "HeroSection.Default1"
+  }
+]
