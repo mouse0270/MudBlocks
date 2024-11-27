@@ -25,7 +25,6 @@ namespace MudBlocks.Site.Pages
 			if (!string.IsNullOrWhiteSpace(category) && !string.IsNullOrWhiteSpace(block))
 			{
 				var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-				Console.WriteLine($"Vars: {category} {block} {(type ?? "Index")}");
 				var componentFullName = $"MudBlocks.Site.Blocks.{category.Dehumanize()}.{block.Dehumanize()}.{(type ?? "Index").Humanize()}";
 
 				ComponentType = assembly.GetType(componentFullName);
