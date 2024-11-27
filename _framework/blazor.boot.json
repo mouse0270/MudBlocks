@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MudBlocks",
   "resources": {
-    "hash": "sha256-bJiHnq+SmgPyQB3/p1KEahP266QfOgVygpNJfWQf8xA=",
+    "hash": "sha256-1HnbD5xWJbuLLvAhJGzwGXpwCqEloWWUOYCAgQFX3IU=",
     "fingerprinting": {
       "Brism.sd17fq74af.wasm": "Brism.wasm",
       "Humanizer.4hcp2ns3h3.wasm": "Humanizer.wasm",
@@ -23,7 +23,7 @@
       "Microsoft.JSInterop.vbgjtaistr.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.90ixfq4lhh.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
       "MudBlazor.ov7p6tnce4.wasm": "MudBlazor.wasm",
-      "MudBlocks.13pncmqkor.wasm": "MudBlocks.wasm",
+      "MudBlocks.82ipjytsfb.wasm": "MudBlocks.wasm",
       "System.Collections.Concurrent.cbqb4yiwdy.wasm": "System.Collections.Concurrent.wasm",
       "System.Collections.Immutable.8alnsyrrty.wasm": "System.Collections.Immutable.wasm",
       "System.Collections.7xwas4n2vw.wasm": "System.Collections.wasm",
@@ -97,7 +97,7 @@
       "Microsoft.JSInterop.vbgjtaistr.wasm": "sha256-a55WYCaycB8aUpAsLC/Amip8LqEGJGwHC3Pjb3544lc=",
       "Microsoft.JSInterop.WebAssembly.90ixfq4lhh.wasm": "sha256-l4822aWDv6TJPgb67s344sWo4iK3FwEXkLjpgYNYS0k=",
       "MudBlazor.ov7p6tnce4.wasm": "sha256-JL4jJxn3VlFxdA0Y6ehsIEOiNT4W8OHFUQl7E4QuRmU=",
-      "MudBlocks.13pncmqkor.wasm": "sha256-vSI3ysoRHaYcxnBbmQoXkOTWpmjVOY5rMv4BaiDBZ4M=",
+      "MudBlocks.82ipjytsfb.wasm": "sha256-sLKR3G8mTfkFrHGtc5VfBTAAApC6+J6q3oiHLGgZmuU=",
       "System.Collections.Concurrent.cbqb4yiwdy.wasm": "sha256-+MWkNFg0YkJecDtnZNtx1cYLC5Z0MFGKxwHYenTAOz4=",
       "System.Collections.Immutable.8alnsyrrty.wasm": "sha256-gGAL7pj7lR7D1kxOeG9zeInTG9jH38yRXJ8yd7lrcLQ=",
       "System.Collections.7xwas4n2vw.wasm": "sha256-K+GVm0T9Wr07B4yZ9R2IsErrYhyQVCwFjO/bZyvf0Rs=",
