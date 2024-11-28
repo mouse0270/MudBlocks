@@ -65,4 +65,5 @@ body:has(header.mud-appbar) .mud-main-content {
 .code-view code[class*="language-"], 
 .code-view pre[class*="language-"] {
 	background-color: var(--mud-palette-background);
+	color: var(--mud-palette-text-primary);
 }

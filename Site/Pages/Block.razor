@@ -25,6 +25,8 @@
 		width: 100%;
 	}
 	.code-view {
+		background-color: var(--mud-palette-background);
+		color: var(--mud-palette-text-primary);
 		opacity: 0;
 		overflow: auto;
 		pointer-events: none;
@@ -155,7 +157,9 @@
                 }
             </MudAvatarGroup>
 		}
-        <MudButton Href="@($"https://github.com/mouse0270/MudBlocks/blob/main/Pages/{category}/{block}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
+		@if (category != null && block != null && type != null) {
+        	<MudButton Href="@($"https://github.com/mouse0270/MudBlocks/tree/main/Site/Blocks/{category.Humanize(LetterCasing.Title).Dehumanize()}/{block.Humanize(LetterCasing.Title).Dehumanize()}/{(type != "Skeleton" ? "Index" : "Skeleton")}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
+		}
     </MudStack>
 }
 else
