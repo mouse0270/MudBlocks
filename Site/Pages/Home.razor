@@ -8,16 +8,16 @@
 		@if (Blocks != null) {
 			@foreach (var item in ListBlocks) {
 				<MudItem xs="12" md="6" lg="4">
-					<MudLink Href=@($"/category/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title)}") Underline="Underline.None">
+					<MudLink Href=@($"/category/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title).Replace(" ", "+") ?? string.Empty)}") Underline="Underline.None">
 						<MudCard Outlined="true" Style="position: relative;">
 							@* Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{item.Title.Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")"*@
-							<MudCardMedia Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{(item.Title ?? "").Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")" Height="200" />
+							<MudCardMedia Image="@($"/assets/images/blocks/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty).Dehumanize()}/{(item.Title ?? "").Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")" Height="200" />
 							<MudChip T="String" Variant="Variant.Filled" Color="Color.Primary" Style="position:absolute;top:1rem;left:1rem;display:none;">
-								<MudText Typo="Typo.button">@item.Namespace.Split(".")[0].Humanize(LetterCasing.Title)</MudText>
+								<MudText Typo="Typo.button">@(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty)</MudText>
 							</MudChip>
 							<MudCardContent>
-								<MudText Typo="Typo.h5">@item.Namespace.Split(".")[0].Humanize(LetterCasing.Title)</MudText>
-								<MudText Typo="Typo.caption" class="mud-text-disabled">@Blocks.Where(b => b.Namespace.StartsWith(@item.Namespace.Split(".")[0])).Count() Components</MudText>
+								<MudText Typo="Typo.h5">@(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty)</MudText>
+								<MudText Typo="Typo.caption" class="mud-text-disabled">@Blocks.Where(b => item.Namespace != null && b.Namespace.StartsWith(item.Namespace.Split(".")[0])).Count() Components</MudText>
 							</MudCardContent>
 						</MudCard>
 					</MudLink>

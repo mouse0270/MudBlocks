@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ra7tqs0AP2c=",
+  "dgSpecHash": "mGY+EglU9c4=",
   "success": true,
-  "projectFilePath": "E:\\Programs\\GitHub\\MudBlocks\\MudBlocks.csproj",
+  "projectFilePath": "T:\\GitHub\\MudBlocks\\MudBlocks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rmcin\\.nuget\\packages\\brism\\1.0.0\\brism.1.0.0.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\humanizer.core\\3.0.0-beta.54\\humanizer.core.3.0.0-beta.54.nupkg.sha512",
@@ -32,15 +32,15 @@
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.jsinterop\\9.0.0\\microsoft.jsinterop.9.0.0.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.jsinterop.webassembly\\9.0.0-preview.7.24406.2\\microsoft.jsinterop.webassembly.9.0.0-preview.7.24406.2.nupkg.sha512",
-    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.0-preview.7.24405.7\\microsoft.net.illink.tasks.9.0.0-preview.7.24405.7.nupkg.sha512",
-    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.0-preview.7.24405.7\\microsoft.net.sdk.webassembly.pack.9.0.0-preview.7.24405.7.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.0\\microsoft.net.illink.tasks.9.0.0.nupkg.sha512",
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.0\\microsoft.net.sdk.webassembly.pack.9.0.0.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\mudblazor\\8.0.0-preview.5\\mudblazor.8.0.0-preview.5.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.io.pipelines\\9.0.0-preview.7.24405.7\\system.io.pipelines.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.text.encodings.web\\9.0.0-preview.7.24405.7\\system.text.encodings.web.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.text.json\\9.0.0-preview.7.24405.7\\system.text.json.9.0.0-preview.7.24405.7.nupkg.sha512",
     "C:\\Users\\rmcin\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.0-preview.7.24405.7\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.0-preview.7.24405.7.nupkg.sha512"
+    "C:\\Users\\rmcin\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.0\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }
