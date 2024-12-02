@@ -1,7 +1,16 @@
 [
   {
-    "Title": "Cards 1",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Article List",
+    "Description": "A clean and structured article layout featuring categorized posts with publication dates, detailed descriptions, and 'Learn More' links. Designed for readability and ease of navigation in a modern web design context.",
+    "Keywords": [
+      "Article List",
+      "Categorized Posts",
+      "Structured Layout",
+      "Modern Design",
+      "Responsive Design",
+      "Readability",
+      "Web Components"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -20,16 +29,23 @@
         }
       }
     ],
-    "Tags": [
-      "Blog",
-      "MudCard"
-    ],
+    "Created": "2024-11-30",
+    "Updated": "2024-12-01",
     "Category": "Blog",
-    "Namespace": "Blog.Cards1"
+    "Namespace": "Blog.ArticleList"
   },
   {
-    "Title": "Cards 2",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Blog Timeline",
+    "Description": "A timeline-style blog section featuring categorized posts with publication dates, author avatars, and concise descriptions. Designed for easy navigation and a clean, structured layout.",
+    "Keywords": [
+      "Blog Timeline",
+      "Timeline Design",
+      "Responsive Layout",
+      "Category Posts",
+      "Author Profiles",
+      "Modern Blog Design",
+      "Web Components"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -48,16 +64,23 @@
         }
       }
     ],
-    "Tags": [
-      "Blog",
-      "MudCard"
-    ],
+    "Created": "2024-12-02",
+    "Updated": "2024-12-02",
     "Category": "Blog",
-    "Namespace": "Blog.Cards2"
+    "Namespace": "Blog.BlogTimeline"
   },
   {
-    "Title": "Cards 3",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Card Layout",
+    "Description": "A responsive card layout featuring images, titles, descriptions, and action buttons. Includes functionality for view counts, comments, and 'Learn More' links, designed for modern web interfaces.",
+    "Keywords": [
+      "Card Layout",
+      "Responsive Design",
+      "Web Design",
+      "Material Design",
+      "Actionable Cards",
+      "Modern UI",
+      "Blazor Components"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -76,16 +99,23 @@
         }
       }
     ],
-    "Tags": [
-      "Blog",
-      "MudCard"
-    ],
+    "Created": "2024-12-02",
+    "Updated": "2024-12-02",
     "Category": "Blog",
-    "Namespace": "Blog.Cards3"
+    "Namespace": "Blog.CardLayout"
   },
   {
-    "Title": "Cards 4",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Cards With Header",
+    "Description": "A responsive and engaging blog section featuring tutorials and articles with author profiles, timestamps, and categorized tags. Designed to connect with the audience through structured and accessible content.",
+    "Keywords": [
+      "Blog Header",
+      "Blog Layout",
+      "Responsive Design",
+      "Articles and Tutorials",
+      "Author Profiles",
+      "Content Organization",
+      "Modern Web Design"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -96,44 +126,23 @@
         }
       }
     ],
-    "Tags": [
-      "Blog",
-      "MudCard"
-    ],
+    "Created": "2024-12-02",
+    "Updated": "2024-12-02",
     "Category": "Blog",
-    "Namespace": "Blog.Cards4"
+    "Namespace": "Blog.CardsWithHeader"
   },
   {
-    "Title": "Cards 5",
-    "Description": "A simple card with image, title, description and button.",
-    "Authors": [
-      {
-        "Name": "Mouse0270",
-        "Url": "https://github.com/mouse0270",
-        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
-        "Socials": {
-          "GitHub": "https://github.com/mouse0270/"
-        }
-      },
-      {
-        "Name": "Tailblocks",
-        "Url": "https://github.com/mertJF/tailblocks",
-        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
-        "Socials": {
-          "GitHub": "https://github.com/mertJF/"
-        }
-      }
+    "Title": "Centered Cards",
+    "Description": "A clean, centered card layout with streamlined content including titles, descriptions, and action buttons. Features view counts, comments, and 'Learn More' links, optimized for a balanced and modern presentation.",
+    "Keywords": [
+      "Card Layout",
+      "Centered Design",
+      "Responsive UI",
+      "Modern Web",
+      "Interactive Cards",
+      "Minimalist Design",
+      "Web Components"
     ],
-    "Tags": [
-      "Blog",
-      "MudCard"
-    ],
-    "Category": "Blog",
-    "Namespace": "Blog.Cards5"
-  },
-  {
-    "Title": "List 1",
-    "Description": "A simple card with image, title, description and button.",
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -152,12 +161,45 @@
         }
       }
     ],
-    "Tags": [
-      "Blog",
-      "MudCard"
-    ],
+    "Created": "2024-12-02",
+    "Updated": "2024-12-02",
     "Category": "Blog",
-    "Namespace": "Blog.List1"
+    "Namespace": "Blog.CenteredCards"
+  },
+  {
+    "Title": "Profile Cards",
+    "Description": "A modern profile card layout featuring categories, detailed descriptions, view counts, and user information. Includes 'Learn More' links and visually distinct user avatars for better engagement.",
+    "Keywords": [
+      "Profile Cards",
+      "Modern Design",
+      "Responsive Layout",
+      "User Avatars",
+      "Web Design",
+      "Interactive UI",
+      "Card Components"
+    ],
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Created": "2024-12-02",
+    "Updated": "2024-12-02",
+    "Category": "Blog",
+    "Namespace": "Blog.ProfileCards"
   },
   {
     "Title": "Form 1",

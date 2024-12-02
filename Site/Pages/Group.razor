@@ -19,6 +19,17 @@
 							<MudChip T="String" Variant="Variant.Filled" Color="Color.Primary" Style="position:absolute;top:1rem;left:1rem;">
 								<MudText Typo="Typo.button">@(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? String.Empty)</MudText>
 							</MudChip>
+							@if (item.Created != null && item.Updated != null) {
+								@if (item.Updated != null && item.Updated > DateOnly.FromDateTime(DateTime.Now.AddMonths(-2))) {
+									<MudChip T="String" Variant="Variant.Filled" Color="Color.Info" Style="position:absolute;top:1rem;right:1rem;" Size="Size.Small">
+										<MudText Typo="Typo.button">Updated</MudText>
+									</MudChip>
+								}else if (item.Created != null && item.Created > DateOnly.FromDateTime(DateTime.Now.AddMonths(-2))) {
+									<MudChip T="String" Variant="Variant.Filled" Color="Color.Info" Style="position:absolute;top:1rem;right:1rem;" Size="Size.Small">
+										<MudText Typo="Typo.button">New</MudText>
+									</MudChip>
+								}
+							}
 							<MudCardContent>
 								<MudText Typo="Typo.h5">@item.Title</MudText>
 							</MudCardContent>

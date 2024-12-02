@@ -64,12 +64,20 @@ namespace MudBlocks.Site.Pages {
 			if (Blocks != null && Blocks.Count > 0 && type != null) {
 				if (type.ToLower() == "category" || type.ToLower() == "categories") {
 					// Get the blocks from the database
-					Blocks = Blocks.Where(b => options.Any(option => b.Namespace.Split('.').First().Humanize().ToLower() == option.Humanize().ToLower())).ToList();
+					Blocks = Blocks.Where(b => options.Any(option => b.Namespace.Split('.').First().Humanize().ToLower() == option.Humanize().ToLower()))
+						.OrderByDescending(b => b.Updated)
+						.ThenByDescending(b => b.Created)
+						.ThenBy(b => b.Title)
+						.ToList();
 				}
 
 				if (type.ToLower() == "tag" || type.ToLower() == "tags") {
 					// Get the blocks from the database
-					Blocks = Blocks.Where(b => b.Tags != null && options.Any(option => b.Tags.Any(tag => tag.Humanize().ToLower() == option.Humanize().ToLower()))).ToList();
+					Blocks = Blocks.Where(b => b.Tags != null && options.Any(option => b.Tags.Any(tag => tag.Humanize().ToLower() == option.Humanize().ToLower())))
+						.OrderByDescending(b => b.Updated)
+						.ThenByDescending(b => b.Created)
+						.ThenBy(b => b.Title)
+						.ToList();
 				}
 			}
 		}

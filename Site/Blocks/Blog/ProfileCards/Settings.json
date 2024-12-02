@@ -1,0 +1,32 @@
+{
+	"Title": "Profile Cards",
+	"Description": "A modern profile card layout featuring categories, detailed descriptions, view counts, and user information. Includes 'Learn More' links and visually distinct user avatars for better engagement.",
+	"Keywords": [
+	  "Profile Cards",
+	  "Modern Design",
+	  "Responsive Layout",
+	  "User Avatars",
+	  "Web Design",
+	  "Interactive UI",
+	  "Card Components"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}, {
+			"Name": "Tailblocks",
+			"Url": "https://github.com/mertJF/tailblocks",
+			"Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mertJF/"
+			}
+		}
+	],
+	"Created": "2024-12-02",
+	"Updated": "2024-12-02"
+}

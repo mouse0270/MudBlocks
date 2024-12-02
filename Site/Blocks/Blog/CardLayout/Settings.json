@@ -1,0 +1,32 @@
+{
+	"Title": "Card Layout",
+	"Description": "A responsive card layout featuring images, titles, descriptions, and action buttons. Includes functionality for view counts, comments, and 'Learn More' links, designed for modern web interfaces.",
+	"Keywords": [
+	  "Card Layout",
+	  "Responsive Design",
+	  "Web Design",
+	  "Material Design",
+	  "Actionable Cards",
+	  "Modern UI",
+	  "Blazor Components"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}, {
+			"Name": "Tailblocks",
+			"Url": "https://github.com/mertJF/tailblocks",
+			"Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mertJF/"
+			}
+		}
+	],
+	"Created": "2024-12-02",
+	"Updated": "2024-12-02"
+}

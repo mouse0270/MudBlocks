@@ -1,13 +1,23 @@
 ﻿@page "/"
 @using Humanizer;
 
-<PageTitle>Home</PageTitle>
+<PageTitle>MudBlocks - A collection of MudBlazor Components.</PageTitle>
 
-<MudContainer Class="py-4 py-sm-8 py-md-12 py-lg-16 py-xl-20">
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="py-4 py-sm-8 py-md-12 py-lg-16 py-xl-20">
 	<MudGrid>
+		<MudItem xs="12">
+			<MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
+				<MudBlocks.Site.Layout.Components.Logo style="height: var(--mud-typography-h1-size);" />
+				<MudStack Row="true" Spacing="0">
+					<MudText Typo="Typo.h1" Style="font-weight: 600;">Mud</MudText>
+					<MudText Typo="Typo.h1" Color="Color.Primary" Style="font-weight: 600;">Blocks</MudText>
+				</MudStack>
+			</MudStack>
+			<MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4 font-weight-bold">A collection of MudBlazor Components.</MudText>
+		</MudItem>
 		@if (Blocks != null) {
 			@foreach (var item in ListBlocks) {
-				<MudItem xs="12" md="6" lg="4">
+				<MudItem xs="12" md="6" lg="3">
 					<MudLink Href=@($"/category/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title).Replace(" ", "+") ?? string.Empty)}") Underline="Underline.None">
 						<MudCard Outlined="true" Style="position: relative;">
 							@* Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{item.Title.Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")"*@
@@ -24,5 +34,56 @@
 				</MudItem>
 			}
 		}
+		<MudItem xs="12">
+			<MudGrid Spacing="0" Class="mt-8">
+				<MudItem xs="12" md="6" lg="3">
+					<MudButton Href="https://www.mudblazor.com/" Target="_blank" Variant="Variant.Text" FullWidth="true">
+						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+							<MudText Typo="Typo.h4" Color="Color.Primary" Style="font-weight: 600;">MudBlazor</MudText>
+							<MudText Typo="Typo.body2">MudBlazor Components library</MudText>
+						</MudStack>
+					</MudButton>
+				</MudItem>
+				<MudItem xs="12" md="6" lg="3">
+					<MudButton Href="https://try.mudblazor.com/" Target="_blank" Variant="Variant.Text" FullWidth="true">
+						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+							<MudStack Row="true" Spacing="0">
+								<MudText Typo="Typo.h4" Color="Color.Primary" Style="font-weight: 600;">Try</MudText>
+								<MudText Typo="Typo.h4" Style="font-weight: 600;">MudBlazor</MudText>
+							</MudStack>
+							<MudText Typo="Typo.body2">Online code editor with Blazor</MudText>
+						</MudStack>
+					</MudButton>
+				</MudItem>
+				<MudItem xs="12" md="6" lg="3">
+					<MudButton Href="https://themes.arctechonline.tech/" Target="_blank" Variant="Variant.Text" FullWidth="true">
+						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+							<MudStack Row="true" Spacing="0">
+								<MudText Typo="Typo.h4" Style="font-weight: 600;">Theme</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Success" Style="font-weight: 600;">C</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">r</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Error" Style="font-weight: 600;">e</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Info" Style="font-weight: 600;">a</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Success" Style="font-weight: 600;">t</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">o</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Error" Style="font-weight: 600;">r</MudText>
+							</MudStack>
+							<MudText Typo="Typo.body2">Design your own MudBlazor Theme</MudText>
+						</MudStack>
+					</MudButton>
+				</MudItem>
+				<MudItem xs="12" md="6" lg="3">
+					<MudButton Href="https://codebeam-mudextensions.pages.dev/" Target="_blank" Variant="Variant.Text" FullWidth="true">
+						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+							<MudStack Row="true" Spacing="0">
+								<MudText Typo="Typo.h4" Style="font-weight: 600;">Mud</MudText>
+								<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">Extensions</MudText>
+							</MudStack>
+							<MudText Typo="Typo.body2">MudBlazor extensions by CodeBeam</MudText>
+						</MudStack>
+					</MudButton>
+				</MudItem>
+			</MudGrid>
+		</MudItem>
 	</MudGrid>
 </MudContainer>

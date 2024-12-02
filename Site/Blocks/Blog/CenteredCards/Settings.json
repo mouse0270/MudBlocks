@@ -1,0 +1,33 @@
+{
+
+	"Title": "Centered Cards",
+	"Description": "A clean, centered card layout with streamlined content including titles, descriptions, and action buttons. Features view counts, comments, and 'Learn More' links, optimized for a balanced and modern presentation.",
+	"Keywords": [
+	  "Card Layout",
+	  "Centered Design",
+	  "Responsive UI",
+	  "Modern Web",
+	  "Interactive Cards",
+	  "Minimalist Design",
+	  "Web Components"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}, {
+			"Name": "Tailblocks",
+			"Url": "https://github.com/mertJF/tailblocks",
+			"Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mertJF/"
+			}
+		}
+	],
+	"Created": "2024-12-02",
+	"Updated": "2024-12-02"
+}

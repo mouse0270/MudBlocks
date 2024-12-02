@@ -67,3 +67,8 @@ body:has(header.mud-appbar) .mud-main-content {
 	background-color: var(--mud-palette-background);
 	color: var(--mud-palette-text-primary);
 }
+
+.code-view .token.tag,
+.code-view .token.variable {
+	color: var(--mud-palette-primary);
+}

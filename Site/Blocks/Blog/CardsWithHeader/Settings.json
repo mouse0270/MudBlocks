@@ -1,0 +1,25 @@
+{
+	"Title": "Cards With Header",
+	"Description": "A responsive and engaging blog section featuring tutorials and articles with author profiles, timestamps, and categorized tags. Designed to connect with the audience through structured and accessible content.",
+	"Keywords": [
+	  "Blog Header",
+	  "Blog Layout",
+	  "Responsive Design",
+	  "Articles and Tutorials",
+	  "Author Profiles",
+	  "Content Organization",
+	  "Modern Web Design"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}
+	],
+	"Created": "2024-12-02",
+	"Updated": "2024-12-02"
+}

@@ -1,0 +1,32 @@
+{
+	"Title": "Article List",
+	"Description": "A clean and structured article layout featuring categorized posts with publication dates, detailed descriptions, and 'Learn More' links. Designed for readability and ease of navigation in a modern web design context.",
+	"Keywords": [
+	  "Article List",
+	  "Categorized Posts",
+	  "Structured Layout",
+	  "Modern Design",
+	  "Responsive Design",
+	  "Readability",
+	  "Web Components"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}, {
+			"Name": "Tailblocks",
+			"Url": "https://github.com/mertJF/tailblocks",
+			"Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mertJF/"
+			}
+		}
+	],
+	"Created": "2024-11-30",
+	"Updated": "2024-12-01"
+}
