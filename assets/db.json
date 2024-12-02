@@ -334,6 +334,95 @@
     "Namespace": "Content.Default3"
   },
   {
+    "Title": "Default 4",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Content",
+    "Namespace": "Content.Default4"
+  },
+  {
+    "Title": "Default 5",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Content",
+    "Namespace": "Content.Default5"
+  },
+  {
+    "Title": "Default 6",
+    "Description": "A simple card with image, title, description and button.",
+    "Authors": [
+      {
+        "Name": "Mouse0270",
+        "Url": "https://github.com/mouse0270",
+        "Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mouse0270/"
+        }
+      },
+      {
+        "Name": "Tailblocks",
+        "Url": "https://github.com/mertJF/tailblocks",
+        "Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+        "Socials": {
+          "GitHub": "https://github.com/mertJF/"
+        }
+      }
+    ],
+    "Tags": [
+      "Blog",
+      "MudCard"
+    ],
+    "Category": "Content",
+    "Namespace": "Content.Default6"
+  },
+  {
+    "Title": "Default7",
+    "Category": "Content",
+    "Namespace": "Content.Default7"
+  },
+  {
     "Title": "Default1",
     "Category": "HeroSection",
     "Namespace": "HeroSection.Default1"
