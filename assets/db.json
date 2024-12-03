@@ -202,8 +202,17 @@
     "Namespace": "Blog.ProfileCards"
   },
   {
-    "Title": "Form 1",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Contact Form",
+    "Description": "A minimalist contact form layout with fields for name, email, and message. Includes email and physical address details along with social media icons for additional connectivity. Designed for simplicity and accessibility.",
+    "Keywords": [
+      "Contact Form",
+      "Minimalist Design",
+      "Responsive Layout",
+      "User Engagement",
+      "Social Media Integration",
+      "Email Address",
+      "Modern UI"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -222,18 +231,23 @@
         }
       }
     ],
-    "Tags": [
-      "Contact",
-      "MudCard",
-      "Maps",
-      "Form"
-    ],
+    "Created": "2024-12-03",
+    "Updated": "2024-12-03",
     "Category": "Contact",
-    "Namespace": "Contact.Form1"
+    "Namespace": "Contact.ContactForm"
   },
   {
-    "Title": "Form 2",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Contact Section",
+    "Description": "A dynamic contact section combining a map view, contact details, and a feedback form. It includes an address, email, phone number, and fields for user interaction, designed for accessibility and user engagement.",
+    "Keywords": [
+      "Contact Section",
+      "Feedback Form",
+      "Map Integration",
+      "Contact Details",
+      "Responsive Design",
+      "User Engagement",
+      "Modern UI"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -252,18 +266,23 @@
         }
       }
     ],
-    "Tags": [
-      "Contact",
-      "MudCard",
-      "Maps",
-      "Form"
-    ],
+    "Created": "2024-12-03",
+    "Updated": "2024-12-03",
     "Category": "Contact",
-    "Namespace": "Contact.Form2"
+    "Namespace": "Contact.ContactSection"
   },
   {
-    "Title": "Form 3",
-    "Description": "A simple card with image, title, description and button.",
+    "Title": "Feedback Form",
+    "Description": "An interactive feedback form embedded alongside a map view, featuring fields for email and message submission. Designed with privacy and user engagement in mind, this layout ensures accessibility and simplicity.",
+    "Keywords": [
+      "Feedback Form",
+      "Interactive Form",
+      "Map Integration",
+      "User Engagement",
+      "Modern UI",
+      "Responsive Design",
+      "Privacy Focus"
+    ],
     "Authors": [
       {
         "Name": "Mouse0270",
@@ -282,14 +301,10 @@
         }
       }
     ],
-    "Tags": [
-      "Contact",
-      "MudCard",
-      "Maps",
-      "Form"
-    ],
+    "Created": "2024-12-03",
+    "Updated": "2024-12-03",
     "Category": "Contact",
-    "Namespace": "Contact.Form3"
+    "Namespace": "Contact.FeedbackForm"
   },
   {
     "Title": "Default 1",
