@@ -37,7 +37,7 @@
 				}
 			</style>
 			<MudTextField @bind-Value="SearchFor" Label="Search" Variant="Variant.Outlined"
-			  FullWidth="true" Clearable="true"
+			  FullWidth="true" Clearable="true" AutoFocus="true"
 			  Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Outlined.Search"
 			  DebounceInterval="500" OnDebounceIntervalElapsed="HandleIntervalElapsed" />
 			@code {
@@ -88,48 +88,60 @@
 			<MudGrid Spacing="0" Class="mt-8">
 				<MudItem xs="12" md="6" lg="3">
 					<MudButton Href="https://www.mudblazor.com/" Target="_blank" Variant="Variant.Text" FullWidth="true">
-						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
-							<MudText Typo="Typo.h4" Color="Color.Primary" Style="font-weight: 600;">MudBlazor</MudText>
-							<MudText Typo="Typo.body2">MudBlazor Components library</MudText>
+						<MudStack AlignItems="AlignItems.Center" Row="true" Spacing="0">
+							<MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Title="MudBlazor" Style="color: rgba(119,107,231,1); font-size: 3rem;" />
+							<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+								<MudText Typo="Typo.h4" Style="color: rgba(119,107,231,1); font-weight: 600;">MudBlazor</MudText>
+								<MudText Typo="Typo.body2">MudBlazor Components library</MudText>
+							</MudStack>
 						</MudStack>
 					</MudButton>
 				</MudItem>
 				<MudItem xs="12" md="6" lg="3">
 					<MudButton Href="https://try.mudblazor.com/" Target="_blank" Variant="Variant.Text" FullWidth="true">
-						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
-							<MudStack Row="true" Spacing="0">
-								<MudText Typo="Typo.h4" Color="Color.Primary" Style="font-weight: 600;">Try</MudText>
-								<MudText Typo="Typo.h4" Style="font-weight: 600;">MudBlazor</MudText>
+						<MudStack AlignItems="AlignItems.Center" Row="true" Spacing="0">
+							<MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Title="TryMudBlazor" Style="color: rgba(119,107,231,1); font-size: 3rem;" />
+							<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+								<MudStack Row="true" Spacing="0">
+									<MudText Typo="Typo.h4" Style="color: rgba(119,107,231,1); font-weight: 600;">Try</MudText>
+									<MudText Typo="Typo.h4" Style="font-weight: 600;">MudBlazor</MudText>
+								</MudStack>
+								<MudText Typo="Typo.body2">Online code editor with Blazor</MudText>
 							</MudStack>
-							<MudText Typo="Typo.body2">Online code editor with Blazor</MudText>
 						</MudStack>
 					</MudButton>
 				</MudItem>
 				<MudItem xs="12" md="6" lg="3">
 					<MudButton Href="https://themes.arctechonline.tech/" Target="_blank" Variant="Variant.Text" FullWidth="true">
-						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
-							<MudStack Row="true" Spacing="0">
-								<MudText Typo="Typo.h4" Style="font-weight: 600;">Theme</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Success" Style="font-weight: 600;">C</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">r</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Error" Style="font-weight: 600;">e</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Info" Style="font-weight: 600;">a</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Success" Style="font-weight: 600;">t</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">o</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Error" Style="font-weight: 600;">r</MudText>
+						<MudStack AlignItems="AlignItems.Center" Row="true" Spacing="0">
+							<MudIcon Icon="@Icons.Material.Filled.Palette" Title="ThemeCreator" Style="font-size: 3rem;" Color="@currentColor" />
+							<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+								<MudStack Row="true" Spacing="0">
+									<MudText Typo="Typo.h4" Style="font-weight: 600;">Theme</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Success" Style="font-weight: 600;">C</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">r</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Error" Style="font-weight: 600;">e</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Info" Style="font-weight: 600;">a</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Success" Style="font-weight: 600;">t</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">o</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Error" Style="font-weight: 600;">r</MudText>
+								</MudStack>
+								<MudText Typo="Typo.body2">Design your own Theme</MudText>
 							</MudStack>
-							<MudText Typo="Typo.body2">Design your own MudBlazor Theme</MudText>
 						</MudStack>
 					</MudButton>
 				</MudItem>
 				<MudItem xs="12" md="6" lg="3">
 					<MudButton Href="https://codebeam-mudextensions.pages.dev/" Target="_blank" Variant="Variant.Text" FullWidth="true">
-						<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
-							<MudStack Row="true" Spacing="0">
-								<MudText Typo="Typo.h4" Style="font-weight: 600;">Mud</MudText>
-								<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">Extensions</MudText>
+						<MudStack AlignItems="AlignItems.Center" Row="true" Spacing="0">
+							<MudIcon Icon="@Icons.Material.Filled.Extension" Title="MudExtensions" Color="Color.Warning"  Style="font-size: 3rem;" />
+							<MudStack AlignItems="AlignItems.Center" Class="py-2 px-4">
+								<MudStack Row="true" Spacing="0">
+									<MudText Typo="Typo.h4" Style="font-weight: 600;">Mud</MudText>
+									<MudText Typo="Typo.h4" Color="Color.Warning" Style="font-weight: 600;">Extensions</MudText>
+								</MudStack>
+								<MudText Typo="Typo.body2">MudBlazor extensions by CodeBeam</MudText>
 							</MudStack>
-							<MudText Typo="Typo.body2">MudBlazor extensions by CodeBeam</MudText>
 						</MudStack>
 					</MudButton>
 				</MudItem>

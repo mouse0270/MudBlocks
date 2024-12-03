@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Humanizer;
+using System.Drawing;
 
 namespace MudBlocks.Site.Pages
 {
@@ -27,6 +28,30 @@ namespace MudBlocks.Site.Pages
 			Theme.OnThemeChanged += (isDarkMode, themeColor, themeMode, themeFont) => {
 				StateHasChanged();
 			};
+
+			await ChangeColor();
+		}
+
+		
+		private MudBlazor.Color currentColor = MudBlazor.Color.Success;
+		private readonly List<MudBlazor.Color> colorList = new List<MudBlazor.Color> {
+			MudBlazor.Color.Success,
+			MudBlazor.Color.Warning,
+			MudBlazor.Color.Error,
+			MudBlazor.Color.Info
+		};
+
+		private async Task ChangeColor() {
+			var random = new Random();
+			MudBlazor.Color randomColor = colorList[random.Next(colorList.Count)];
+			if (currentColor == randomColor) {
+				await ChangeColor();
+			} else {
+				currentColor = randomColor;
+			}
+			StateHasChanged();
+			await Task.Delay(600);
+			await ChangeColor();
 		}
 	}
 }

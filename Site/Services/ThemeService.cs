@@ -125,6 +125,11 @@ public class ThemeService {
 				FontUrl = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
 			}
 		}, {
+			"Comic Sans", new FontType {
+				FontFamily = new string[] { "Comic Sans MS", "Comic Sans", "Roboto", "cursive" },
+				FontUrl = "https://fonts.googleapis.com/css2?family=Comic+Sans&display=swap"
+			}
+		}, {
 			"Crimson Text", new FontType {
 				FontFamily = new string[] { "Crimson Text", "Roboto", "serif" },
 				FontUrl = "https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
