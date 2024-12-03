@@ -1,0 +1,28 @@
+@using Humanizer;
+
+@code {
+    [Parameter] public Services.Database.Block Block { get; set; } = default!;
+    [Inject] private Services.ThemeService Theme { get; set; } = default!;
+}
+<MudLink Href=@($"/block/{(Block.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title).Replace(" ", "+") ?? string.Empty)}/{(Block.Title?.Replace(" ", "+") ?? string.Empty)}") Underline="Underline.None">
+    <MudCard Outlined="true" Style="position: relative;">
+        <MudCardMedia Image="@($"/assets/images/blocks/{(Block.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty).Dehumanize()}/{(Block.Title ?? "").Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")" Height="200" />
+            <MudChip T="String" Variant="Variant.Filled" Color="Color.Primary" Style="position:absolute;top:1rem;left:1rem;">
+                <MudText Typo="Typo.button">@(Block.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? String.Empty)</MudText>
+            </MudChip>
+            @if (Block.Created != null && Block.Updated != null) {
+                @if (Block.Updated != null && Block.Updated > DateOnly.FromDateTime(DateTime.Now.AddMonths(-2))) {
+                    <MudChip T="String" Variant="Variant.Filled" Color="Color.Info" Style="position:absolute;top:1rem;right:1rem;" Size="Size.Small">
+                        <MudText Typo="Typo.button">Updated</MudText>
+                    </MudChip>
+                }else if (Block.Created != null && Block.Created > DateOnly.FromDateTime(DateTime.Now.AddMonths(-2))) {
+                    <MudChip T="String" Variant="Variant.Filled" Color="Color.Info" Style="position:absolute;top:1rem;right:1rem;" Size="Size.Small">
+                        <MudText Typo="Typo.button">New</MudText>
+                    </MudChip>
+                }
+            }
+            <MudCardContent>
+                <MudText Typo="Typo.h5">@Block.Title</MudText>
+            </MudCardContent>
+    </MudCard>
+</MudLink>

@@ -3,8 +3,9 @@
 
 <PageTitle>MudBlocks - A collection of MudBlazor Components.</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="py-4 py-sm-8 py-md-12 py-lg-16 py-xl-20">
+<MudContainer Class="py-4 py-sm-8 py-md-12 py-lg-16 py-xl-20">
 	<MudGrid>
+		<!-- Title -->
 		<MudItem xs="12">
 			<MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
 				<MudBlocks.Site.Layout.Components.Logo style="height: var(--mud-typography-h1-size);" />
@@ -15,9 +16,56 @@
 			</MudStack>
 			<MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4 font-weight-bold">A collection of MudBlazor Components.</MudText>
 		</MudItem>
-		@if (Blocks != null) {
+
+		<!-- Search -->
+		<MudItem xs="12">
+			<style>
+				.mud-input>input.mud-input-root-outlined, div.mud-input-slot.mud-input-root-outlined {
+					padding-inline: 1.25rem;
+				}
+				.mud-input>input.mud-input-root-outlined.mud-input-root-adorned-end, div.mud-input-slot.mud-input-root-outlined.mud-input-root-adorned-end {
+					padding-inline-start: 1.25rem;
+				}
+				.mud-input-label-outlined {
+					background-color: var(--mud-palette-background);
+				}
+				.mud-shrink~label.mud-input-label.mud-input-label-inputcontrol.mud-input-label-outlined, .mud-input:focus-within~label.mud-input-label.mud-input-label-inputcontrol.mud-input-label-outlined {
+					transform: translate(1.25rem, -6px) scale(0.75);
+				}
+				.mud-input.mud-input-outlined .mud-input-outlined-border {
+					border-radius: 9999px !important;
+				}
+			</style>
+			<MudTextField @bind-Value="SearchFor" Label="Search" Variant="Variant.Outlined"
+			  FullWidth="true" Clearable="true"
+			  Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Outlined.Search"
+			  DebounceInterval="500" OnDebounceIntervalElapsed="HandleIntervalElapsed" />
+			@code {
+				private string SearchFor { get; set; } = string.Empty;
+				private void HandleIntervalElapsed() {
+					Console.WriteLine(SearchFor);
+				}
+			}
+		</MudItem>
+
+		<!-- Cards -->
+		@if (!String.IsNullOrEmpty(SearchFor) && Blocks != null) {
+			<MudItem xs="12">
+				<MudAlert Severity="Severity.Warning" NoIcon="true" Class="my-2">Search is currently exprimental as I am reworking the individual Blocks Titles / Descriptions / Keywords.</MudAlert>
+			</MudItem>
+			@foreach (var item in Blocks.Where(b => (
+				b.Title.Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
+				|| b.Description.Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
+				|| b.Tags.Any(t => t.Contains(SearchFor, StringComparison.OrdinalIgnoreCase))
+				|| b.Namespace.Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
+			))) {
+				<MudItem xs="12" md="6" lg="4">
+					<MudBlocks.Site.Components.CardBlock Block="@item" />
+				</MudItem>
+			}
+		}else if (Blocks != null) {
 			@foreach (var item in ListBlocks) {
-				<MudItem xs="12" md="6" lg="3">
+				<MudItem xs="12" md="6" lg="4">
 					<MudLink Href=@($"/category/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title).Replace(" ", "+") ?? string.Empty)}") Underline="Underline.None">
 						<MudCard Outlined="true" Style="position: relative;">
 							@* Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{item.Title.Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")"*@
@@ -34,6 +82,8 @@
 				</MudItem>
 			}
 		}
+
+		<!-- Ads -->
 		<MudItem xs="12">
 			<MudGrid Spacing="0" Class="mt-8">
 				<MudItem xs="12" md="6" lg="3">
