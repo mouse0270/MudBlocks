@@ -1,0 +1,32 @@
+{
+	"Title": "Contact Form",
+	"Description": "A minimalist contact form layout with fields for name, email, and message. Includes email and physical address details along with social media icons for additional connectivity. Designed for simplicity and accessibility.",
+	"Keywords": [
+	  "Contact Form",
+	  "Minimalist Design",
+	  "Responsive Layout",
+	  "User Engagement",
+	  "Social Media Integration",
+	  "Email Address",
+	  "Modern UI"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}, {
+			"Name": "Tailblocks",
+			"Url": "https://github.com/mertJF/tailblocks",
+			"Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mertJF/"
+			}
+		}
+	],
+	"Created": "2024-12-03",
+	"Updated": "2024-12-03"
+}

@@ -1,0 +1,32 @@
+{
+	"Title": "Contact Section",
+	"Description": "A dynamic contact section combining a map view, contact details, and a feedback form. It includes an address, email, phone number, and fields for user interaction, designed for accessibility and user engagement.",
+	"Keywords": [
+	  "Contact Section",
+	  "Feedback Form",
+	  "Map Integration",
+	  "Contact Details",
+	  "Responsive Design",
+	  "User Engagement",
+	  "Modern UI"
+	],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}, {
+			"Name": "Tailblocks",
+			"Url": "https://github.com/mertJF/tailblocks",
+			"Image": "https://avatars.githubusercontent.com/u/34642289?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mertJF/"
+			}
+		}
+	],
+	"Created": "2024-12-03",
+	"Updated": "2024-12-03"
+}

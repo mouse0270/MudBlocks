@@ -80,6 +80,10 @@
             "MudBlazor": {
               "target": "Package",
               "version": "[8.0.0-preview.5, )"
+            },
+            "Sentry.AspNetCore.Blazor.WebAssembly": {
+              "target": "Package",
+              "version": "[4.13.0, )"
             }
           },
           "imports": [

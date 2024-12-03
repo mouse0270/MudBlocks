@@ -1,0 +1,17 @@
+@page "/sentry/error"
+
+<PageTitle>Sentry Error</PageTitle>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        try {
+            throw new Exception("This is a test exception");
+        }
+        catch (Exception ex) {
+            SentrySdk.CaptureException(ex);
+        }
+        
+        await Task.CompletedTask;
+    }
+}

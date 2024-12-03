@@ -85,14 +85,14 @@
                     </ActivatorContent>
                     <ChildContent>
                         @foreach (var color in Theme.Themes) {
-                            <MudMenuItem OnClick="@(() => SetTheme(color.Key, "Monochromatic"))">
+                            <MudMenuItem OnClick="@(() => SetTheme(color.Key, "Analogous"))">
                                 <MudStack AlignItems="AlignItems.Center" Row="true">
                                     <MudText Typo="Typo.body1" Style="white-space: nowrap;">@color.Key.Humanize()</MudText>
                                     <MudSpacer />
                                     <MudStack Row="true" Spacing="0">
-                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle"Style="@($"color: {@Theme.Themes[color.Key]["Monochromatic"].PaletteLight.Primary.ToString()}")" Title="Primary" />
-                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key]["Monochromatic"].PaletteLight.Secondary.ToString()}")" Title="Secondary" />
-                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key]["Monochromatic"].PaletteLight.Tertiary.ToString()}")" Title="Tertiary" />
+                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle"Style="@($"color: {@Theme.Themes[color.Key]["Analogous"].PaletteLight.Primary.ToString()}")" Title="Primary" />
+                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key]["Analogous"].PaletteLight.Secondary.ToString()}")" Title="Secondary" />
+                                        <MudIcon Icon="@Icons.Material.Filled.Rectangle" Style="@($"color: {@Theme.Themes[color.Key]["Analogous"].PaletteLight.Tertiary.ToString()}")" Title="Tertiary" />
                                         @*@foreach (var mode in color.Value) {
                                             <MudButton Variant="Variant.Text" OnClick="@(() => SetTheme(color.Key, mode.Key))">
                                                 <MudIcon Icon="@Icons.Material.Filled.Rectangle"Style="@($"color: {@Theme.Themes[color.Key][mode.Key].PaletteLight.Primary.ToString()}")" Title="Primary" />

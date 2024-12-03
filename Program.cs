@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using MudBlocks;
 using Brism;
+//using Sentry.Profiling;
 //using Sentry;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -47,6 +48,22 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
         TimeSpan.FromMilliseconds(500)
     ));
 });*/
+
+builder.UseSentry(options => {
+    options.Dsn = "https://430e24f35275831dbb768d3e7a107299@o4508296920498176.ingest.us.sentry.io/4508344866308096";
+    options.Debug = builder.HostEnvironment.Environment == "Development";
+    options.AutoSessionTracking = true;
+    options.TracesSampleRate = 1.0;
+    options.ProfilesSampleRate = 1.0;
+    /*options.AddIntegration(new ProfilingIntegration(
+        TimeSpan.FromMilliseconds(500)
+    ));*/
+});
+
+// Captures logError and higher as events
+builder.Logging.AddSentry(options => {
+    options.InitializeSdk = false;
+});
 
 builder.Services.AddScoped<MudBlocks.Site.Services.Database>();
 builder.Services.AddScoped<MudBlocks.Site.Services.ThemeService>();
