@@ -33,7 +33,7 @@ namespace MudBlocks.Site.Pages {
 			};
 
 			// Get the blocks from the database
-			Blocks = await Database.Get();
+			Blocks = Services.Database.Get();
 		}
 
 		protected override async Task OnAfterRenderAsync(bool firstRender) {

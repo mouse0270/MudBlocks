@@ -19,7 +19,6 @@ public class BlockService {
 		public Dictionary<string, string> Socials { get; set; } = new Dictionary<string, string>();
 	}
 	public List<Author> Authors { get; set; } = new List<Author>();
-	public List<string> Tags { get; set; } = new List<string>();
 	public string Code {
 		get => _code;
 		set {

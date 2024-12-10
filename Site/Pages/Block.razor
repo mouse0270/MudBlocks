@@ -118,10 +118,10 @@
 </style>
 
 
-@if (ComponentType != null)
+@if (Component != null)
 {	
 	<div class="iframe-view" data-display="@BlockService.DisplayMode">
-		<iframe title="@BreadCrumbService.GetText() Preview" src="/iframe/@category/@block/@(type != "Skeleton" ? "Index" : "Skeleton")"></iframe>
+		<iframe title="@BreadCrumbService.GetText() Preview" src="/iframe/@category/@block/@(blockType != "Skeleton" ? "Index" : "Skeleton")"></iframe>
 	</div>
 
 	@if (!String.IsNullOrEmpty(BlockService.Code)) {
@@ -158,8 +158,8 @@
                 }
             </MudAvatarGroup>
 		}
-		@if (category != null && block != null && type != null) {
-        	<MudButton Href="@($"https://github.com/mouse0270/MudBlocks/tree/main/Site/Blocks/{category.Humanize(LetterCasing.Title).Dehumanize()}/{block.Humanize(LetterCasing.Title).Dehumanize()}/{(type != "Skeleton" ? "Index" : "Skeleton")}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
+		@if (category != null && block != null && blockType != null) {
+        	<MudButton Href="@($"https://github.com/mouse0270/MudBlocks/tree/main/Site/Blocks/{category.Humanize(LetterCasing.Title).Dehumanize()}/{block.Humanize(LetterCasing.Title).Dehumanize()}/{(blockType != "Skeleton" ? "Index" : "Skeleton")}.razor")" Target="_blank" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.GitHub" Color="Color.Dark" Class="rounded-pill">GitHub</MudButton>
 		}
     </MudStack>
 }

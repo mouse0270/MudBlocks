@@ -24,7 +24,7 @@ namespace MudBlocks.Site.Layout {
 			 _dotNetRef = DotNetObjectReference.Create(this);
 
 			// Get the blocks from the database
-			Blocks = await Database.Get();
+			Blocks = Services.Database.Get();
 		}
 
 		protected override async Task OnAfterRenderAsync(bool firstRender) {

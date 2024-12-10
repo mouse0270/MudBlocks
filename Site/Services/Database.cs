@@ -23,13 +23,7 @@ public class Database {
         _httpClient = httpClient;
     }
 
-	public async Task<List<Database.Block>> Get() {
-		if (BlocksCache == null || BlocksCache.Count() == 0) BlocksCache = await _httpClient.GetFromJsonAsync<List<Database.Block>>("assets/db.json") ?? new List<Database.Block>();
-		
-		return BlocksCache;
+	public static List<Block> Get() {
+		return StaticData.Blocks;
     }
-
-	public async Task Refresh() {
-		BlocksCache = await _httpClient.GetFromJsonAsync<List<Database.Block>>("assets/db.json") ?? new List<Database.Block>();
-	}
 }

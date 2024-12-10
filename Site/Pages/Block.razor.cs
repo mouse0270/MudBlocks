@@ -11,13 +11,14 @@ namespace MudBlocks.Site.Pages {
 		[Inject] private Services.BreadCrumbService BreadCrumbService { get; set; } = default!;
 		[Inject] public Services.BlockService BlockService { get; set; } = default!;
 		[Inject] private Services.Database Database { get; set; } = default!;
+		private string blockType { get; set; } = "Index";
 		private string? category { get; set; } = null;
 		private string? block { get; set; } = null;
-		private string type { get; set; } = "Index";
 		private List<string> ThemeOptions { get; set; } = new List<string>();
 
 		private List<Services.Database.Block>? Blocks { get; set; } = null;
 		private Type? ComponentType { get; set; } = null;
+		private Services.Database.Block? Component { get; set; } = null;
 		
 		protected override async Task OnInitializedAsync() {
 			await base.OnInitializedAsync();
@@ -31,7 +32,7 @@ namespace MudBlocks.Site.Pages {
 			};
 
 			// Get the blocks from the database
-			Blocks = await Database.Get();
+			Blocks = Services.Database.Get();
 		}
 
 		protected override async Task OnAfterRenderAsync(bool firstRender) {
@@ -41,56 +42,63 @@ namespace MudBlocks.Site.Pages {
 
 		protected override async Task OnParametersSetAsync() {
 			await base.OnParametersSetAsync();
-			// Parameter setting logic here
 
-			// If url is `/random` then select a random Block from the database
-			type = NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('/').First().Humanize();
-			if ((type.ToLower() == "random" || type.ToLower() == "r") && (Blocks ?? new List<Services.Database.Block>()).Count > 0) {
+			// Get Base Page Path
+			// :basePath/:category/:block/{:theme|:color|:font|:mode}
+			string basePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('/').First().Humanize();
+
+			// Handle the type of Block to Display
+			// :s || :skeleton = Display the Skeleton of the Block
+			if (basePath.ToLower() == "s" || basePath.ToLower() == "skeleton") blockType = "Skeleton";
+
+			// Handle if basePath is `r` || `random` then select a random block
+			if (basePath.ToLower() == "r" || basePath.ToLower() == "random") {
 				var random = new Random();
 				var randomBlock = (Blocks ?? new List<Services.Database.Block>())[random.Next(0, (Blocks ?? new List<Services.Database.Block>()).Count)];
 				category = randomBlock.Namespace.Split('.').First();
 				block = randomBlock.Namespace.Split('.').Last();
 			}
 
-			if (type.ToLower() == "s" || type.ToLower() == "skeleton" ) type = "Skeleton";
-
+			// Get the Category and Block from the path
 			// Setup Variables from Path
 			if (!string.IsNullOrWhiteSpace(Path)) {
 				// Split the path into segments
 				var segments = Path.Split('/', StringSplitOptions.RemoveEmptyEntries);
-				if (segments.Length >= 2) {
+				if ((basePath.ToLower() == "r" || basePath.ToLower() == "random") && segments.Length >= 1) {
+					// If the base path is random, then the segments are theme options
+					ThemeOptions = [.. segments];
+				}else if (segments.Length >= 2) {
+					// Assume the first segment is the category and the second segment is the block
 					category = segments[0];
 					block = segments[1];
-					ThemeOptions = segments.Skip(2).ToList();
+					// If there are more than 2 segments, then the rest are theme options
+					if (segments.Length >= 3) ThemeOptions = segments.Skip(2).ToList();
 				}
 			}
 
-			// Set the Category BreadCrumb
+			// Set the Breadcrumbs for Category
 			if (!string.IsNullOrWhiteSpace(category)) {
 				BreadCrumbService.Set(new List<MudBlazor.BreadcrumbItem> {
 					new MudBlazor.BreadcrumbItem(category.Humanize(LetterCasing.Title), href: $"/category/{category}"),
 				});
+				// Set the Breadcrumbs for Block
+				if (!string.IsNullOrWhiteSpace(category) && !string.IsNullOrWhiteSpace(block)) {
+					BreadCrumbService.Add(new MudBlazor.BreadcrumbItem(block.Humanize(LetterCasing.Title), href: $"/blocks/{category}/{block}"));
+				}
 			}
 
 			if (!string.IsNullOrWhiteSpace(category) && !string.IsNullOrWhiteSpace(block)) {
-				BreadCrumbService.Add(new MudBlazor.BreadcrumbItem(block.Humanize(LetterCasing.Title), href: $"/blocks/{category}/{block}"));
-
-				var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-				var componentFullName = $"MudBlocks.Site.Blocks.{category.Dehumanize()}.{block.Dehumanize()}.{(type != "Skeleton" ? "Index" : "Skeleton")}";
-				ComponentType = assembly.GetType(componentFullName);
-
-				var url = $"https://raw.githubusercontent.com/mouse0270/MudBlocks/main/Site/Blocks/{category.Dehumanize()}/{block.Dehumanize()}/Index.razor";
-				BlockService.Code = await FetchRazorFileContent(url);
-
-				// Check if Block is in Database
+				// Get The Block
 				if (Blocks != null && Blocks.Count > 0) {
-					var component = Blocks.FirstOrDefault(b => b.Namespace == $"{category.Dehumanize()}.{block.Dehumanize()}");
-					if (component != null) {
-						BlockService.Authors = component?.Authors ?? new List<Services.BlockService.Author>();
-						BlockService.Tags = component?.Tags ?? new List<string>();
+					Component = Blocks.Find(b => b.Namespace.Equals($"{category.Dehumanize()}.{block.Dehumanize()}", StringComparison.OrdinalIgnoreCase));
+					if (Component != null) {
+						BlockService.Authors = Component?.Authors ?? new List<Services.BlockService.Author>();
+						var url = $"https://raw.githubusercontent.com/mouse0270/MudBlocks/main/Site/Blocks/{(Component?.Namespace ?? "").Replace(".", "/")}/{(blockType != "Skeleton" ? "Index" : "Skeleton")}.razor"; 
+						BlockService.Code = await FetchRazorFileContent(url);
+					}else{
+						//SentrySdk.CaptureMessage($"Block not found: {category}/{block}");
 					}
 				}
-
 				StateHasChanged();
 			}
 
@@ -142,7 +150,7 @@ namespace MudBlocks.Site.Pages {
 				}
 			} catch (Exception ex) {
 				// Log the exception (ex) if necessary
-				Console.WriteLine(ex.Message);
+				//SentrySdk.CaptureException(ex);
 				return "Unable to load block content.";
 			}
 		}

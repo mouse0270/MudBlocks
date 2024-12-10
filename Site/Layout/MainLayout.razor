@@ -12,8 +12,7 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    @if (!NavigationManager.Uri.Contains("/iframe/"))
-    {
+    @if (!NavigationManager.Uri.Contains("/iframe/")) {
         <MudAppBar Elevation="1">
             <MudBlocks.Site.Layout.Components.Logo
                 style="height: 100%;max-width: var(--mud-drawer-width-mini-left);max-height: calc(var(--mud-appbar-height) / 2);" />
@@ -117,4 +116,19 @@
     <MudMainContent>
         @Body
     </MudMainContent>
+
+    @if (!NavigationManager.Uri.Contains("/iframe/")) {
+        <MudAppBar Dense="true" Bottom="true" Fixed="true" Color="Color.Dark" Elevation="1">
+            <MudSpacer />
+            <MudButton Href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" Target="_blank" Variant="Variant.Text" Color="Color.Inherit">
+                @System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
+            </MudButton>
+            <MudButton Href="https://mudblazor.com" Target="_blank" Variant="Variant.Text" Color="Color.Inherit">
+                MudBlazor @(typeof(MudBlazor.MudAppBar).Assembly.GetName().Version?.ToString() ?? "Unknown Version")
+            </MudButton>
+            <MudButton Href="https://github.com/altudev/Brism" Target="_blank" Variant="Variant.Text" Color="Color.Inherit">
+                Brism @(typeof(Brism.CodeBlock).Assembly.GetName().Version?.ToString() ?? "Unknown Version")
+            </MudButton>
+        </MudAppBar>
+    }
 </MudLayout>

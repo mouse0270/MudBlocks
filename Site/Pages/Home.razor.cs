@@ -20,7 +20,7 @@ namespace MudBlocks.Site.Pages
 			BreadCrumbService.Clear();
 
 			// Get the blocks from the database
-			Blocks = await Database.Get();
+			Blocks = Services.Database.Get();
 			if (Blocks != null) ListBlocks = Blocks.GroupBy(b => b.Namespace.Split(".")[0]).Select(g => g.OrderBy(_ => Guid.NewGuid()).First()).ToList() ?? new List<Services.Database.Block>();
 
 			// Listen for theme changes

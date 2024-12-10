@@ -54,10 +54,10 @@
 				<MudAlert Severity="Severity.Warning" NoIcon="true" Class="my-2">Search is currently exprimental as I am reworking the individual Blocks Titles / Descriptions / Keywords.</MudAlert>
 			</MudItem>
 			@foreach (var item in Blocks.Where(b => (
-				b.Title.Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
-				|| b.Description.Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
-				|| b.Tags.Any(t => t.Contains(SearchFor, StringComparison.OrdinalIgnoreCase))
-				|| b.Namespace.Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
+				(b?.Title ?? "").Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
+				|| (b?.Description ?? "").Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
+				|| (b?.Tags ?? new List<String>()).Any(t => t.Contains(SearchFor, StringComparison.OrdinalIgnoreCase))
+				|| (b?.Namespace ?? "").Contains(SearchFor, StringComparison.OrdinalIgnoreCase)
 			))) {
 				<MudItem xs="12" md="6" lg="4">
 					<MudBlocks.Site.Components.CardBlock Block="@item" />
@@ -68,8 +68,7 @@
 				<MudItem xs="12" md="6" lg="4">
 					<MudLink Href=@($"/category/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title).Replace(" ", "+") ?? string.Empty)}") Underline="Underline.None">
 						<MudCard Outlined="true" Style="position: relative;">
-							@* Image="@($"/assets/images/blocks/{item.Namespace.Split(".")[0].Humanize(LetterCasing.Title).Dehumanize()}/{item.Title.Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")"*@
-							<MudCardMedia Image="@($"/assets/images/blocks/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty).Dehumanize()}/{(item.Title ?? "").Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.jpg")" Height="200" />
+							<MudCardMedia Image="@($"/assets/images/blocks/{(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty).Dehumanize()}/{(item.Title ?? "").Humanize(LetterCasing.Title).Dehumanize()}/{(Theme.IsDarkMode ? "Dark" : "Light")}.webp")" Height="200" />
 							<MudChip T="String" Variant="Variant.Filled" Color="Color.Primary" Style="position:absolute;top:1rem;left:1rem;display:none;">
 								<MudText Typo="Typo.button">@(item.Namespace?.Split(".")[0]?.Humanize(LetterCasing.Title) ?? string.Empty)</MudText>
 							</MudChip>

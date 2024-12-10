@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+const sharp = require('sharp');
 
 const blocksDir = path.join(__dirname, 'Site', 'Blocks');
 const wwwRootAssets = path.join(__dirname, 'wwwroot', 'assets', 'images', 'blocks');
-const dbFile = path.join(__dirname, 'wwwroot', 'assets', 'db.json');
+const dbFile = path.join(__dirname, 'Site', 'Services', 'StaticData.cs');
 
 // Ensure target directory exists
 const ensureDirExists = (dir) => {
@@ -54,24 +55,88 @@ const processFolder = (folderPath, blockCategory = null) => {
 					});
 				}
 
-				if (path.basename(itemPath) === 'Dark.jpg') {
-					const darkTarget = path.join(blockAssetsDir, 'Dark.jpg');
-					fs.copyFileSync(itemPath, darkTarget);
+				if (path.basename(itemPath) === 'Dark.jpg' || path.basename(itemPath) === 'Dark.jpeg' || path.basename(itemPath) === 'Dark.png') {
+					const darkTarget = path.join(blockAssetsDir, path.basename(itemPath));
+					//fs.copyFileSync(itemPath, darkTarget);
+					sharp(itemPath).webp({ quality: 80 }).toFile(darkTarget.replace(path.extname(itemPath), '.webp'));
 				}
 
-				if (path.basename(itemPath) === 'Light.jpg') {
-					const lightTarget = path.join(blockAssetsDir, 'Light.jpg');
-					fs.copyFileSync(itemPath, lightTarget);
+				if (path.basename(itemPath) === 'Light.jpg' || path.basename(itemPath) === 'Light.jpeg' || path.basename(itemPath) === 'Light.png') {
+					const lightTarget = path.join(blockAssetsDir, path.basename(itemPath));
+					//fs.copyFileSync(itemPath, lightTarget);
+					sharp(itemPath).webp({ quality: 80 }).toFile(lightTarget.replace(path.extname(itemPath), '.webp'));
 				}
 			}
 		}
 	});
 };
+// Function to convert JSON to C# static class
+function generateStaticClass(data) {
+	return `
+  using System;
+  using System.Collections.Generic;
+  
+  namespace MudBlocks.Site.Services
+  {
+	  public static class StaticData
+	  {
+		  public static List<Database.Block> Blocks { get; } = InitializeBlocks();
+		  private static List<Database.Block> InitializeBlocks()
+		  {
+			try
+			{
+				return new List<Database.Block> {
+				  ${data.map((item) => `
+					new Database.Block
+					{
+						Namespace = "${item.Namespace}",
+						Title = "${item.Title}",
+						Description = @"${item.Description}",
+						Keywords = new List<string> { ${(item?.Keywords ?? []).map(
+							(k) => `"${k}"`
+						).join(", ")} },
+						Authors = new List<BlockService.Author>
+						{
+							${(item?.Authors ?? []).map(
+								(author) => `
+							new BlockService.Author
+							{
+								Name = "${author.Name}",
+								Url = "${author.Url}",
+								Image = "${author.Image}",
+								Socials = new Dictionary<string, string>
+								{
+									${Object.entries(author.Socials)
+										.map(
+										([key, value]) => `{"${key}", "${value}"}`
+										)
+										.join(", ")}
+								}
+							}`
+							).join(",")}
+						},
+						${item?.Created ? `Created = DateOnly.Parse("${item.Created}"),` : ``}
+						${item?.Updated ? `Updated = DateOnly.Parse("${item.Updated}"),` : ``}
+						Tags = new List<string>()
+					}`
+				  ).join(",")}
+		  		};
+			} catch (Exception ex) {
+				Console.WriteLine(ex.Message);
+				return new List<Database.Block>();
+			}
+		 }
+	  }
+  }`;
+}
 
 // Start processing from the root blocks directory
 processFolder(blocksDir);
 
+// Get StaticData.cs content
+const StaticDB = generateStaticClass(mergedSettings);
+
 // Write merged Settings.json to db.json
-fs.writeFileSync(dbFile, JSON.stringify(mergedSettings, null, 2));
+fs.writeFileSync(dbFile, StaticDB, 'utf-8');
 
 console.log('Processing complete.');
