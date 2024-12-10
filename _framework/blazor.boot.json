@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MudBlocks",
   "resources": {
-    "hash": "sha256-hxvwjidiAi3eJl0Slx9jGDETiON6th/Nm3EI7g0fdEA=",
+    "hash": "sha256-h0ENEh8fus27jhnsPgzb1QBXNj2hOdCQmtZ8367Ldcc=",
     "fingerprinting": {
       "Brism.sd17fq74af.wasm": "Brism.wasm",
       "Humanizer.4hcp2ns3h3.wasm": "Humanizer.wasm",
@@ -26,7 +26,7 @@
       "Microsoft.JSInterop.vbgjtaistr.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.90ixfq4lhh.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
       "MudBlazor.ov7p6tnce4.wasm": "MudBlazor.wasm",
-      "MudBlocks.4ek93a6jzq.wasm": "MudBlocks.wasm",
+      "MudBlocks.gr0dp797qg.wasm": "MudBlocks.wasm",
       "Sentry.AspNetCore.Blazor.WebAssembly.9lfnhdqdp6.wasm": "Sentry.AspNetCore.Blazor.WebAssembly.wasm",
       "Sentry.Extensions.Logging.sazhdltr1e.wasm": "Sentry.Extensions.Logging.wasm",
       "Sentry.mt7qgjzazg.wasm": "Sentry.wasm",
@@ -114,7 +114,7 @@
       "Microsoft.JSInterop.vbgjtaistr.wasm": "sha256-a55WYCaycB8aUpAsLC/Amip8LqEGJGwHC3Pjb3544lc=",
       "Microsoft.JSInterop.WebAssembly.90ixfq4lhh.wasm": "sha256-l4822aWDv6TJPgb67s344sWo4iK3FwEXkLjpgYNYS0k=",
       "MudBlazor.ov7p6tnce4.wasm": "sha256-JL4jJxn3VlFxdA0Y6ehsIEOiNT4W8OHFUQl7E4QuRmU=",
-      "MudBlocks.4ek93a6jzq.wasm": "sha256-fDoCdHnKu+QZQIuod2AzJqFdd6t3duKtIi6XfuuCVTQ=",
+      "MudBlocks.gr0dp797qg.wasm": "sha256-HMo5r5UZuREDv8yz+mUKbRQ5pKcnCp40zm7wC9mkQHs=",
       "Sentry.AspNetCore.Blazor.WebAssembly.9lfnhdqdp6.wasm": "sha256-rZOgYsjQI7Jqx2LX/T/ljhx4X3SKFy4tRD+ej3+FeWw=",
       "Sentry.Extensions.Logging.sazhdltr1e.wasm": "sha256-DALo4A27yafeBNL03WMy9i7vQXHWSTg10qQMuF5AvpQ=",
       "Sentry.mt7qgjzazg.wasm": "sha256-Gpbn85uniBVaFZldeJMwOzCyx2BTMz8ZXywdtgXTwQo=",
