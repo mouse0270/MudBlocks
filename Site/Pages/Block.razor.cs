@@ -90,10 +90,15 @@ namespace MudBlocks.Site.Pages {
 			if (!string.IsNullOrWhiteSpace(category) && !string.IsNullOrWhiteSpace(block)) {
 				// Get The Block
 				if (Blocks != null && Blocks.Count > 0) {
-					Component = Blocks.Find(b => b.Namespace.Equals($"{category.Dehumanize()}.{block.Dehumanize()}", StringComparison.OrdinalIgnoreCase));
+					Component = Blocks.Find(b => 
+						b.Namespace.Equals($"{category.Dehumanize()}.{block.Dehumanize()}", StringComparison.OrdinalIgnoreCase)
+						|| (b.AltUrls ?? []).Any(url => url.Equals($"{category.Dehumanize()}/{block.Dehumanize()}", StringComparison.OrdinalIgnoreCase))
+					);
 					if (Component != null) {
+						category = Component.Namespace.Split('.').First();
+						block = Component.Namespace.Split('.').Last();
 						BlockService.Authors = Component?.Authors ?? new List<Services.BlockService.Author>();
-						var url = $"https://raw.githubusercontent.com/mouse0270/MudBlocks/main/Site/Blocks/{(Component?.Namespace ?? "").Replace(".", "/")}/{(blockType != "Skeleton" ? "Index" : "Skeleton")}.razor"; 
+						var url = $"https://raw.githubusercontent.com/mouse0270/MudBlocks/main/Site/Blocks/{(Component?.Namespace ?? "").Replace(".", "/")}/{getBlockType(category, block)}.razor"; 
 						BlockService.Code = await FetchRazorFileContent(url);
 					}else{
 						//SentrySdk.CaptureMessage($"Block not found: {category}/{block}");
@@ -141,6 +146,12 @@ namespace MudBlocks.Site.Pages {
 			}
 		}
 
+
+		private string getBlockType(string Category, string Block) {
+			if (Category.ToLower() == "c" || Category.ToLower() == "component") return Block;
+			else if (blockType == "Skeleton") return "Skeleton";
+			else return "Index";
+		}
 		private async Task<string> FetchRazorFileContent(string url) {
 			try {
 				using (HttpClient httpClient = new HttpClient()) {

@@ -1,0 +1,60 @@
+@page "/test/MudNumericSlider"
+
+<MudContainer Class="py-4 py-sm-8 py-md-12 py-lg-16 py-xl-20">
+    <MudGrid>
+        <MudItem xs="12" md="8" >
+            <MudBlocks.Components.MudNumericSlider 
+                @bind-Value="@Value" 
+                Label="Numeric Slider"
+                Step="1"
+                Min="@Min"
+                Max="@Max"
+                Variant="@InputVariant"
+                Color="@InputColor"
+                Size="@InputSize" />
+        </MudItem>
+        <MudItem xs="12" md="4" >
+            <MudStack>
+                <MudSelect @bind-Value="InputVariant"
+                  Variant="Variant.Outlined"
+                  Label="Variant Style">
+                    <MudSelectItem Value="Variant.Filled">Filled</MudSelectItem> 
+                    <MudSelectItem Value="Variant.Outlined">Outlined</MudSelectItem>
+                    <MudSelectItem Value="Variant.Text">Text</MudSelectItem>
+                </MudSelect>
+                <MudSelect @bind-Value="InputColor"
+                  Variant="Variant.Outlined"
+                  Label="Color">
+                    <MudSelectItem Value="Color.Primary">Primary</MudSelectItem> 
+                    <MudSelectItem Value="Color.Secondary">Secondary</MudSelectItem>
+                    <MudSelectItem Value="Color.Tertiary">Tertiary</MudSelectItem>
+                    <MudSelectItem Value="Color.Info">Info</MudSelectItem>
+                    <MudSelectItem Value="Color.Success">Success</MudSelectItem>
+                    <MudSelectItem Value="Color.Warning">Warning</MudSelectItem>
+                    <MudSelectItem Value="Color.Error">Error</MudSelectItem>
+                </MudSelect>
+                <MudSelect @bind-Value="InputSize"
+                  Variant="Variant.Outlined"
+                  Label="Size">
+                    <MudSelectItem Value="Size.Small">Small</MudSelectItem> 
+                    <MudSelectItem Value="Size.Medium">Medium</MudSelectItem>
+                    <MudSelectItem Value="Size.Large">Large</MudSelectItem>
+                </MudSelect>
+            </MudStack>
+        </MudItem>
+        <MudItem xs="12">
+            <CodeBlock Code="@Code" Language="@CodeLanguages.Razor" EnableLineNumbers="true" />
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+@code {
+    private int Value { get; set; } = 50;
+    private int Min { get; set; } = 0;
+    private int Max { get; set; } = 500;
+    private Variant InputVariant { get; set; } = Variant.Filled;
+    private Color InputColor { get; set; } = Color.Primary;
+    private Size InputSize { get; set; } = Size.Medium;
+
+    private string Code = $@"<NameSpace.MudNumericSlider @bind-Value=""@Value"" Label=""Numeric Slider"" Step=""1"" Min=""@Min"" Max=""@Max"" Variant=""@InputVariant"" Color=""@InputColor"" Size=""@InputSize"" />";
+}

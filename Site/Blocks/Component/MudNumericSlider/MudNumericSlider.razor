@@ -1,0 +1,232 @@
+@namespace MudBlocks.Components
+@typeparam T where T : struct, System.Numerics.INumber<T>
+@inherits MudNumericField<T>
+
+<MudStack Class="mud-numeric-slider" Spacing="0">
+    <MudNumericField T="T" 
+        Value="@Value"
+        ValueChanged="@ValueChanged"
+        @attributes="@UserAttributes"
+        Style="@Style"
+        Variant="@Variant"
+        Typo="@Typo"
+        Label="@Label"
+        TextUpdateSuppression="@TextUpdateSuppression"
+        Placeholder="@Placeholder"
+        Disabled="@GetDisabledState()"
+        Underline="@Underline"
+        ReadOnly="@GetReadOnlyState()"
+        Adornment="@Adornment"
+        AdornmentText="@AdornmentText"
+        AdornmentIcon="@AdornmentIcon"
+        AdornmentColor="@AdornmentColor"
+        AdornmentAriaLabel="@AdornmentAriaLabel"
+        IconSize="@IconSize"
+        Error="@Error"
+        ErrorId="@ErrorId"
+        HelperId="@GetHelperId()"
+        HelperText="@HelperText"
+        Immediate="@Immediate"
+        Margin="@Margin"
+        MaxLength="@MaxLength"
+        HideSpinButtons="@HideSpinButtons"
+        InputMode="@InputMode"
+        Pattern="@((Pattern ?? "[0-9]").TrimEnd('*')+"*")"
+        OnAdornmentClick="@OnAdornmentClick"
+        OnBlur="@OnBlurredAsync"
+        OnKeyDown="@HandleKeyDownAsync"
+        OnKeyUp="@HandleKeyUpAsync"
+        Clearable="@(Clearable && !GetReadOnlyState())"
+        ClearIcon="@ClearIcon"
+        ShrinkLabel="@ShrinkLabel"
+        InputId="@InputElementId"
+        Required="@Required"
+        Min="@Min"
+        Max="@Max"
+        Step="@Step" />
+    <MudSlider 
+        Value="@Value"
+        ValueChanged="@ValueChanged"
+        Min="@Min"
+        Max="@Max"
+        Step="@Step"
+        Color="@Color"
+        Size="@Size"
+        @attributes="UserAttributes" 
+        Disabled="@GetDisabledState()" />
+</MudStack>
+
+<style>
+    .mud-numeric-slider {
+        width: 100%;
+    }
+
+    .mud-numeric-slider .mud-input-number-control .mud-input>input.mud-input-root {
+        text-align: center;
+    }
+    .mud-numeric-slider:has(.mud-slider.mud-slider-medium) .mud-input-number-control .mud-input>input.mud-input-root {
+        padding-bottom: 12px;
+    }
+    .mud-numeric-slider:has(.mud-slider.mud-slider-large) .mud-input-number-control .mud-input>input.mud-input-root {
+        padding-bottom: 16px;
+    }
+    .mud-numeric-slider .mud-slider .mud-slider-input::-webkit-slider-runnable-track {
+        border-radius: 0 0 var(--mud-default-borderradius) var(--mud-default-borderradius);
+    }
+    .mud-numeric-slider .mud-input.mud-input-outlined .mud-input-outlined-border {
+        border-radius: var(--mud-default-borderradius) var(--mud-default-borderradius) 0 0;
+    }
+    .mud-numeric-slider .mud-input-control.mud-input-outlined-with-label {
+        margin-top: 8px;
+        margin-bottom: 0px;
+    }
+    .mud-numeric-slider:has(.mud-input-control.mud-input-outlined-with-label) {
+        margin-bottom: 4px;
+    }
+    .mud-numeric-slider .mud-slider.mud-slider-small .mud-slider-input::-webkit-slider-runnable-track,
+    .mud-numeric-slider .mud-slider.mud-slider-medium .mud-slider-input::-webkit-slider-runnable-track,
+    .mud-numeric-slider .mud-slider.mud-slider-large .mud-slider-input::-webkit-slider-runnable-track {
+        margin-top: 0px;
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-primary):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-primary .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-primary .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-primary);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-primary-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-primary-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-secondary):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-secondary .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-secondary .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-secondary);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-secondary-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-secondary-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-tertiary):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-tertiary .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-tertiary .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-tertiary);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-tertiary-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-tertiary-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-info):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-info .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-info .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-info);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-info-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-info-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-success):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-success .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-success .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-success);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-success-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-success-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-warning):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-warning .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-warning .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-warning);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-warning-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-warning-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-error):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-error .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-error .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-error);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-error-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-error-rgb), 0.3);
+        }
+    }
+
+    .mud-numeric-slider:has(.mud-slider.mud-slider-dark):has(.mud-input:focus-within),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-dark .mud-slider-input:focus-visible),
+    .mud-numeric-slider:has(.mud-slider.mud-slider-dark .mud-slider-input:active) {
+        & label.mud-input-label.mud-input-label-inputcontrol {
+            color: var(--mud-palette-dark);
+        }
+        & .mud-input.mud-input-underline:after {
+            border-color: rgba(var(--mud-palette-dark-rgb), 0.3);
+            transform: scaleX(1);
+        }
+        & .mud-input-outlined-border {
+            border-color: rgba(var(--mud-palette-dark-rgb), 0.3);
+        }
+    }
+</style>
+
+@code {
+    private T nValue
+    {
+        get => Value;
+        set => Value = value;
+    }
+    /// <summary>
+    /// The color of the component. It supports the Primary, Secondary and Tertiary theme colors.
+    /// </summary>
+    [Parameter]
+    [Category(CategoryTypes.Slider.Appearance)]
+    public Color Color { get; set; } = Color.Primary;
+
+    /// <summary>
+    /// Size of the slider.
+    /// </summary>
+    [Parameter]
+    [Category(CategoryTypes.Slider.Appearance)]
+    public Size Size { get; set; } = Size.Small;
+}

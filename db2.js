@@ -90,11 +90,10 @@ function generateStaticClass(data) {
 					new Database.Block
 					{
 						Namespace = "${item.Namespace}",
+						AltUrls = new List<string> { ${(item?.AltUrls ?? []).map((k) => `"${k}"`).join(", ")} },
 						Title = "${item.Title}",
 						Description = @"${item.Description}",
-						Keywords = new List<string> { ${(item?.Keywords ?? []).map(
-							(k) => `"${k}"`
-						).join(", ")} },
+						Keywords = new List<string> { ${(item?.Keywords ?? []).map((k) => `"${k}"`).join(", ")} },
 						Authors = new List<BlockService.Author>
 						{
 							${(item?.Authors ?? []).map(

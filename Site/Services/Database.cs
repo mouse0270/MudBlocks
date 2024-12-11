@@ -6,6 +6,7 @@ public class Database {
 	public class Block {
 
 		public string Namespace { get; set; } = String.Empty;
+		public List<string> AltUrls { get; set; } = [];
 		public string? Title { get; set; } = String.Empty;
 		public string? Description { get; set; } = String.Empty;
 		public List<string>? Keywords { get; set; } = [];

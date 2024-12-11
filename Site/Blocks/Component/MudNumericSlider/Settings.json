@@ -1,0 +1,27 @@
+{
+	"Title": "Numeric Slider",
+    "AltUrls": [
+        "Component/NumericSlider"
+    ],
+    "Description": "This component combines a MudNumericField with a MudSlider to allow users to customize their values easily. The MudNumericField provides a precise input method, while the MudSlider offers a more intuitive and visual way to adjust the values. This combination ensures both accuracy and ease of use, making it ideal for settings where users need to fine-tune numeric values.",
+    "Keywords": [
+      "Numeric Input",
+      "Slider",
+      "MudNumericField",
+      "MudSlider",
+      "User Interface",
+      "Component",
+      "Customization"
+    ],
+	"Authors": [
+		{
+			"Name": "Mouse0270",
+			"Url": "https://github.com/mouse0270",
+			"Image": "https://avatars.githubusercontent.com/u/564874?v=4",
+			"Socials": {
+				"GitHub": "https://github.com/mouse0270/"
+			}
+		}
+	],
+	"Created": "2024-12-11"
+}
